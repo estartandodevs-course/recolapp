@@ -5,7 +5,7 @@ const Input = ({ id, onChange, value, label }) => {
     <>
       <S.Container>
         <S.Label htmlFor={id}>{label}</S.Label>
-        <S.InputElement value={value} onChange={onChange} />
+        <S.InputElement id={id} value={value} onChange={onChange} />
       </S.Container>
     </>
   );
