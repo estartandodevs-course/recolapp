@@ -4,7 +4,7 @@ import { Button } from "../../components/Button";
 const Home = () => {
   return (
     <>
-      <Button backgroundColor={"red"} />
+      <Button bgColor="#008000">Botão</Button>
     </>
   );
 };
