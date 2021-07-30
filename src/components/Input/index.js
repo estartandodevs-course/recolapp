@@ -1,23 +1,11 @@
-import { useEffect, useState } from "react";
 import * as S from "./styles";
 
-const Input = ({ label }) => {
-  const [InputValue, SetInputValue] = useState("");
-
-  useEffect(() => {
-    const SetConsole = () => {
-      console.log(InputValue); // teste
-    };
-    SetConsole();
-  }, [InputValue]);
-
+const Input = ({ id, onChange, value, label }) => {
   return (
     <>
       <S.Container>
-        <S.Label>{label}</S.Label>
-        <S.InputElement
-          onChange={(event) => SetInputValue(event.target.value)}
-        />
+        <S.Label htmlFor={id}>{label}</S.Label>
+        <S.InputElement value={value} onChange={onChange} />
       </S.Container>
     </>
   );

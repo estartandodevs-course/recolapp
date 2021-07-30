@@ -26,6 +26,12 @@
           "arrow-body-style": 0,
           "import/prefer-default-export": "off",
           "react/prop-types": 0,
-          "react/react-in-jsx-scope": "off"
+          "react/react-in-jsx-scope": "off",
+          "object-curly-newline": ["error", {
+            "ObjectExpression": "always",
+            "ObjectPattern": { "multiline": true },
+            "ImportDeclaration": "never",
+            "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+        }]
     }
 }
