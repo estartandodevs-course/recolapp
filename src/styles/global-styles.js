@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
         --green:#008000;
         --lightGray:#FFF8F4;
     }
-    
+
     * {
      margin: 0;
      padding: 0;
