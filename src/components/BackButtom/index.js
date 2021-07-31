@@ -10,3 +10,20 @@ export const BackButton = ({ pageTitle, handleBack }) => {
     </S.Section>
   );
 };
+// intrucoes para o componente
+
+// import { useHistory } from "react-router-dom";
+
+// import { BackButton } from "../../components/BackButtom";
+
+// const App = () => {
+//   const history = useHistory();
+
+//   const handleBack = () => history.goBack();
+
+//   return (
+//     <div>
+//       <BackButton pageTitle="testando" handleBack={handleBack} />
+//     </div>
+//   );
+// };
