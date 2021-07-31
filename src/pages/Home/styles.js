@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
+  background-color: #fff8f4;
   height: 100vh;
+  color: #4f4f4f;
+  margin: 0px 30px;
 
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  color: #4f4f4f;
 `;
 export const Title = styled.h3`
-  padding: 32px 0px 0px 30px;
+  padding-top: 32px;
 `;
 export const Pragraph = styled.p`
   padding: 8px 0px 4px 0px;
@@ -20,18 +21,20 @@ export const Pragraph = styled.p`
 export const RedirectLogin = styled.a`
   color: #4f4f4f;
   font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
 `;
 
 export const Img = styled.img`
-  padding: 0px 30px;
+  margin: auto;
 `;
 
 export const ContainerBottom = styled.div`
   width: 100%;
+  padding-bottom: 32px;
 
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  padding-bottom: 32px;
 `;
