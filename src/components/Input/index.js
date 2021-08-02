@@ -1,9 +1,9 @@
 import * as S from "./styles";
 
-const Input = ({ id, onChange, value, label, width = "100%" }) => {
+const Input = ({ id, onChange, value, label, width = "100%", ...rest }) => {
   return (
     <>
-      <S.Container>
+      <S.Container {...rest}>
         <S.Label htmlFor={id}>{label}</S.Label>
         <S.InputElement
           id={id}
