@@ -9,6 +9,7 @@ import * as S from "./styles";
 import image from "../../assets/img/illustrations/tela_inicial.svg";
 
 const Home = () => {
+
   const history = useHistory();
 
   return (
