@@ -11,10 +11,7 @@ export const BackButton = ({ pageTitle }) => {
     <S.Section>
       <S.Img
         src={Backimg}
-        onClick={
-          handleBack
-          // , () => console.log("voltar pagina")
-        }
+        onClick={handleBack}
       />
       <S.Pagetitle>{pageTitle}</S.Pagetitle>
     </S.Section>
