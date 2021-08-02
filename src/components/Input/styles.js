@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 60%;
+  width: ${({ width }) => width};
   text-align: left;
 
   display: flex;
@@ -11,11 +11,11 @@ export const Container = styled.div`
 
 export const InputElement = styled.input`
   background-color: #fde5d7;
-  width: 100%;
+  width: calc(100% - 10px);
   height: 45px;
   border: none;
   border-radius: 8px;
-  padding: 0px 10px;
+  padding-left: 10px;
 
   textarea:focus,
   &:focus {
