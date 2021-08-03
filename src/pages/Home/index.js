@@ -1,19 +1,19 @@
 import React from "react";
 
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
-import { Button } from "../../components/Button";
+// import { Button } from "../../components/Button";
 
-import * as S from "./styles";
+// import * as S from "./styles";
 
-import image from "../../assets/img/illustrations/tela_inicial.svg";
-import { Select } from "../../components/Select";
+// import image from "../../assets/img/illustrations/tela_inicial.svg";
+import { Selectb } from "../../components/Select";
 
 const Home = () => {
-  const history = useHistory();
+  // const history = useHistory();
 
   return (
-    <Select />
+    <Selectb />
     // <>
     //   <S.Container>
     //     <S.Title>Faça parte dessa iniciativa!</S.Title>

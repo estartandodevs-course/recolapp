@@ -8,6 +8,8 @@ export const Section = styled.div`
   height: 45px;
 `;
 export const Selectarrow = styled.img`
+  display: flex;
+  flex-direction: flex-end;
   width: 9px;
   height: 5.56px;
 `;

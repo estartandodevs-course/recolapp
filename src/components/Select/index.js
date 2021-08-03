@@ -1,11 +1,13 @@
 import React from "react";
+import Select from "react-select";
 import * as S from "./styles";
-import SelectA from "../../assets/img/icons/Select_arrow.svg";
+// import Selecta from "../../assets/img/icons/select_arrow.svg";
 
-export const Select = () => {
+export const Selectb = () => {
+  const options = [{ value: "rio", label: "Chocolate" }];
   return (
     <S.Section>
-      <S.img src={SelectA} />
+      <Select options={options} />
     </S.Section>
   );
 };
