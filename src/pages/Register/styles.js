@@ -1,21 +1,27 @@
 import styled from "styled-components";
 
-export const FormContainer = styled.form`
-  height: 100%;
-  width: 100%;
+export const Container = styled.div`
+  background-color: #fff8f4;
+  height: 100vh;
+  color: #4f4f4f;
+  margin: 0px 30px;
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+`;
+
+export const FormContainer = styled.form`
+  height: 100%;
+
 `;
 
 export const Wrapper = styled.div`
-  width: 60%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
   margin-bottom: 10px;
 
 `;
