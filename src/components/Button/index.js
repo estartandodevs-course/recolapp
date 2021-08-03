@@ -7,6 +7,7 @@ const Button = ({
   children,
   disable,
   width = "100%",
+  ...rest
 }) => {
   return (
     <ButtonElement
@@ -14,6 +15,7 @@ const Button = ({
       bgColor={bgColor}
       disabled={disable}
       width={width}
+      {...rest}
     >
       {children}
     </ButtonElement>
