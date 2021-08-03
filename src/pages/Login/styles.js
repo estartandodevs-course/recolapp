@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
 import { BackButton } from "../../components/BackButtom";
 
 export const Container = styled.div`
@@ -28,6 +27,10 @@ export const InputPassword = styled(Input)`
   margin-top: 24px;
 `;
 
-export const ButtonEnter = styled(Button)`
-  margin: 24px 0px;
+export const ErrorMessage = styled.p`
+  /* font-family: Roboto; */
+  font-size: 11px;
+  color: ${({ disable }) => (disable ? "#FFFFFFAA" : "#FF0000FF")};
+  margin-top: 6px;
+  margin-bottom: 8px;
 `;

@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+
+import { Button } from "../../components/Button";
 
 import * as S from "./styles";
 
 import image from "../../assets/img/illustrations/login.svg";
 
 const Login = () => {
-  const [Email, SetEmail] = useState("");
-  const [Password, SetPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [buttonDisable, setButtonDisable] = useState(true);
+  const [errorDisable, SetErrorDisable] = useState(true);
+
+  const history = useHistory();
 
   const authLogib = () => {
-    if (Email === "admin" && Password === "123") {
-      console.log("Entrou!");
+    if (email === "admin" && password === "123") {
+      history.push("/home");
     } else {
-      console.log("Email/Senha inválidos!");
+      SetErrorDisable(false);
+      setTimeout(() => SetErrorDisable(true), 3000);
     }
   };
 
-  const [ButtonDisable, SetButtonDisable] = useState(true);
-
   useEffect(() => {
-    if (Email !== "" && Password !== "") {
-      SetButtonDisable(false);
+    if (email !== "" && password !== "") {
+      setButtonDisable(false);
     } else {
-      SetButtonDisable(true);
+      setButtonDisable(true);
     }
-  }, [Email, Password]);
+  }, [email, password]);
 
   return (
     <>
@@ -34,17 +40,22 @@ const Login = () => {
         <S.InputEmail
           id="email"
           label="Email"
-          onChange={(e) => SetEmail(e.target.value)}
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
         />
         <S.InputPassword
           type="password"
           id="password"
           label="Password"
-          onChange={(e) => SetPassword(e.target.value)}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
         />
-        <S.ButtonEnter disable={ButtonDisable} onClick={() => authLogib()}>
+        <S.ErrorMessage disable={errorDisable}>
+          O email ou senha está errado. Por favor, tente novamente
+        </S.ErrorMessage>
+        <Button disable={buttonDisable} onClick={() => authLogib()}>
           Entrar
-        </S.ButtonEnter>
+        </Button>
       </S.Container>
     </>
   );
