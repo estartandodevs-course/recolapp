@@ -1,8 +1,6 @@
 import React from "react";
 import * as S from "./styles";
 
-export const Select = () => {
-  const options = [{ value: "rio", label: "Chocolate" }];
-
-  return <S.Select options={options} />;
+export const Select = ({ options, onChange }) => {
+  return <S.Select options={options} onChange={onChange} />;
 };
