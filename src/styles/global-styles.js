@@ -5,17 +5,22 @@ import Poppins700 from "../assets/fonts/Poppins-Bold.ttf";
 export const GlobalStyles = createGlobalStyle`
      @font-face {
         font-family: 'Poppins';
-        src:  url(${Poppins400}) format('ttf'),
+        src: url(${Poppins400}) format('ttf'),
         url(${Poppins700}) format('ttf');
-    }
+      }
     :root {
         --orange:#F28E36;
         --green:#008000;
         --lightGray:#FFF8F4;
+        --inputBackground: #fde5d7;
     }
 
     * {
      margin: 0;
      padding: 0;
- }
+    }
+
+    body {
+      font-family: Poppins;
+    }
 `;
