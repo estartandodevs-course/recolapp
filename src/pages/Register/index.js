@@ -4,6 +4,8 @@ import { Input } from "../../components/Input";
 import { BackButton } from "../../components/BackButtom";
 import { Button } from "../../components/Button";
 import { Mask } from "../../components/InputMask";
+import { Select } from "../../components/Select";
+import { States } from "../../services/StatesToSelect/mock";
 
 const Register = () => {
   let [count, setCount] = useState(1);
@@ -127,22 +129,30 @@ const Register = () => {
             }
             label="CEP"
           />
-          <Input
+          <Select
             id="estado"
             value={data.state}
-            onChange={(e) =>
-              setData({
-                ...data,
-                state: e.target.value,
-              })
-            }
+            onChange={() => {}}
             label="Estado"
+            options={States}
           />
         </S.Wrapper>
-        <Button type="submit" width="100%">
-          Cadastrar
-        </Button>
+        <Select
+          id="typeUser"
+          options={[
+            { value: "Empreendedor", label: "Empreendedor" },
+            { value: "Coletor", label: "Coletor" },
+            { value: "PessoaFisica", label: "Pessoa Física" },
+            { value: "Cooperativa", label: "Cooperativa" },
+          ]}
+          value={data.estado}
+          onChange={(e) => {}}
+          label="Você é:"
+        />
       </S.FormContainer>
+      <Button type="submit" width="100%">
+        Cadastrar
+      </Button>
     </S.Container>
   );
 };
