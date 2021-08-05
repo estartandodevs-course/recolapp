@@ -9,10 +9,7 @@ export const Select = styled(ReactSelect)`
     background-color: var(--inputBackground);
     border-radius: 8px;
     border: none;
-    outline: none;
-    &:focus {
-      border: none;
-    }
+
   }
   .css-1okebmr-indicatorSeparator {
     display: none;
@@ -21,9 +18,11 @@ export const Select = styled(ReactSelect)`
     display: none;
   }
 
-  .css-2b097c-container, .css-1f43avz-a11yText-A11yText, .css-1pahdxg-control {
-    outline: none;
+
+  .css-1pahdxg-control {
     border: none;
+    box-shadow: none;
+    background-color: var(--inputBackground);
     }
   }
 `;
