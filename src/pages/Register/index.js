@@ -11,14 +11,14 @@ const Register = () => {
   let [count, setCount] = useState(1);
   const [maskCPF, SetMaskCPF] = useState("");
   const [data, setData] = useState({
-    name: "", 
-    certification: "", 
+    name: "",
+    certification: "",
     email: "",
     cellphone: "",
     city: "",
     street: "",
     zip: "",
-    state: ""
+    state: "",
   });
 
   const submit = (e) => {
@@ -30,12 +30,12 @@ const Register = () => {
     let length = onlyNumbers.length;
 
     if (length === 11) {
-      setCount((count+1));
+      setCount(count + 1);
     }
 
     if (length >= 11 && count === 2) {
       SetMaskCPF("99.999.999/9999-99");
-      setCount(1)
+      setCount(1);
     } else if (length <= 11) {
       SetMaskCPF("999.999.999-99");
     }
@@ -45,7 +45,7 @@ const Register = () => {
     setData({
       ...data,
       certification: e.target.value,
-    })
+    });
     getCertificationMask(e.target.value);
   };
 
@@ -132,7 +132,12 @@ const Register = () => {
           <Select
             id="estado"
             value={data.state}
-            onChange={() => {}}
+            onChange={(e) =>
+              setData({
+                ...data,
+                state: e.value,
+              })
+            }
             label="Estado"
             options={States}
           />
