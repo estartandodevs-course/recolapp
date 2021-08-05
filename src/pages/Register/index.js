@@ -5,7 +5,7 @@ import { BackButton } from "../../components/BackButtom";
 import { Button } from "../../components/Button";
 import { Mask } from "../../components/InputMask";
 import { Select } from "../../components/Select";
-import { States } from "../../services/states";
+import { States } from "../../services/StatesToSelect/mock";
 
 const Register = () => {
   let count = 0;
