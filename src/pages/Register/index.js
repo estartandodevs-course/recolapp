@@ -4,6 +4,8 @@ import { Input } from "../../components/Input";
 import { BackButton } from "../../components/BackButtom";
 import { Button } from "../../components/Button";
 import { Mask } from "../../components/InputMask";
+import { Select } from "../../components/Select";
+import { States } from "../../services/states";
 
 const Register = () => {
   let count = 0;
@@ -114,16 +116,24 @@ const Register = () => {
             }
             label="CEP"
           />
-          <Input
+          <Select
             id="estado"
+            options={States}
             value={data.estado}
-            onChange={(e) =>
-              setData({
-                ...data,
-                estado: e.target.value,
-              })
-            }
+            onChange={(e) => {}}
             label="Estado"
+          />
+          <Select
+            id="typeUser"
+            options={[
+              { value: "Empreendedor", label: "Empreendedor" },
+              { value: "Coletor", label: "Coletor" },
+              { value: "PessoaFisica", label: "Pessoa Física" },
+              { value: "Cooperativa", label: "Cooperativa" },
+            ]}
+            value={data.estado}
+            onChange={(e) => {}}
+            label="Você é:"
           />
         </S.Wrapper>
         <Button type="submit" width="100%">
