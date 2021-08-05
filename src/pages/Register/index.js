@@ -55,6 +55,7 @@ const Register = () => {
         <Mask
           mask={maskCPF}
           id="cpf"
+          width="100%"
           onChange={(e) => handleCpfCnpj(e)}
           label="CPF/CNPJ"
         />
@@ -72,6 +73,7 @@ const Register = () => {
         <Mask
           mask={"(99)99999-9999"}
           id="celular"
+          width="100%"
           value={data.celular}
           onChange={(e) =>
             setData({
@@ -107,6 +109,7 @@ const Register = () => {
           <Mask
             mask={"99999-999"}
             id="cep"
+            width="100%"
             value={data.cep}
             onChange={(e) =>
               setData({
@@ -123,23 +126,23 @@ const Register = () => {
             onChange={(e) => {}}
             label="Estado"
           />
-          <Select
-            id="typeUser"
-            options={[
-              { value: "Empreendedor", label: "Empreendedor" },
-              { value: "Coletor", label: "Coletor" },
-              { value: "PessoaFisica", label: "Pessoa Física" },
-              { value: "Cooperativa", label: "Cooperativa" },
-            ]}
-            value={data.estado}
-            onChange={(e) => {}}
-            label="Você é:"
-          />
         </S.Wrapper>
-        <Button type="submit" width="100%">
-          Cadastrar
-        </Button>
+        <Select
+          id="typeUser"
+          options={[
+            { value: "Empreendedor", label: "Empreendedor" },
+            { value: "Coletor", label: "Coletor" },
+            { value: "PessoaFisica", label: "Pessoa Física" },
+            { value: "Cooperativa", label: "Cooperativa" },
+          ]}
+          value={data.estado}
+          onChange={(e) => {}}
+          label="Você é:"
+        />
       </S.FormContainer>
+      <Button type="submit" width="100%">
+        Cadastrar
+      </Button>
     </S.Container>
   );
 };
