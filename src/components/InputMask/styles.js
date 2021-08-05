@@ -24,5 +24,5 @@ export const InputMask = styled(InputMaskBase)`
   border-radius: 8px;
   outline: none;
   font-size: 14px;
-  padding-left: 10px;
+  padding: 4px;
 `;

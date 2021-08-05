@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from "./styles";
 // import { Input } from "../../components/Input";
 // import { BackButton } from "../../components/BackButtom";
@@ -9,32 +9,45 @@ import { States } from "../../services/StatesToSelect/mock";
 // import { CheckBox } from "../../components/CheckBox";
 
 const Register = () => {
-  let count = 0;
-  const [data, setData] = useState({ cpf: "" });
+  let [count, setCount] = useState(1);
   const [maskCPF, SetMaskCPF] = useState("");
+  const [data, setData] = useState({
+    name: "",
+    certification: "",
+    email: "",
+    cellphone: "",
+    city: "",
+    street: "",
+    zip: "",
+    state: "",
+  });
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(data);
   };
 
-  const getCpfAndCnpjMask = (value) => {
+  const getCertificationMask = (value) => {
     let onlyNumbers = value.replace(/[^\d]/g, "");
     let length = onlyNumbers.length;
 
     if (length === 11) {
-      count += 1;
+      setCount(count + 1);
     }
 
     if (length >= 11 && count === 2) {
       SetMaskCPF("99.999.999/9999-99");
+      setCount(1);
     } else if (length <= 11) {
       SetMaskCPF("999.999.999-99");
     }
   };
 
-  const handleCpfCnpj = (e) => {
-    getCpfAndCnpjMask(e.target.value);
+  const handleCertification = (e) => {
+    setData({
+      ...data,
+      certification: e.target.value,
+    });
+    getCertificationMask(e.target.value);
   };
 
   return (
@@ -51,18 +64,17 @@ const Register = () => {
             })
           }
           label="Nome Completo"
-          width="100%"
         />
         <S.MaskRegister
           mask={maskCPF}
           id="cpf"
-          width="100%"
-          onChange={(e) => handleCpfCnpj(e)}
+          value={data.certification}
+          onChange={(e) => handleCertification(e)}
           label="CPF/CNPJ"
         />
         <S.InputRegister
           id="email"
-          value={data.emai}
+          value={data.email}
           onChange={(e) =>
             setData({
               ...data,
@@ -74,12 +86,11 @@ const Register = () => {
         <S.MaskRegister
           mask={"(99)99999-9999"}
           id="celular"
-          width="100%"
-          value={data.celular}
+          value={data.cellphone}
           onChange={(e) =>
             setData({
               ...data,
-              celular: e.target.value,
+              cellphone: e.target.value,
             })
           }
           label="Celular"
@@ -90,18 +101,18 @@ const Register = () => {
           onChange={(e) =>
             setData({
               ...data,
-              endereco: e.target.value,
+              street: e.target.value,
             })
           }
           label="Endereço"
         />
         <S.InputRegister
           id="cidade"
-          value={data.cidade}
+          value={data.city}
           onChange={(e) =>
             setData({
               ...data,
-              cidade: e.target.value,
+              city: e.target.value,
             })
           }
           label="Cidade"
@@ -110,22 +121,26 @@ const Register = () => {
           <S.MaskRegister
             mask={"99999-999"}
             id="cep"
-            width="100%"
-            value={data.cep}
+            value={data.zip}
             onChange={(e) =>
               setData({
                 ...data,
-                cep: e.target.value,
+                zip: e.target.value,
               })
             }
             label="CEP"
           />
           <Select
             id="estado"
-            options={States}
-            value={data.estado}
-            onChange={(e) => {}}
+            value={data.state}
+            onChange={(e) =>
+              setData({
+                ...data,
+                state: e.value,
+              })
+            }
             label="Estado"
+            options={States}
           />
         </S.Wrapper>
         <Select
