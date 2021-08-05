@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #fff8f4;
+  background-color: var(--lightGray);
   height: 100vh;
   color: #4f4f4f;
-  margin: 0px 30px;
+  padding: 0px 30px;
 
   display: flex;
   justify-content: space-between;
