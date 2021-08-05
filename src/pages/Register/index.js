@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as S from "./styles";
 import { Input } from "../../components/Input";
 import { BackButton } from "../../components/BackButtom";
@@ -6,14 +6,9 @@ import { Button } from "../../components/Button";
 import { Mask } from "../../components/InputMask";
 
 const Register = () => {
+  let count = 0;
   const [data, setData] = useState({ cpf: "" });
-  var count = 0;
-  // const [cpfCnpj, setcpfCnpj] = useState("");
-  // useEffect(() => {
-  // const response =
-
-  //   setcpfCnpj(response);
-  // }, [data.cpf]);
+  const [maskCPF, SetMaskCPF] = useState("");
 
   const submit = (e) => {
     e.preventDefault();
@@ -23,19 +18,20 @@ const Register = () => {
   const getCpfAndCnpjMask = (value) => {
     let onlyNumbers = value.replace(/[^\d]/g, "");
     let length = onlyNumbers.length;
-    console.log(onlyNumbers);
-    console.log(count);
-    if (length > 11) {
-      console.log("teste a");
-      return "99.999.999/9999-99";
-    } else {
-      if (length > 10) {
-        count = count + 1;
-        console.log("teste c");
-      }
-      console.log("teste b");
-      return "999.999.999-99";
+
+    if (length === 11) {
+      count += 1;
     }
+
+    if (length >= 11 && count === 2) {
+      SetMaskCPF("99.999.999/9999-99");
+    } else if (length <= 11) {
+      SetMaskCPF("999.999.999-99");
+    }
+  };
+
+  const handleCpfCnpj = (e) => {
+    getCpfAndCnpjMask(e.target.value);
   };
 
   return (
@@ -55,15 +51,9 @@ const Register = () => {
           width="100%"
         />
         <Mask
-          mask={getCpfAndCnpjMask(data.cpf)}
+          mask={maskCPF}
           id="cpf"
-          value={data.cpf}
-          onChange={(e) =>
-            setData({
-              ...data,
-              cpf: e.target.value,
-            })
-          }
+          onChange={(e) => handleCpfCnpj(e)}
           label="CPF/CNPJ"
         />
         <Input
