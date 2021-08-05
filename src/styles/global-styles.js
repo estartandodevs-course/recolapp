@@ -13,6 +13,8 @@ export const GlobalStyles = createGlobalStyle`
         --green:#008000;
         --lightGray:#FFF8F4;
         --inputBackground: #fde5d7;
+        --textColor: #4f4f4f;
+
     }
 
     * {
