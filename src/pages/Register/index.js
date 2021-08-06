@@ -20,6 +20,7 @@ const Register = () => {
     street: "",
     zip: "",
     state: "",
+    typeUser: "",
   });
 
   const submit = (e) => {
@@ -121,6 +122,7 @@ const Register = () => {
           <S.MaskRegister
             mask={"99999-999"}
             id="cep"
+            width="50%"
             value={data.zip}
             onChange={(e) =>
               setData({
@@ -151,8 +153,13 @@ const Register = () => {
             { value: "PessoaFisica", label: "Pessoa Física" },
             { value: "Cooperativa", label: "Cooperativa" },
           ]}
-          value={data.estado}
-          onChange={(e) => {}}
+          value={data.typeUser}
+          onChange={(e) =>
+            setData({
+              ...data,
+              typeUser: e.value,
+            })
+          }
           label="Você é:"
         />
       </S.FormContainer>
