@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from "./styles";
 
 import { States } from "../../services/Select/states";
 import { typeUser } from "../../services/Select/typeUser";
+import { useHistory } from "react-router-dom";
 
 const Register = () => {
   const [count, setCount] = useState(1);
@@ -17,7 +18,13 @@ const Register = () => {
     zip: "",
     state: "",
     typeUser: "",
+    boxCheck: false,
   });
+
+  const [button, setButton] = useState(true);
+  const [checkedBox, setCheckedBox] = useState({});
+
+  const history = useHistory();
 
   const getCertificationMask = (value) => {
     const onlyNumbers = value.replace(/[^\d]/g, "");
@@ -39,6 +46,23 @@ const Register = () => {
     setData({ ...data, certification: e.target.value });
     getCertificationMask(e.target.value);
   };
+
+  const handleBox = (e) => {
+    setCheckedBox({
+      ...CheckedBox,
+      [e.target.value]: e.target.checked,
+    });
+  };
+
+  useEffect(() => {}, [checkedBox]);
+
+  const finishRegister = () => {
+    console.log(data);
+  };
+
+  // useEffect(() => {
+  //   if ()
+  // })
 
   return (
     <S.Container>
@@ -107,12 +131,14 @@ const Register = () => {
         />
       </S.FormContainer>
       <S.CheckboxRegister
-        id="checkbox"
         label="Li e concordo com os termos de uso"
-        type=""
-        onChange={() => {}}
+        checked={data.boxCheck}
+        onChange={(e) => setData({ ...data, boxCheck: e.target.checked })}
       />
-      <S.ButtonRegister onClick={() => {}}>Finalizar cadastro</S.ButtonRegister>
+
+      <S.ButtonRegister disable={false} onClick={() => finishRegister()}>
+        Finalizar cadastro
+      </S.ButtonRegister>
     </S.Container>
   );
 };
