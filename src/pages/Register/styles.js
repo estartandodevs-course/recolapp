@@ -1,11 +1,14 @@
 import styled from "styled-components";
+
 import { Mask } from "../../components/InputMask";
 import { BackButton } from "../../components/BackButtom";
 import { Input } from "../../components/Input";
+import { Select } from "../../components/Select";
+import { Button } from "../../components/Button";
+import { Checkbox } from "../../components/CheckBox";
 
 export const Container = styled.div`
   background-color: var(--lightGray);
-  height: 100vh;
   color: var(--textColor);
   padding: 0px 30px;
 
@@ -29,9 +32,16 @@ export const InputRegister = styled(Input)`
   padding-bottom: 16px;
 `;
 
-export const MaskRegister = styled(Mask)`
+export const MaskCertification = styled(Mask)`
   padding-bottom: 16px;
-  gap: 4px;
+`;
+
+export const MaksCellphone = styled(Mask)`
+  padding-bottom: 16px;
+`;
+
+export const MaskCep = styled(Mask)`
+  width: 138px;
 `;
 
 export const Wrapper = styled.div`
@@ -39,6 +49,23 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
-  /* gap: 24px; */
+  margin-bottom: 22px;
+`;
+
+export const SelectStates = styled(Select)`
+  width: 138px;
+`;
+
+export const SelectTypeUser = styled(Select)`
+  width: 114px;
+  margin-bottom: 16.5px;
+`;
+
+export const CheckboxRegister = styled(Checkbox)`
+  margin-top: 16.5px;
+  margin-bottom: 20px;
+`;
+
+export const ButtonRegister = styled(Button)`
+  margin-bottom: 51px;
 `;
