@@ -5,7 +5,7 @@ export const CheckboxContainer = styled.div`
   align-items: center;
 `;
 
-export const InputCheck = styled.input`
+export const Checkbox = styled.input`
   width: 12px;
   height: 12px;
 `;
