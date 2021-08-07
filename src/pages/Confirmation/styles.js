@@ -13,13 +13,13 @@ export const PageContainer = styled.div`
 export const ConfirmationText = styled.h2`
   text-align: center;
   color: var(--textColor);
-  margin-top: auto
+  margin: auto 0 30px;
 `;
 
 export const ConfirmationImg = styled.img`
-  width: 100%;
+  width: 50%;
 `;
 
 export const ConfirmationButton = styled(Button)`
-  margin-top: auto;
+  margin: auto 0 30px;
 `;
