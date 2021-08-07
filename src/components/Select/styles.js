@@ -9,6 +9,7 @@ export const Select = styled(ReactSelect)`
     background-color: var(--inputBackground);
     border-radius: 8px;
     border: none;
+    height: 45px;
   }
 
   .css-1okebmr-indicatorSeparator {
