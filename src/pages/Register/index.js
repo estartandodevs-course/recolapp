@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import * as S from "./styles";
-import { Input } from "../../components/Input";
-import { BackButton } from "../../components/BackButtom";
+// import { Input } from "../../components/Input";
+// import { BackButton } from "../../components/BackButtom";
 import { Button } from "../../components/Button";
-import { Mask } from "../../components/InputMask";
+// import { Mask } from "../../components/InputMask";
 import { Select } from "../../components/Select";
 import { States } from "../../services/StatesToSelect/mock";
+// import { CheckBox } from "../../components/CheckBox";
 
 const Register = () => {
   let [count, setCount] = useState(1);
@@ -19,6 +20,7 @@ const Register = () => {
     street: "",
     zip: "",
     state: "",
+    typeUser: "",
   });
 
   const submit = (e) => {
@@ -51,9 +53,9 @@ const Register = () => {
 
   return (
     <S.Container onSubmit={submit}>
-      <BackButton pageTitle="Teste" />
+      <S.BackButtonRegister pageTitle="Faça seu cadastro" />
       <S.FormContainer>
-        <Input
+        <S.InputRegister
           id="name"
           value={data.name}
           onChange={(e) =>
@@ -64,14 +66,14 @@ const Register = () => {
           }
           label="Nome Completo"
         />
-        <Mask
+        <S.MaskRegister
           mask={maskCPF}
           id="cpf"
           value={data.certification}
           onChange={(e) => handleCertification(e)}
           label="CPF/CNPJ"
         />
-        <Input
+        <S.InputRegister
           id="email"
           value={data.email}
           onChange={(e) =>
@@ -82,7 +84,7 @@ const Register = () => {
           }
           label="E-mail"
         />
-        <Mask
+        <S.MaskRegister
           mask={"(99)99999-9999"}
           id="celular"
           value={data.cellphone}
@@ -94,7 +96,7 @@ const Register = () => {
           }
           label="Celular"
         />
-        <Input
+        <S.InputRegister
           id="endereco"
           value={data.endereço}
           onChange={(e) =>
@@ -105,7 +107,7 @@ const Register = () => {
           }
           label="Endereço"
         />
-        <Input
+        <S.InputRegister
           id="cidade"
           value={data.city}
           onChange={(e) =>
@@ -117,9 +119,10 @@ const Register = () => {
           label="Cidade"
         />
         <S.Wrapper>
-          <Mask
+          <S.MaskRegister
             mask={"99999-999"}
             id="cep"
+            width="50%"
             value={data.zip}
             onChange={(e) =>
               setData({
@@ -150,14 +153,17 @@ const Register = () => {
             { value: "PessoaFisica", label: "Pessoa Física" },
             { value: "Cooperativa", label: "Cooperativa" },
           ]}
-          value={data.estado}
-          onChange={(e) => {}}
+          value={data.typeUser}
+          onChange={(e) =>
+            setData({
+              ...data,
+              typeUser: e.value,
+            })
+          }
           label="Você é:"
         />
       </S.FormContainer>
-      <Button type="submit" width="100%">
-        Cadastrar
-      </Button>
+      <Button children="Cadastrar" type="submit" width="100%"></Button>
     </S.Container>
   );
 };
