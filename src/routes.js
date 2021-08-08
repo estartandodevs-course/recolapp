@@ -9,6 +9,7 @@ export default function Routes() {
         <Route exact path="/" component={R.Home} />
         <Route exact path="/login" component={R.Login} />
         <Route path="/register" component={R.Register} />
+        <Route exact path="/confirmation" component={R.Confirmation} />
       </Switch>
     </BrowserRouter>
   );
