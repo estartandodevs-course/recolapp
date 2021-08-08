@@ -6,10 +6,11 @@ function Scheduling({
   street = "Rua Osvaldo Cruz, 84",
   date = "04 de agosto de 2021",
   hour = "15:00",
+  ...rest
 }) {
   return (
     <>
-      <S.SchedulingContainer>
+      <S.SchedulingContainer {...rest}>
         <S.SchedulingDiv>
           <S.SchedulingKey>Endereço:</S.SchedulingKey>
           <S.SchedulingValue>{street}</S.SchedulingValue>
