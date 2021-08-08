@@ -26,6 +26,7 @@ const Checkbox = ({ label, checked, onChange, inputProps, ...rest }) => {
           />
         }
         label={label}
+        {...rest}
       />
     </>
   );
