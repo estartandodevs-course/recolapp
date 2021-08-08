@@ -3,9 +3,9 @@ import * as S from "./styles";
 
 import { States } from "../../services/Select/states";
 import { typeUser } from "../../services/Select/typeUser";
-import { useHistory } from "react-router-dom";
 
 const Register = () => {
+  const [buttonDisable, setButtonDisable] = useState(true);
   const [count, setCount] = useState(1);
   const [maskCPF, SetMaskCPF] = useState("");
   const [data, setData] = useState({
@@ -20,11 +20,6 @@ const Register = () => {
     typeUser: "",
     boxCheck: false,
   });
-
-  const [button, setButton] = useState(true);
-  const [checkedBox, setCheckedBox] = useState({});
-
-  const history = useHistory();
 
   const getCertificationMask = (value) => {
     const onlyNumbers = value.replace(/[^\d]/g, "");
@@ -47,22 +42,17 @@ const Register = () => {
     getCertificationMask(e.target.value);
   };
 
-  const handleBox = (e) => {
-    setCheckedBox({
-      ...CheckedBox,
-      [e.target.value]: e.target.checked,
-    });
-  };
+  const finishRegister = () => {};
 
-  useEffect(() => {}, [checkedBox]);
-
-  const finishRegister = () => {
-    console.log(data);
-  };
-
-  // useEffect(() => {
-  //   if ()
-  // })
+  useEffect(() => {
+    for (const [key, value] of Object.entries(data)) {
+      if (key && (value === "" || value === false)) {
+        setButtonDisable(true);
+        break;
+      }
+      setButtonDisable(false);
+    }
+  }, [data]);
 
   return (
     <S.Container>
@@ -136,7 +126,10 @@ const Register = () => {
         onChange={(e) => setData({ ...data, boxCheck: e.target.checked })}
       />
 
-      <S.ButtonRegister disable={false} onClick={() => finishRegister()}>
+      <S.ButtonRegister
+        disable={buttonDisable}
+        onClick={() => finishRegister()}
+      >
         Finalizar cadastro
       </S.ButtonRegister>
     </S.Container>
