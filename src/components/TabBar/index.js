@@ -3,7 +3,7 @@ import { IconsBar } from "../ActionBarIcon";
 
 import * as S from "./styles";
 
-// import image from "../../assets/img/icons/";
+// import image from "../../assets/img/icons";
 import { useLocation } from "react-router-dom";
 
 const icons = [
@@ -27,7 +27,7 @@ const icons = [
   },
 ];
 
-const TabBar = ({ onClick, ...rest }) => {
+const TabBar = ({ ...rest }) => {
   const location = useLocation();
 
   return (
