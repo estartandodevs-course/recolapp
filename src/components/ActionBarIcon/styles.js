@@ -5,6 +5,7 @@ export const ContainerIcon = styled.div`
   /* justify-content: space-between; */
   align-items: center;
   height: 100%;
+  cursor: pointer;
 `;
 
 export const ImageIcon = styled.img`

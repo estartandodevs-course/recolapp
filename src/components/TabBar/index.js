@@ -2,11 +2,11 @@ import React from "react";
 import { IconsBar } from "../ActionBarIcon";
 
 import * as S from "./styles";
+// import icons from "../../assets/img/icons";
 
-// import image from "../../assets/img/icons";
 import { useLocation } from "react-router-dom";
 
-const icons = [
+const mainIcons = [
   {
     path: "/",
     name: "home",
@@ -16,14 +16,14 @@ const icons = [
   {
     path: "/faq",
     name: "faq",
-    src_active: "../../assets/img/icons/profile-active.svg",
-    src_inactive: "../../assets/img/icons/profile-inactive.svg",
+    src_active: "../../assets/img/icons/qa-active.svg",
+    src_inactive: "../../assets/img/icons/qa-inactive.svg",
   },
   {
     path: "/profile",
     name: "profile",
-    src_active: "../../assets/img/icons/qa-active.svg",
-    src_inactive: "../../assets/img/icons/qa-inactive.svg",
+    src_active: "../../assets/img/icons/profile-active.svg",
+    src_inactive: "../../assets/img/icons/profile-inactive.svg",
   },
 ];
 
@@ -33,7 +33,7 @@ const TabBar = ({ ...rest }) => {
   return (
     <>
       <S.NavegationBar {...rest}>
-        {icons.map((pk) => (
+        {mainIcons.map((pk) => (
           <IconsBar
             key={pk.name}
             name={pk.name}
