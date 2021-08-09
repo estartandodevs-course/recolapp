@@ -1,7 +1,11 @@
 import * as S from "./styles";
-// import confirmImg from "../../assets/img/illustrations/agend_confirmado.svg";
+import confirmImg from "../../assets/img/illustrations/agend_confirmado.svg";
 
-const Confirmation = ({ message, img, buttonMessage }) => {
+const Confirmation = ({
+  message,
+  img,
+  buttonMessage,
+}) => {
   return (
     <S.PageContainer>
       <S.ConfirmationText>{message}</S.ConfirmationText>
