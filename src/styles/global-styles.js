@@ -1,13 +1,16 @@
 import { createGlobalStyle } from "styled-components";
-import Poppins400 from "../assets/fonts/Poppins-Regular.ttf";
-import Poppins700 from "../assets/fonts/Poppins-Bold.ttf";
+import PoppinsRegular from "../assets/fonts/Poppins-Regular.ttf";
+import PoppinsBold from "../assets/fonts/Poppins-Bold.ttf";
 
 export const GlobalStyles = createGlobalStyle`
      @font-face {
-        font-family: 'Poppins';
-        src: url(${Poppins400}) format('ttf'),
-        url(${Poppins700}) format('ttf');
-      }
+  font-family: Poppins;
+  src: url(${PoppinsRegular});
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(${PoppinsBold});
+}
     :root {
         --orange:#F28E36;
         --green:#008000;
@@ -20,9 +23,6 @@ export const GlobalStyles = createGlobalStyle`
     * {
      margin: 0;
      padding: 0;
-    }
-
-    body {
-      font-family: Poppins;
+     font-family: Poppins;
     }
 `;
