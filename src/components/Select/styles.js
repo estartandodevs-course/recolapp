@@ -4,6 +4,7 @@ import ReactSelect from "react-select";
 export const Select = styled(ReactSelect)`
   width: 100%;
   height: 45px;
+
   .css-yk16xz-control {
     background-color: var(--inputBackground);
     border-radius: 8px;
