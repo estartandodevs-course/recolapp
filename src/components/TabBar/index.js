@@ -5,40 +5,52 @@ import * as S from "./styles";
 // import icons from "../../assets/img/icons";
 
 import { useLocation } from "react-router-dom";
+import {
+  homeActive,
+  homeInactive,
+  qaActive,
+  qaInactive,
+  profileActive,
+  profileInactive,
+} from "../../assets/img/icons";
 
 const mainIcons = [
   {
-    path: "/",
+    pathname: "/",
     name: "home",
-    src_active: "../../assets/img/icons/home-active.svg",
-    src_inactive: "../../assets/img/icons/home-inactive.svg",
+    src_active: homeActive,
+    src_inactive: homeInactive,
   },
   {
-    path: "/faq",
+    pathname: "/faq",
     name: "faq",
-    src_active: "../../assets/img/icons/qa-active.svg",
-    src_inactive: "../../assets/img/icons/qa-inactive.svg",
+    src_active: qaActive,
+    src_inactive: qaInactive,
   },
   {
-    path: "/profile",
+    pathname: "/profile",
     name: "profile",
-    src_active: "../../assets/img/icons/profile-active.svg",
-    src_inactive: "../../assets/img/icons/profile-inactive.svg",
+    src_active: profileActive,
+    src_inactive: profileInactive,
   },
 ];
 
 const TabBar = ({ ...rest }) => {
   const location = useLocation();
-
+  console.log(location);
   return (
     <>
       <S.NavegationBar {...rest}>
-        {mainIcons.map((pk) => (
+        {mainIcons.map((menuItem) => (
           <IconsBar
-            key={pk.name}
-            name={pk.name}
-            image={location.path === pk.path ? pk.src_active : pk.src_inactive}
-            path={pk.path}
+            key={menuItem.name}
+            name={menuItem.name}
+            image={
+              location.pathname === menuItem.pathname
+                ? menuItem.src_active
+                : menuItem.src_inactive
+            }
+            path={menuItem.pathname}
           />
         ))}
       </S.NavegationBar>
