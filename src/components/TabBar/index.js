@@ -2,9 +2,9 @@ import React from "react";
 import { IconsBar } from "../ActionBarIcon";
 
 import * as S from "./styles";
-// import icons from "../../assets/img/icons";
 
 import { useLocation } from "react-router-dom";
+
 import {
   homeActive,
   homeInactive,
@@ -37,7 +37,7 @@ const mainIcons = [
 
 const TabBar = ({ ...rest }) => {
   const location = useLocation();
-  console.log(location);
+
   return (
     <>
       <S.NavegationBar {...rest}>

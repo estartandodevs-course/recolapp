@@ -6,7 +6,6 @@ export const NavegationBar = styled.nav`
   align-items: center;
   position: fixed;
   bottom: 0px;
-  /* align-content: flex-end; */
 
   width: 100%;
   min-height: 64px;
@@ -15,5 +14,3 @@ export const NavegationBar = styled.nav`
   background-color: var(--lightGray);
   box-shadow: 0px -2px 10px 1px #4f4f4f26;
 `;
-
-// export const IconsBar = styled.div``;
