@@ -1,17 +1,11 @@
 import React from "react";
-
 import { useHistory } from "react-router-dom";
-
 import { Button } from "../../components/Button";
-
 import * as S from "./styles";
-
 import image from "../../assets/img/illustrations/tela_inicial.svg";
 
 const Home = () => {
-
   const history = useHistory();
-
   return (
     <>
       <S.Container>
