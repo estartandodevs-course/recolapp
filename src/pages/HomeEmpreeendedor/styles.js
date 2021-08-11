@@ -12,8 +12,9 @@ export const PageE = styled.div`
   flex-direction: column;
 `;
 export const BackButtonHE = styled(BackButton)`
-  margin-top: 33px;
-  margin-bottom: 45px;
+  margin-top: 17px;
+  margin-bottom: 23px;
+  margin-left: 13.33px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
 `;
@@ -32,6 +33,7 @@ export const mid = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  /* margin-bottom: 57px; */
 `;
 export const image = styled.img`
   width: 209px;

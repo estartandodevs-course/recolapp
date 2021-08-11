@@ -6,7 +6,7 @@ const IconsBar = ({ name, image, path }) => {
 
   return (
     <S.ContainerIcon onClick={() => history.push(path)}>
-      <S.ImageIcon src={image} alt={name + ` icon`} />
+      <S.ImageIcon src={image} alt={`${name} icon`} />
     </S.ContainerIcon>
   );
 };
