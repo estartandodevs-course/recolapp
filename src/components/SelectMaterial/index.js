@@ -1,38 +1,6 @@
-import { useState } from "react";
-
 import * as S from "./styles";
 
-const SelectMaterial = ({
-  array = [
-    {
-      name: "Papel",
-      status: true,
-    },
-    {
-      name: "Papelão",
-      status: false,
-    },
-    {
-      name: "Plástico",
-      status: false,
-    },
-    {
-      name: "Alumínio",
-      status: false,
-    },
-    {
-      name: "Vidro",
-      status: false,
-    },
-    {
-      name: "Metal",
-      status: false,
-    },
-  ],
-  ...rest
-}) => {
-  const [material, setMaterial] = useState(array);
-
+const SelectMaterial = ({ material, setMaterial, ...rest }) => {
   const onClick = (element) => {
     setMaterial((previous) => {
       return previous.map((item) => {
