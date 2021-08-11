@@ -1,6 +1,6 @@
 import React from "react";
-
 import ilustration from "../../assets/img/illustrations/empreendedor_ilu.svg";
+import { TabBar } from "../../components/TabBar";
 import * as S from "./styles";
 
 const HomeE = () => {
@@ -13,6 +13,7 @@ const HomeE = () => {
         <S.ButtonF>Solicitar coleta</S.ButtonF>
         <S.ButtonF>Agendamentos</S.ButtonF>
       </S.mid>
+      <TabBar />
     </S.PageE>
   );
 };
