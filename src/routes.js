@@ -9,6 +9,11 @@ export default function Routes() {
         <Route exact path="/" component={R.Home} />
         <Route exact path="/login" component={R.Login} />
         <Route exact path="/home" component={R.HomeE} />
+        <Route
+          exact
+          path="/request-collection"
+          component={R.RequestCollection}
+        />
       </Switch>
     </BrowserRouter>
   );
