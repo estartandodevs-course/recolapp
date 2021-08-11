@@ -1,5 +1,5 @@
 import Home from "./Home";
 import Login from "./Login";
-import Confirmation from "./Confirmation";
+import HomeE from "./HomeEmpreeendedor";
 
-export { Home, Login, Confirmation };
+export { Home, Login, HomeE };

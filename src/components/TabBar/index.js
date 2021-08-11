@@ -1,9 +1,8 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { IconsBar } from "../ActionBarIcon";
 
 import * as S from "./styles";
-
-import { useLocation } from "react-router-dom";
 
 import {
   homeActive,
@@ -16,7 +15,7 @@ import {
 
 const mainIcons = [
   {
-    pathname: "/",
+    pathname: "/home",
     name: "home",
     src_active: homeActive,
     src_inactive: homeInactive,
