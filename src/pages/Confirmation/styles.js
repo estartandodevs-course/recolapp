@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button } from "../../components/Button";
 
-export const PageContainer = styled.div`
+export const ConfirmationContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;

@@ -1,13 +1,16 @@
 import * as S from "./styles";
-import confirmImg from "../../assets/img/illustrations/agend_confirmado.svg";
 
-const Confirmation = () => {
+const Confirmation = ({
+  message,
+  img,
+  buttonMessage,
+}) => {
   return (
-    <S.PageContainer>
-      <S.ConfirmationText>Agendamento realizado com sucesso</S.ConfirmationText>
-      <S.ConfirmationImg src={confirmImg} />
-      <S.ConfirmationButton>Voltar para a tela inicial</S.ConfirmationButton>
-    </S.PageContainer>
+    <S.ConfirmationContainer>
+      <S.ConfirmationText>{message}</S.ConfirmationText>
+      <S.ConfirmationImg src={img} />
+      <S.ConfirmationButton>{buttonMessage}</S.ConfirmationButton>
+    </S.ConfirmationContainer>
   );
 };
 
