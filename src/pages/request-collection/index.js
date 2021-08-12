@@ -5,6 +5,7 @@ const RequestCollection = () => {
   return (
     <S.body>
       <S.backb pageTitle="Informe" />
+      <S.checkbox />
     </S.body>
   );
 };
