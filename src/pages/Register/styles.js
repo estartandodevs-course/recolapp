@@ -69,3 +69,10 @@ export const CheckboxRegister = styled(Checkbox)`
 export const ButtonRegister = styled(Button)`
   margin-bottom: 51px;
 `;
+
+export const ErrorMessage = styled.p`
+  font-size: 15px;
+  color: ${({ disable }) => (disable ? "#FF0000FF" : "#FFFFFFAA")};
+  margin-top: 6px;
+  margin-bottom: 8px;
+`;

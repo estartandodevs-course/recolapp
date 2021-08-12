@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import * as S from "./styles";
+
+import { removeMask, passwordMatch } from "../../services/RegisterValidate";
 
 import { States } from "../../services/Select/states";
 import { typeUser } from "../../services/Select/typeUser";
 
 const Register = () => {
-  const [buttonDisable, setButtonDisable] = useState(true);
+  const [errorRegister, SetErrorDisable] = useState({
+    message: "",
+    status: false,
+  });
   const [count, setCount] = useState(1);
+  const [buttonDisable, setButtonDisable] = useState(true);
   const [maskCPF, SetMaskCPF] = useState("");
   const [data, setData] = useState({
     name: "",
+    password: "",
     certification: "",
     email: "",
     cellphone: "",
@@ -20,6 +29,26 @@ const Register = () => {
     typeUser: "",
     boxCheck: false,
   });
+  const [password, SetPassword] = useState({
+    one: "",
+    two: "",
+  });
+
+  const history = useHistory();
+
+  const finishRegister = () => {
+    if (passwordMatch(password.one, password.two) === false) {
+      SetErrorDisable({
+        message: "Senhas não são iguais!",
+        status: true,
+      });
+      return 0;
+    }
+
+    setData({ ...data, password: password.one });
+
+    return history.push("/home");
+  };
 
   const getCertificationMask = (value) => {
     const onlyNumbers = value.replace(/[^\d]/g, "");
@@ -37,16 +66,14 @@ const Register = () => {
     }
   };
 
-  const handleCertification = (e) => {
-    setData({ ...data, certification: e.target.value });
-    getCertificationMask(e.target.value);
+  const handleCertification = (event) => {
+    setData({ ...data, certification: removeMask(event.target.value) });
+    getCertificationMask(event.target.value);
   };
-
-  const finishRegister = () => {};
 
   useEffect(() => {
     for (const [key, value] of Object.entries(data)) {
-      if (key && (value === "" || value === false)) {
+      if ((value === "" || value === false) && key !== "password") {
         setButtonDisable(true);
         break;
       }
@@ -68,7 +95,7 @@ const Register = () => {
           mask={maskCPF}
           id="cpf"
           value={data.certification}
-          onChange={(e) => handleCertification(e)}
+          onChange={(event) => handleCertification(event)}
           label="CPF/CNPJ"
         />
         <S.InputRegister
@@ -77,16 +104,32 @@ const Register = () => {
           onChange={(e) => setData({ ...data, email: e.target.value })}
           label="E-mail"
         />
+        <S.InputRegister
+          id="password1"
+          value={password.one}
+          onChange={(e) => SetPassword({ ...password, one: e.target.value })}
+          label="Senha"
+          type="password"
+        />
+        <S.InputRegister
+          id="password2"
+          value={password.two}
+          onChange={(e) => SetPassword({ ...password, two: e.target.value })}
+          label="Confirmar Senha"
+          type="password"
+        />
         <S.MaksCellphone
           mask="(99)99999-9999"
           id="celular"
           value={data.cellphone}
-          onChange={(e) => setData({ ...data, cellphone: e.target.value })}
+          onChange={(e) =>
+            setData({ ...data, cellphone: removeMask(e.target.value) })
+          }
           label="Celular"
         />
         <S.InputRegister
           id="endereco"
-          value={data.endereço}
+          value={data.street}
           onChange={(e) => setData({ ...data, street: e.target.value })}
           label="Endereço"
         />
@@ -101,7 +144,9 @@ const Register = () => {
             mask="99999-999"
             id="cep"
             value={data.zip}
-            onChange={(e) => setData({ ...data, zip: e.target.value })}
+            onChange={(e) =>
+              setData({ ...data, zip: removeMask(e.target.value) })
+            }
             label="CEP"
           />
           <S.SelectStates
@@ -125,6 +170,10 @@ const Register = () => {
         checked={data.boxCheck}
         onChange={(e) => setData({ ...data, boxCheck: e.target.checked })}
       />
+
+      <S.ErrorMessage disable={errorRegister.status}>
+        {errorRegister.message}
+      </S.ErrorMessage>
 
       <S.ButtonRegister
         disable={buttonDisable}
