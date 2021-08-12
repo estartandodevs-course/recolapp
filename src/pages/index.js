@@ -1,6 +1,5 @@
 import Home from "./Home";
 import Login from "./Login";
-import Register from "./Register";
-import Confirmation from "./Confirmation";
+import HomeE from "./HomeEmpreeendedor";
 
-export { Home, Login, Register, Confirmation };
+export { Home, Login, HomeE };
