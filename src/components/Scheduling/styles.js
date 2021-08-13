@@ -24,7 +24,9 @@ export const SchedulingDiv = styled.div`
   font-size: 16px;
 `;
 
-export const SchedulingKey = styled.h3``;
+export const SchedulingKey = styled.p`
+  font-weight: 700;
+`;
 
 export const SchedulingValue = styled.p`
   padding-left: 5px;

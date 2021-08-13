@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 
 import * as S from "./styles";
@@ -16,7 +18,7 @@ function MaterialInfo({ info, width, ...rest }) {
                 {element.material}: {element.weight}
               </S.ContainerInfo>
               <S.ContainerCheck>
-                <S.CheckMark src={checkMark}></S.CheckMark>
+                <S.CheckMark src={checkMark} />
               </S.ContainerCheck>
             </S.MaterialData>
           );
