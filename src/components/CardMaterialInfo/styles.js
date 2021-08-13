@@ -6,7 +6,7 @@ export const ContainerMaterialInfo = styled.div`
   align-items: center;
 
   background-color: var(--inputBackground);
-  width: 100%;
+  width: ${(props) => props.width};
   border-radius: 8px;
   padding-bottom: 18px;
 `;

@@ -4,10 +4,10 @@ import * as S from "./styles";
 
 import { checkMark } from "../../assets/img/icons";
 
-function MaterialInfo({ info, ...rest }) {
+function MaterialInfo({ info, width, ...rest }) {
   return (
     <>
-      <S.ContainerMaterialInfo {...rest}>
+      <S.ContainerMaterialInfo width={width} {...rest}>
         <S.TitleContainer>Materiais a serem recolhidos:</S.TitleContainer>
         {info?.map((element) => {
           return (
