@@ -13,15 +13,14 @@ export const ModalOut = styled.div`
 `;
 
 export const ContainerModal = styled.div`
-  width: 301px;
-  background-color: var(--lightTextColor);
-  border-radius: 8px;
-  height: 96px;
-
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  width: 301px;
+  background-color: var(--lightTextColor);
+  border-radius: 8px;
+  height: 96px;
 `;
 
 export const ModalTitle = styled.div`
@@ -41,13 +40,13 @@ export const ActionModal = styled.div`
 `;
 
 export const YesButtom = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--green);
   height: 32px;
   width: 89px;
   border-radius: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 16px;
   border: none;
   color: #fffefe;
@@ -55,13 +54,13 @@ export const YesButtom = styled.button`
 `;
 
 export const NoButtom = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--orange);
   height: 32px;
   width: 89px;
   border-radius: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 16px;
   border: none;
   color: #fffefe;
