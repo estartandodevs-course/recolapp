@@ -6,22 +6,22 @@ import * as S from "./styles";
 const DetailsScheduling = () => {
   const history = useHistory();
 
-  const mock = [
-    {
-      material: "Vidro",
-      weight: `${33}kg`,
-    },
-    {
-      material: "Plástico",
-      weight: `${5}kg`,
-    },
-  ];
-
   return (
     <>
       <S.DSBackButton pageTitle="Detalhes do agendamento" />
       <S.DSContainer>
-        <S.DSMaterialInfo info={mock} />
+        <S.DSMaterialInfo
+          info={[
+            {
+              material: "Vidro",
+              weight: `${33}kg`,
+            },
+            {
+              material: "Plástico",
+              weight: `${5}kg`,
+            },
+          ]}
+        />
         <S.DSScheduling />
         <S.DSConfirmCollection onClick={() => history.push("/confirm")}>
           Coleta realizada

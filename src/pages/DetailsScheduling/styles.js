@@ -34,3 +34,5 @@ export const DSCancelCollection = styled(Button)`
 export const DSTabBar = styled(TabBar)`
   margin-top: 17px;
 `;
+
+//teste
