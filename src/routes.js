@@ -10,6 +10,7 @@ export default function Routes() {
         <Route exact path="/login" component={R.Login} />
         <Route exact path="/register" component={R.Register} />
         <Route exact path="/home" component={R.HomeE} />
+        <Route exact path="/cancelled" component={R.Cancelled} />
       </Switch>
     </BrowserRouter>
   );
