@@ -23,12 +23,12 @@ const DetailsScheduling = () => {
       <S.DSContainer>
         <S.DSMaterialInfo info={mock} />
         <S.DSScheduling />
-        <S.DSConfirmCollection onClick={() => history.push("/")}>
+        <S.DSConfirmCollection onClick={() => history.push("/confirm")}>
           Coleta realizada
         </S.DSConfirmCollection>
         <S.DSCancelCollection
           bgColor="#F28E36"
-          onClick={() => history.push("/")}
+          onClick={() => history.push("/cancel")}
         >
           Cancelar coleta
         </S.DSCancelCollection>
