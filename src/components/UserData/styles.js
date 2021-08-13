@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const UserDataContainer = styled.div`
   width: 100%;
-  display: flex;
+  display: ${({ HaveUser }) => (HaveUser ? "flex" : "none")};
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -70,4 +70,14 @@ export const UserDataImgZap = styled.div`
   height: 24px;
   background-size: 24px;
   margin-left: 4px;
+`;
+
+export const NotHaveUserData = styled.div`
+  display: ${({ HaveUser }) => (!HaveUser ? "flex" : "none")};
+  text-align: center;
+  font-weight: 700;
+  color: #4f4f4f;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
