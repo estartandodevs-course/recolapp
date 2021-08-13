@@ -1,9 +1,20 @@
 import styled from "styled-components";
 
+export const ModalOut = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c4c4c485;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+`;
+
 export const ContainerModal = styled.div`
   width: 301px;
-  background-color: #fde5d7;
-  /* var(--lightTextColor); */
+  background-color: var(--lightTextColor);
   border-radius: 8px;
   height: 96px;
 
@@ -40,6 +51,7 @@ export const YesButtom = styled.button`
   font-size: 16px;
   border: none;
   color: #fffefe;
+  cursor: pointer;
 `;
 
 export const NoButtom = styled.button`
@@ -53,4 +65,5 @@ export const NoButtom = styled.button`
   font-size: 16px;
   border: none;
   color: #fffefe;
+  cursor: pointer;
 `;

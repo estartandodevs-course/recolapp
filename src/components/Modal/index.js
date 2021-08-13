@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import * as S from "./styles";
 
@@ -9,17 +10,32 @@ function Modal({
   width = "100%",
   action,
   onClick,
+  showModal,
+  setShowModal,
   ...rest
 }) {
+  const history = useHistory();
+
   return (
     <>
-      <S.ContainerModal width={width} {...rest}>
-        <S.ModalTitle>{text}</S.ModalTitle>
-        <S.ActionModal>
-          <S.YesButtom>{confirm}</S.YesButtom>
-          <S.NoButtom>{deny}</S.NoButtom>
-        </S.ActionModal>
-      </S.ContainerModal>
+      {showModal ? (
+        <S.ModalOut
+          onClick={() => setShowModal((previous) => !previous)}
+          {...rest}
+        >
+          <S.ContainerModal width={width} onClick={(e) => e.stopPropagation()}>
+            <S.ModalTitle>{text}</S.ModalTitle>
+            <S.ActionModal>
+              <S.YesButtom onClick={() => history.push("/cancelled")}>
+                {confirm}
+              </S.YesButtom>
+              <S.NoButtom onClick={() => setShowModal((previous) => !previous)}>
+                {deny}
+              </S.NoButtom>
+            </S.ActionModal>
+          </S.ContainerModal>
+        </S.ModalOut>
+      ) : null}
     </>
   );
 }
