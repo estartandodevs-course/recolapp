@@ -17,7 +17,7 @@ const Home = () => {
         <S.Title>Faça parte dessa iniciativa!</S.Title>
         <S.Img src={image} alt="homeScreen" />
         <S.ContainerBottom>
-          <Button onClick={() => history.push("/register")}>Cadatrar</Button>
+          <Button onClick={() => history.push("/register")}>Cadastrar</Button>
           <S.Pragraph>Já possuo cadastro</S.Pragraph>
           <S.RedirectLogin onClick={() => history.push("/login")}>
             Fazer login
