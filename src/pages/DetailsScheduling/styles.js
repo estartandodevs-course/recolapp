@@ -47,8 +47,24 @@ export const DSCollectionStatesImg = styled.div`
   margin-left: 12.9px;
 `;
 
+export const DSConfirmTitle = styled.p`
+  margin-top: 37px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+`;
+
+export const DSConfirmParagraph = styled.p`
+  margin-top: 9px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: #828282;
+  text-align: start;
+`;
+
 export const DSConfirmCollection = styled(Button)`
-  margin-top: 21px;
+  margin-top: 9px;
   display: ${({ HaveUser }) => (HaveUser ? "flex" : "none")};
 `;
 

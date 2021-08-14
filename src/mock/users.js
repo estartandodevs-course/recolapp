@@ -1,24 +1,16 @@
 export const users = [
   {
+    id: 0,
     name: "Mário Ferreira",
+    password: "123456",
+    certification: "12345678901",
+    email: "marioferreira@gmail.com",
+    cellphone: "11988760011",
+    city: "Rio de Janeiro",
+    street: "Av. Ayrton Senna, 333",
+    zip: "22028555",
+    state: "Rio de Janeiro",
+    typeUser: "Empreendedor",
     office: "Associado a Cooperativa Pinheiro",
-    collection: {
-      id: 2,
-      accept: true,
-      street: "Endereço: Rua Osvaldo Cruz, 84",
-      date: "04/08/2021",
-      hour: "15:00",
-    },
-  },
-  {
-    name: "",
-    office: "",
-    collection: {
-      id: null,
-      accept: null,
-      street: "",
-      date: "",
-      hour: "",
-    },
   },
 ];

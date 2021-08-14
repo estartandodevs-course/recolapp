@@ -1,15 +1,14 @@
-import { useHistory, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import * as S from "./styles";
 
 import states from "../../assets/img/icons/icon_clock.svg";
 
-import { users } from "../../mock/users";
+import { getUser } from "../../services/users";
 
 const DetailsScheduling = () => {
   const history = useHistory();
-  const { id } = useParams();
+  // const { id } = useParams();
 
   const info = [
     {
@@ -22,15 +21,18 @@ const DetailsScheduling = () => {
     },
   ];
 
-  const data = users.filter((user) => user.collection.id === parseInt(id));
+  const user = getUser("marioferreira@gmail.com");
 
-  const [userEnd, setUserEnd] = useState([]);
+  console.log("user:", user);
 
-  useEffect(() => {
-    data.map((previous) => setUserEnd(previous));
-  }, []);
+  // if (!user)
+  //   return (
+  //     <>
+  //       <p>Sem u!</p>
+  //     </>
+  //   );
 
-  const { name, office } = userEnd;
+  const { name, office } = user;
 
   return (
     <>
@@ -44,11 +46,19 @@ const DetailsScheduling = () => {
             {name ? "Coleta em andamento" : "Procura em andamento"}
             <S.DSCollectionStatesImg image={states} />
           </S.DSCollectionStates>
+
+          <S.DSConfirmTitle>A coleta foi realizada ?</S.DSConfirmTitle>
+
+          <S.DSConfirmParagraph>
+            Confirme assim que a coleta for realizada e nos ajude a sabe se deu
+            tudo certo.
+          </S.DSConfirmParagraph>
+
           <S.DSConfirmCollection
             HaveUser={name}
             onClick={() => history.push("/confirm")}
           >
-            Coleta realizada
+            Confirmar coleta
           </S.DSConfirmCollection>
           <S.DSCancelCollection
             onClick={() => history.push(name ? "/cancel1" : "/cancel2")}
