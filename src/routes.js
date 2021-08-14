@@ -15,6 +15,8 @@ export default function Routes() {
           path="/details-scheduling/:id"
           component={R.DetailsScheduling}
         />
+        <Route exact path="/scheduledCollections" component={R.ScheduledCollections} />
+
       </Switch>
     </BrowserRouter>
   );

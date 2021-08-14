@@ -9,9 +9,10 @@ const ViewDetails = ({
   date = "Sáb, 24/07 - 15:30h",
   details = "Ver detalhes",
   onClick,
+  ...rest
 }) => {
   return (
-    <S.ContainerViewDetails>
+    <S.ContainerViewDetails {...rest}>
       <S.ContainerViewDetailsLeft>
         <S.TitleViewDetails>{title}</S.TitleViewDetails>
         <S.DataViewDetails>{date}</S.DataViewDetails>
