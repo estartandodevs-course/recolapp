@@ -16,3 +16,5 @@ export const BackButton = ({ pageTitle, handleBack = false, ...rest }) => {
     </S.Section>
   );
 };
+
+export { BackButton };

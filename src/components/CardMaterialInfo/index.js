@@ -1,22 +1,24 @@
+/* eslint-disable */
+
 import React from "react";
 
 import * as S from "./styles";
 
 import { checkMark } from "../../assets/img/icons";
 
-function MaterialInfo({ info, width, ...rest }) {
+const MaterialInfo = ({ info, width, ...rest }) => {
   return (
     <>
       <S.ContainerMaterialInfo width={width} {...rest}>
         <S.TitleContainer>Materiais a serem recolhidos:</S.TitleContainer>
         {info?.map((element) => {
           return (
-            <S.MaterialData>
+            <S.MaterialData key={element.name}>
               <S.ContainerInfo>
-                {element.material}: {element.weight}
+                {element.name}: {element.weight} kg
               </S.ContainerInfo>
               <S.ContainerCheck>
-                <S.CheckMark src={checkMark}></S.CheckMark>
+                <S.CheckMark src={checkMark} />
               </S.ContainerCheck>
             </S.MaterialData>
           );
@@ -24,6 +26,6 @@ function MaterialInfo({ info, width, ...rest }) {
       </S.ContainerMaterialInfo>
     </>
   );
-}
+};
 
 export { MaterialInfo };

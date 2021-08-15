@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Button } from "../../components/Button";
-import { BackButton } from "../../components/BackButtom";
+import { BackButton } from "../../components/BackButton";
 
 export const PageE = styled.div`
   height: 100vh;
