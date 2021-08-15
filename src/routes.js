@@ -1,16 +1,29 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { UserContext } from "./contexts";
+
 import * as R from "./pages";
 
 export default function Routes() {
+  const context = useContext(UserContext);
+
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={R.Home} />
-        <Route exact path="/login" component={R.Login} />
-        <Route exact path="/register" component={R.Register} />
-        <Route exact path="/home" component={R.HomeE} />
-        <Route exact path="/cancelled" component={R.Cancelled} />
+        {context.user.name ? (
+          <>
+            <Route exact path="/home" component={R.HomeEntrepreneur} />
+            <Route exact path="/schedules/:id" component={R.SchedulesDetails} />
+            <Route exact path="/schedules" component={R.Schedules} />
+          </>
+        ) : (
+          <>
+            <Route exact path="/" component={R.Home} />
+            <Route exact path="/login" component={R.Login} />
+            <Route exact path="/register" component={R.Register} />
+            <Redirect to="/" />
+          </>
+        )}
       </Switch>
     </BrowserRouter>
   );

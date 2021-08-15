@@ -1,7 +1,8 @@
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
-import HomeE from "./HomeEmpreeendedor";
-import Cancelled from "./JustifyCancellation";
+import HomeEntrepreneur from "./HomeEntrepreneur";
+import SchedulesDetails from "./SchedulesDetails";
+import Schedules from "./Schedules";
 
-export { Home, Login, HomeE, Register, Cancelled };
+export { Home, Login, HomeEntrepreneur, Register, Schedules, SchedulesDetails };

@@ -1,29 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+
+import { UserContext } from "../../contexts";
+
 import ilustration from "../../assets/img/illustrations/empreendedor_ilu.svg";
 import { TabBar } from "../../components/TabBar";
+
 import * as S from "./styles";
 
-const HomeE = () => {
+const HomeEntrepreneur = () => {
   const history = useHistory();
+  const { user } = useContext(UserContext);
 
   return (
     <>
       <S.PageE>
         <S.BackButtonHE pageTitle="Sair" />
-        <S.FirstText>Olá antônio!</S.FirstText>
+        <S.FirstText>{`Olá ${user?.name}`}</S.FirstText>
         <S.mid>
           <S.image src={ilustration} alt="bussines man" />
           <S.ButtonF onClick={() => history.push("/request-collection")}>
             Solicitar coleta
           </S.ButtonF>
-          <S.ButtonF onClick={() => history.push("/scheduling")}>
+          <S.ButtonF onClick={() => history.push("/schedules")}>
             Agendamentos
           </S.ButtonF>
         </S.mid>
-        <TabBar />
       </S.PageE>
+      <TabBar />
     </>
   );
 };
-export default HomeE;
+export default HomeEntrepreneur;

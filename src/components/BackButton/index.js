@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import * as S from "./styles";
 import Backimg from "../../assets/img/icons/icon_arrow_left.svg";
 
-export const BackButton = ({ pageTitle, ...rest }) => {
+const BackButton = ({ pageTitle, ...rest }) => {
   const history = useHistory();
   const handleBack = () => history.goBack();
   return (
@@ -14,3 +14,5 @@ export const BackButton = ({ pageTitle, ...rest }) => {
     </S.Section>
   );
 };
+
+export { BackButton };
