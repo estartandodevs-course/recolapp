@@ -23,6 +23,8 @@ const Login = () => {
     const response = auth(email, password);
 
     if (response.auth) {
+      localStorage.setItem("user", JSON.stringify(response.user));
+
       context.setUser(getUser(response.user.id));
       history.push("/home");
     } else {
