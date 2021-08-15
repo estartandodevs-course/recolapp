@@ -34,9 +34,6 @@ export const kgindex = styled.span`
   font-size: 12px;
 `;
 export const kgvalue = styled.input`
-  /* :out-of-range {
-      border: 3px solid red;
-    } */
   border: none;
   border-radius: 8px;
   outline: none;

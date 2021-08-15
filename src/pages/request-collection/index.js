@@ -7,12 +7,22 @@ import Step5 from "./Step5";
 
 const RequestCollection = () => {
   const [page, setPage] = useState(1);
+  const nextPage = () => {
+    setPage((previousPage) => previousPage + 1);
+  };
+  const firstPage = () => {
+    setPage(1);
+  };
+  const backPage = () => {
+    setPage((actualPage) => actualPage - 1);
+  };
+
   const Steps = {
-    1: <Step1 setPage={setPage} />,
-    2: <Step2 setPage={setPage} />,
-    3: <Step3 setPage={setPage} />,
-    4: <Step4 setPage={setPage} />,
-    5: <Step5 setPage={setPage} />,
+    1: <Step1 nextPage={nextPage} />,
+    2: <Step2 backPage={backPage} firstPage={firstPage} nextPage={nextPage} />,
+    3: <Step3 backPage={backPage} nextPage={nextPage} />,
+    4: <Step4 backPage={backPage} firstPage={firstPage} nextPage={nextPage} />,
+    5: <Step5 backPage={backPage} nextPage={nextPage} />,
   };
 
   return Steps[page];

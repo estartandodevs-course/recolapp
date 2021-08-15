@@ -6,13 +6,11 @@ import { TabBar } from "../../../components/TabBar";
 
 import * as S from "./styles";
 
-const Step1 = ({ setPage }) => {
-  //   const history = useHistory();
+const Step1 = ({ nextPage }) => {
   const selectedByStorage = JSON.parse(localStorage.getItem("material"));
 
   const [material, setMaterial] = useState(recyclablematerials);
   const [selectedMaterial, setSelectedMaterial] = useState([]);
-
   useEffect(() => {
     if (selectedByStorage) setMaterial(selectedByStorage);
   }, []);
@@ -35,7 +33,7 @@ const Step1 = ({ setPage }) => {
           <S.indicator>Itens selecionados</S.indicator>
           <S.spannum>{materialsQuantity}</S.spannum>
         </S.itensselected>
-        <S.button onClick={() => setPage(2)}>Confirme</S.button>
+        <S.button onClick={nextPage}>Confirme</S.button>
       </S.bottonpage>
       <TabBar />
     </S.body>
