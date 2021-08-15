@@ -2,28 +2,37 @@ import styled from "styled-components";
 
 export const ContainerViewDetails = styled.div`
   background-color: #008000;
-  height: 110px;
+  min-height: 89px;
   border-radius: 3px;
   padding-left: 15px;
   padding-right: 30.33px;
+  line-height: 19.2px;
 
   color: #ffffff;
   font-size: 16px;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const TitleViewDetails = styled.p`
-  margin-top: 10px;
+  max-width: 200px;
+  max-height: 20px;
+  margin-top: 17px;
   font-weight: 600;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 export const DataViewDetails = styled.p`
+  margin-top: 2px;
   font-weight: 400;
 `;
 export const OptionViewDetails = styled.p`
-  margin-top: 6px;
+  margin-top: 8px;
+  margin-bottom: 5px;
   font-weight: 300;
   text-decoration: underline;
 `;

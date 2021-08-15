@@ -1,9 +1,8 @@
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
-import HomeE from "./HomeEmpreeendedor";
-import DetailsScheduling from "./DetailsScheduling";
-import ScheduledCollections from "./ScheduledCollections";
+import HomeEntrepreneur from "./HomeEntrepreneur";
+import SchedulesDetails from "./SchedulesDetails";
+import Schedules from "./Schedules";
 
-export { Home, Login, HomeE, Register, ScheduledCollections, DetailsScheduling };
-
+export { Home, Login, HomeEntrepreneur, Register, Schedules, SchedulesDetails };
