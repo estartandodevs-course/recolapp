@@ -15,6 +15,7 @@ export default function Routes() {
             <Route exact path="/home" component={R.HomeEntrepreneur} />
             <Route exact path="/schedules/:id" component={R.SchedulesDetails} />
             <Route exact path="/schedules" component={R.Schedules} />
+            <Route exact path="/cancelled" component={R.Cancelled} />
           </>
         ) : (
           <>
