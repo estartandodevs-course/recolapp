@@ -7,7 +7,7 @@ export const ModalOut = styled.div`
   background: #c4c4c485;
   height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
 `;

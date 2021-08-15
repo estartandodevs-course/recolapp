@@ -13,9 +13,9 @@ const MaterialInfo = ({ info, width, ...rest }) => {
         <S.TitleContainer>Materiais a serem recolhidos:</S.TitleContainer>
         {info?.map((element) => {
           return (
-            <S.MaterialData key={element.material}>
+            <S.MaterialData key={element.name}>
               <S.ContainerInfo>
-                {element.material}: {element.weight}
+                {element.name}: {element.weight} kg
               </S.ContainerInfo>
               <S.ContainerCheck>
                 <S.CheckMark src={checkMark} />

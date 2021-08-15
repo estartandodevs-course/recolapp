@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import * as S from "./styles";
@@ -18,7 +17,7 @@ function Modal({
 
   return (
     <>
-      {showModal ? (
+      {showModal && (
         <S.ModalOut
           onClick={() => setShowModal((previous) => !previous)}
           {...rest}
@@ -35,7 +34,7 @@ function Modal({
             </S.ActionModal>
           </S.ContainerModal>
         </S.ModalOut>
-      ) : null}
+      )}
     </>
   );
 }

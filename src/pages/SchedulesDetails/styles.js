@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-import { BackButton } from "../../components/BackButtom";
+import { BackButton } from "../../components/BackButton";
 import { MaterialInfo } from "../../components/CardMaterialInfo";
 import { Scheduling } from "../../components/Scheduling";
 import { UserData } from "../../components/UserData";
 import { Button } from "../../components/Button";
 import { TabBar } from "../../components/TabBar";
 
-export const DSContainerAll = styled.div``;
+export const DSContainerAll = styled.div`
+  position: ${({ showModal }) => (showModal ? "fixed" : "relative")};
+`;
 
 export const DSContainer = styled.div`
   padding: 0px 36px;
@@ -65,7 +67,7 @@ export const DSConfirmParagraph = styled.p`
 
 export const DSConfirmCollection = styled(Button)`
   margin-top: 9px;
-  display: ${({ HaveUser }) => (HaveUser ? "flex" : "none")};
+  display: ${({ hasCollector }) => (hasCollector ? "flex" : "none")};
 `;
 
 export const DSCancelCollection = styled(Button)`

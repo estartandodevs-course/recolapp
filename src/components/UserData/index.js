@@ -8,14 +8,15 @@ import whatsapp from "../../assets/img/icons/icon_whatsapp.svg";
 
 const UserData = ({
   image,
-  name,
+  name = "Mario Ferreira",
   office = "Associado a Cooperativa Pinheiro",
   onClick,
+  hasCollector,
   ...rest
 }) => {
   return (
     <>
-      <S.UserDataContainer {...rest} HaveUser={name}>
+      <S.UserDataContainer {...rest} hasCollector={hasCollector}>
         <S.UserDataContainerTop>
           <S.UserDataImgProfile image={!image ? profile : image}>
             <S.UserDataImgProfileVerify image={verify} />
@@ -30,7 +31,7 @@ const UserData = ({
           <S.UserDataImgZap image={whatsapp} />
         </S.UserDataContainerBottom>
       </S.UserDataContainer>
-      <S.NotHaveUserData {...rest} HaveUser={name}>
+      <S.NotHaveUserData {...rest} hasCollector={hasCollector}>
         Ops.. ainda não
         <br />
         encontramos
