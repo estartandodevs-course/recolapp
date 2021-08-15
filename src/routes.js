@@ -1,20 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { UserContext } from "./contexts";
 
 import * as R from "./pages";
 
-export default function Routes() {
-  const context = useContext(UserContext);
+const Routes = () => {
+  const { user, setUser } = useContext(UserContext);
+
+  useEffect(() => {
+    const response = JSON.parse(localStorage.getItem("user"));
+    setUser(response);
+  }, []);
 
   return (
     <BrowserRouter>
       <Switch>
-        {context.user.name ? (
+        {user?.name ? (
           <>
             <Route exact path="/home" component={R.HomeEntrepreneur} />
             <Route exact path="/schedules/:id" component={R.SchedulesDetails} />
             <Route exact path="/schedules" component={R.Schedules} />
+            <Redirect to="/home" />
           </>
         ) : (
           <>
@@ -27,4 +33,6 @@ export default function Routes() {
       </Switch>
     </BrowserRouter>
   );
-}
+};
+
+export default Routes;
