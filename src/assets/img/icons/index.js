@@ -4,6 +4,7 @@ import qaActive from "./qa-active.svg";
 import qaInactive from "./qa-inactive.svg";
 import profileActive from "./profile-active.svg";
 import profileInactive from "./profile-inactive.svg";
+import checkMark from "./check-mark.svg";
 
 export {
   homeActive,
@@ -12,4 +13,5 @@ export {
   qaInactive,
   profileActive,
   profileInactive,
+  checkMark,
 };

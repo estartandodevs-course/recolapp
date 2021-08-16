@@ -122,9 +122,7 @@ const Register = () => {
           mask="(99)99999-9999"
           id="celular"
           value={data.cellphone}
-          onChange={(e) =>
-            setData({ ...data, cellphone: removeMask(e.target.value) })
-          }
+          onChange={(e) => setData({ ...data, cellphone: removeMask(e.target.value) })}
           label="Celular"
         />
         <S.InputRegister
@@ -144,9 +142,7 @@ const Register = () => {
             mask="99999-999"
             id="cep"
             value={data.zip}
-            onChange={(e) =>
-              setData({ ...data, zip: removeMask(e.target.value) })
-            }
+            onChange={(e) => setData({ ...data, zip: removeMask(e.target.value) })}
             label="CEP"
           />
           <S.SelectStates
