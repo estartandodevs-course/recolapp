@@ -3,10 +3,7 @@ import Backimg from "../../assets/img/icons/icon_arrow_left.svg";
 const Step6 = () => {
   return (
     <>
-      <S.Section>
-        <S.Img src={Backimg} onClick={() => setPage(1)} />
-        <S.Pagetitle>Dúvidas Frequentes</S.Pagetitle>
-      </S.Section>
+      <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
         <span>Como a reciclagem beneficia as empresas?</span>
         <img src={Woman_recy} alt="woman recycling" />

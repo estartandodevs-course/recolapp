@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export const Section = styled.div`
-  display: flex;
-  gap: 13px;
-`;
-
-export const Img = styled.img`
-  width: 21.33px;
-`;
-export const Pagetitle = styled.span`
-  font-size: 20px;
-  font-weight: 200;
+// export const body = styled.div`
+//   height: 100vh;
+//   margin: 0;
+//   padding: 0;
+// `;
+export const backb = styled(BackButton)`
+  margin-top: 17px;
+  margin-bottom: 8px;
+  margin-left: 13.33px;
+  color: rgba(79, 79, 79, 1);
+  font-weight: 600;
 `;

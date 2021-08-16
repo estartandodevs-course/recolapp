@@ -3,10 +3,7 @@ import Backimg from "../../assets/img/icons/icon_arrow_left.svg";
 const Step7 = () => {
   return (
     <>
-      <S.Section>
-        <S.Img src={Backimg} onClick={() => setPage(1)} />
-        <S.Pagetitle>Dúvidas Frequentes</S.Pagetitle>
-      </S.Section>
+      <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
         <span>Qual a importancia dos catadores para a reciclagem?</span>
         <img src={Woman_recy} alt="woman recycling" />

@@ -1,9 +1,9 @@
 import * as S from "./styles";
 
-const Step1 = () => {
+const Step1 = (setPage, backPage) => {
   return (
     <>
-      <S.backb pageTitle="Dúvidas Frequentes" />
+      <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <button onClick={() => setPage(2)}>O que é reciclável?</button>
       <button onClick={() => setPage(3)}>O que não é reciclável?</button>
       <button onClick={() => setPage(4)}>Como separar o lixo?</button>
