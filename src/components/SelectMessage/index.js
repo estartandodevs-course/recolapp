@@ -7,7 +7,7 @@ const SelectMessage = ({ message, setMessage, ...rest }) => {
         if (item.text == element.text) {
           return { ...item, status: !item.status };
         }
-        return item;
+        return { ...item, status: false };
       });
     });
   };
