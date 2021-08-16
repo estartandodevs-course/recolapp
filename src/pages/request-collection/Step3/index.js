@@ -20,7 +20,6 @@ const Step3 = ({ nextPage, backPage }) => {
           </S.hourdiv>
         </S.dateSection>
         <S.button onClick={nextPage}>Continuar</S.button>
-        {/* <S.submitbutton id="teste" type="submit" /> */}
       </S.body>
       <TabBar />
     </>
