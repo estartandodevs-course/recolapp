@@ -64,7 +64,7 @@ const SchedulesDetails = () => {
 
           <S.DSConfirmCollection
             hasCollector={hasCollector}
-            onClick={() => history.push("/confirm")}
+            onClick={() => history.push("/collection-confirm")}
           >
             Confirmar coleta
           </S.DSConfirmCollection>
