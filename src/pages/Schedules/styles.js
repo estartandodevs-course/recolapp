@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BackButton } from "../../components/BackButton";
+import BackButton from "../../components/BackButton";
 import { ViewDetails } from "../../components/ViewDetails";
 
 export const CollectionsContainer = styled.div`

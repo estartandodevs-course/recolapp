@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Confirmation } from "../../components/Confirmation";
 import { sentMessage } from "../../assets/img/illustrations/index";
 
-const CollectionCancelled = () => {
+const CollectCancelled = () => {
   const history = useHistory();
   return (
     <>
@@ -19,4 +19,4 @@ const CollectionCancelled = () => {
   );
 };
 
-export default CollectionCancelled;
+export default CollectCancelled;

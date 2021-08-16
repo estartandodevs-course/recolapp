@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Confirmation } from "../../components/Confirmation";
 import { collectionConfirmation } from "../../assets/img/illustrations/index";
 
-const CollectionConfirm = () => {
+const CollectConfirm = () => {
   const history = useHistory();
   return (
     <>
@@ -19,4 +19,4 @@ const CollectionConfirm = () => {
   );
 };
 
-export default CollectionConfirm;
+export default CollectConfirm;
