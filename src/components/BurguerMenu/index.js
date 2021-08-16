@@ -20,7 +20,10 @@ const BurguerMenu = () => {
         src={main}
         onClick={() => setMainShow((previous) => !previous)}
       />
-      <S.HeaderMainShowOut mainShow={mainShow} />
+      <S.HeaderMainShowOut
+        mainShow={mainShow}
+        onClick={() => setMainShow(false)}
+      />
       <S.HeaderMainShow mainShow={mainShow}>
         <S.HeaderMainShowBePartOfIt>
           <S.HeaderMainShowBePartOfItImg src={bepartofit} />
