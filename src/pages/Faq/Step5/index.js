@@ -6,7 +6,7 @@ const Step5 = (backPage) => {
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
-        <span>O que fazer para facilitar a separação?</span>
+        <S.mainSpan>O que fazer para facilitar a separação?</S.mainSpan>
         <img src={WomanRecy} alt="woman recycling" />
         <span>
           Para facilitar a separação existe a coleta seletiva, e a separação

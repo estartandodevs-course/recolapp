@@ -6,17 +6,17 @@ const Step7 = (backPage) => {
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
-        <span>Qual a importancia dos catadores para a reciclagem?</span>
+        <S.mainSpan>
+          Qual a importancia dos catadores para a reciclagem?
+        </S.mainSpan>
         <img src={WomanRecy} alt="woman recycling" />
         <span>
           Os catadores são os que organizam os materiais para a reciclagem. Eles
-          coletam, separam, transportam e acondicionam.
-          <br /> Torna-se um catador é sinônimo de fonte de renda para as
-          camadas mais pobres do Brasil. As cooperativas e os catadores são
-          responsáveis por aproximadamente 20% do volume entregue para os
-          aparistas.
-          <br /> Portanto é uma das profissões essenciais para que o processo de
-          reciclagem no país funcione bem.
+          coletam, separam, transportam e acondicionam. Torna-se um catador é
+          sinônimo de fonte de renda para as camadas mais pobres do Brasil. As
+          cooperativas e os catadores são responsáveis por aproximadamente 20%
+          do volume entregue para os aparistas. Portanto é uma das profissões
+          essenciais para que o processo de reciclagem no país funcione bem.
         </span>
       </div>
     </>

@@ -6,7 +6,7 @@ const Step6 = (backPage) => {
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
-        <span>Como a reciclagem beneficia as empresas?</span>
+        <S.mainSpan>Como a reciclagem beneficia as empresas?</S.mainSpan>
         <img src={WomanRecy} alt="woman recycling" />
         <span>
           A reciclagem é geradora de riquezas, pois a empresa reduz custos no

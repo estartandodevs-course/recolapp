@@ -13,7 +13,7 @@ const Faq = () => {
     setPage((actualPage) => actualPage - 1);
   };
   const Steps = {
-    1: <Step1 setPage={setPage} backPage={backPage} />,
+    1: <Step1 setPage={setPage} />,
     2: <Step2 setPage={setPage} backPage={backPage} />,
     3: <Step3 setPage={setPage} backPage={backPage} />,
     4: <Step4 setPage={setPage} backPage={backPage} />,

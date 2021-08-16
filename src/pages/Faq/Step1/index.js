@@ -1,21 +1,29 @@
 import * as S from "./styles";
 
-const Step1 = (setPage, backPage) => {
+const Step1 = (setPage) => {
   return (
     <>
-      <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
-      <button onClick={() => setPage(2)}>O que é reciclável?</button>
-      <button onClick={() => setPage(3)}>O que não é reciclável?</button>
-      <button onClick={() => setPage(4)}>Como separar o lixo?</button>
-      <button onClick={() => setPage(5)}>
-        O que fazer para facilitar a separação?
-      </button>
-      <button onClick={() => setPage(6)}>
-        Como a reciclagem beneficia as empresas?
-      </button>
-      <button onClick={() => setPage(7)}>
-        Qual a importância dos catadores para a reciclagem?
-      </button>
+      <S.body>
+        <S.backB pageTitle="Dúvidas Frequentes" />
+        <S.sectionButtons onClick={() => setPage(2)}>
+          O que é reciclável?
+        </S.sectionButtons>
+        <S.sectionButtons onClick={() => setPage(3)}>
+          O que não é reciclável?
+        </S.sectionButtons>
+        <S.sectionButtons onClick={() => setPage(4)}>
+          Como separar o lixo?
+        </S.sectionButtons>
+        <S.sectionButtons onClick={() => setPage(5)}>
+          O que fazer para facilitar a separação?
+        </S.sectionButtons>
+        <S.sectionButtons onClick={() => setPage(6)}>
+          Como a reciclagem beneficia as empresas?
+        </S.sectionButtons>
+        <S.sectionButtons onClick={() => setPage(7)}>
+          Qual a importância dos catadores para a reciclagem?
+        </S.sectionButtons>
+      </S.body>
     </>
   );
 };

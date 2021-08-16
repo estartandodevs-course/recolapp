@@ -6,7 +6,7 @@ const Step3 = (backPage) => {
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
-        <span>O que não é reciclável?</span>
+        <S.mainSpan>O que não é reciclável?</S.mainSpan>
         <img src={WomanRecy} alt="woman recycling" />
         <span>
           Materiais como: papel-carbono, etiqueta adesiva, fita crepe,
