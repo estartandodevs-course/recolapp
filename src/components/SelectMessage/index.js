@@ -28,6 +28,7 @@ const SelectMessage = ({ message, setMessage, ...rest }) => {
               ) : (
                 <S.InputCancelled
                   label="Outro:"
+                  labelColor="#000000"
                   bgColor={element.status ? "#F28E36" : "#FDE5D7"}
                   key={element.text}
                   onClick={() => onClick(element)}
