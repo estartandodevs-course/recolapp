@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { BackButton } from "../../components/BackButton";
+import BackButton from "../../components/BackButton";
 import { MaterialInfo } from "../../components/CardMaterialInfo";
 import { Scheduling } from "../../components/Scheduling";
 import { UserData } from "../../components/UserData";

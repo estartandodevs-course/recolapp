@@ -17,11 +17,14 @@ const Step2 = ({ nextPage, backPage, firstPage }) => {
             <S.kgvalue type="number" step="0.5" min="1" max="50" />
           </S.valuearea>
         </S.containers>
-        <S.turnback onClick={firstPage}>
-          <S.turnbackbutton type="image" src={plusicon} alt="plusicon" />
-          <S.buttonspan>Adicionar outro item</S.buttonspan>
-        </S.turnback>
-        <S.button onClick={nextPage}>Continuar</S.button>
+
+        <S.endPage>
+          <S.turnback onClick={firstPage}>
+            <S.turnbackbutton type="image" src={plusicon} alt="plusicon" />
+            <S.buttonspan>Adicionar outro item</S.buttonspan>
+          </S.turnback>
+          <S.button onClick={nextPage}>Continuar</S.button>
+        </S.endPage>
       </S.body>
       <TabBar />
     </>

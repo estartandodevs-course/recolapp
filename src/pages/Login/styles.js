@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Input } from "../../components/Input";
-import { BackButton } from "../../components/BackButton";
+import BackButton from "../../components/BackButton";
 
 export const Container = styled.div`
   height: 100vh;

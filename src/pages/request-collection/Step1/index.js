@@ -22,21 +22,23 @@ const Step1 = ({ nextPage }) => {
 
   const materialsQuantity = selectedMaterial.length;
   return (
-    <S.body>
-      <S.backb pageTitle="Informe os materiais que serão coletados" />
-      <S.materialselect>
-        <span>Escolha quantas opções desejar.</span>
-        <SelectMaterial material={material} setMaterial={setMaterial} />
-      </S.materialselect>
-      <S.bottonpage>
-        <S.itensselected>
-          <S.indicator>Itens selecionados</S.indicator>
-          <S.spannum>{materialsQuantity}</S.spannum>
-        </S.itensselected>
-        <S.button onClick={nextPage}>Confirme</S.button>
-      </S.bottonpage>
+    <>
+      <S.body>
+        <S.backb pageTitle="Informe os materiais que serão coletados" />
+        <S.materialselect>
+          <span>Escolha quantas opções desejar.</span>
+          <SelectMaterial material={material} setMaterial={setMaterial} />
+        </S.materialselect>
+        <S.bottonpage>
+          <S.itensselected>
+            <S.indicator>Itens selecionados</S.indicator>
+            <S.spannum>{materialsQuantity}</S.spannum>
+          </S.itensselected>
+          <S.button onClick={nextPage}>Confirme</S.button>
+        </S.bottonpage>
+      </S.body>
       <TabBar />
-    </S.body>
+    </>
   );
 };
 export default Step1;

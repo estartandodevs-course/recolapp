@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
-import { BackButton } from "../../../components/BackButtom";
+import BackButton from "../../../components/BackButton";
 import { Button } from "../../../components/Button";
 
 export const body = styled.div`
+  background-color: #fff8f4;
   height: 100vh;
   margin: 0;
   padding: 0;
 `;
+
 export const backb = styled(BackButton)`
-  margin-top: 17px;
+  padding-top: 17px;
   margin-bottom: 8px;
   margin-left: 13.33px;
   color: rgba(79, 79, 79, 1);
@@ -24,7 +26,7 @@ export const materialselect = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 135px;
+  margin-bottom: 100px;
 `;
 export const bottonpage = styled.div`
   display: flex;

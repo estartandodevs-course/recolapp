@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
-import { BackButton } from "../../../components/BackButtom";
+import BackButton from "../../../components/BackButton";
 import { Button } from "../../../components/Button";
 
 export const body = styled.div`
+  background-color: #fff8f4;
   height: 100vh;
   margin: 0;
   padding: 0;
 `;
 export const backb = styled(BackButton)`
-  margin-top: 17px;
+  padding-top: 17px;
   margin-bottom: 8px;
   margin-left: 13.33px;
   color: rgba(79, 79, 79, 1);
@@ -17,7 +18,9 @@ export const backb = styled(BackButton)`
 `;
 export const containers = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-left: 30px;
+  margin-top: 12px;
 `;
 export const valuearea = styled.div`
   display: flex;
@@ -41,9 +44,18 @@ export const kgvalue = styled.input`
   height: 40px;
   background-color: rgba(253, 229, 215, 1);
 `;
+export const endPage = styled.div`
+  gap: 11px;
+  position: relative;
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 export const turnback = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
 `;
 export const turnbackbutton = styled.input`
   width: 16, 67px;

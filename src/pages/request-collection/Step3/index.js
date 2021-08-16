@@ -9,18 +9,18 @@ const Step3 = ({ nextPage, backPage }) => {
           handleBack={backPage}
           pageTitle="Escolha a data e o horário para a coleta"
         />
-        <div>
-          <span>Data</span>
-          <input type="date" />
-        </div>
-        <div>
-          <span>Hora</span>
-          <input type="time" min="08:00" max="17:00" />
-        </div>
-        <S.button as="label" htmlFor="teste" onClick={nextPage}>
-          Continuar
-        </S.button>
-        <input id="teste" type="submit" />
+        <S.dateSection>
+          <S.datediv>
+            <S.dateSpan>Data:</S.dateSpan>
+            <S.inputDate type="date" min="2021-09-01" max="2022-01-01" />
+          </S.datediv>
+          <S.hourdiv>
+            <S.hourSpan>Hora:</S.hourSpan>
+            <S.inputHour type="time" min="08:00" max="17:00" />
+          </S.hourdiv>
+        </S.dateSection>
+        <S.button onClick={nextPage}>Continuar</S.button>
+        {/* <S.submitbutton id="teste" type="submit" /> */}
       </S.body>
       <TabBar />
     </>

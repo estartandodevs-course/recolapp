@@ -1,13 +1,17 @@
+import { useHistory } from "react-router-dom";
 import Recycling from "../../../assets/img/illustrations/recycling.svg";
 import * as S from "./styles";
 
 const Step5 = () => {
+  const history = useHistory();
   return (
-    <>
-      <span>Agendamento realizado com sucesso!</span>
-      <img src={Recycling} alt="recycling ilustration" />
-      <S.button>Voltar para tela inicial</S.button>
-    </>
+    <S.body>
+      <S.warn>Agendamento realizado com sucesso!</S.warn>
+      <S.ilustration src={Recycling} alt="recycling ilustration" />
+      <S.button onClick={() => history.push("/home")}>
+        Voltar para tela inicial
+      </S.button>
+    </S.body>
   );
 };
 
