@@ -3,8 +3,10 @@ import Register from "./Register";
 import HomeEntrepreneur from "./HomeEntrepreneur";
 import SchedulesDetails from "./SchedulesDetails";
 import Schedules from "./Schedules";
-import RequestCollection from "./request-collection";
 import Login from "./Login";
+import RequestCollect from "./request-collection";
+import CollectConfirm from "./CollectionConfirm";
+import CollectCancelled from "./CollectionCancelled";
 
 export {
   Home,
@@ -13,5 +15,7 @@ export {
   Register,
   Schedules,
   SchedulesDetails,
-  RequestCollection,
+  RequestCollect,
+  CollectConfirm,
+  CollectCancelled,
 };

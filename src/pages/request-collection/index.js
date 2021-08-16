@@ -5,7 +5,7 @@ import Step3 from "./Step3";
 import Step4 from "./Step4";
 import Step5 from "./Step5";
 
-const RequestCollection = () => {
+const RequestCollect = () => {
   const [page, setPage] = useState(1);
   const nextPage = () => {
     setPage((previousPage) => previousPage + 1);
@@ -27,4 +27,4 @@ const RequestCollection = () => {
 
   return Steps[page];
 };
-export default RequestCollection;
+export default RequestCollect;

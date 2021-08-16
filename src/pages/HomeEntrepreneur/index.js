@@ -19,7 +19,7 @@ const HomeEntrepreneur = () => {
         <S.FirstText>{`Olá ${user?.name}`}</S.FirstText>
         <S.mid>
           <S.image src={ilustration} alt="bussines man" />
-          <S.ButtonF onClick={() => history.push("/request-collection")}>
+          <S.ButtonF onClick={() => history.push("/request-collect")}>
             Solicitar coleta
           </S.ButtonF>
           <S.ButtonF onClick={() => history.push("/schedules")}>
