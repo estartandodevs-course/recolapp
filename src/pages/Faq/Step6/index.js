@@ -1,12 +1,13 @@
-import Backimg from "../../assets/img/icons/icon_arrow_left.svg";
+import WomanRecy from "../../../assets/img/icons/icon_arrow_left.svg";
+import * as S from "./styles";
 
-const Step6 = () => {
+const Step6 = (backPage) => {
   return (
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
         <span>Como a reciclagem beneficia as empresas?</span>
-        <img src={Woman_recy} alt="woman recycling" />
+        <img src={WomanRecy} alt="woman recycling" />
         <span>
           A reciclagem é geradora de riquezas, pois a empresa reduz custos no
           seu processo de produto e ainda lucra com a venda dos resíduos que não

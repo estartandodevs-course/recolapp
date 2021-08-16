@@ -1,12 +1,13 @@
-import Backimg from "../../assets/img/icons/icon_arrow_left.svg";
+import WomanRecy from "../../../assets/img/icons/icon_arrow_left.svg";
+import * as S from "./styles";
 
-const Step5 = () => {
+const Step5 = (backPage) => {
   return (
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
         <span>O que fazer para facilitar a separação?</span>
-        <img src={Woman_recy} alt="woman recycling" />
+        <img src={WomanRecy} alt="woman recycling" />
         <span>
           Para facilitar a separação existe a coleta seletiva, e a separação
           através das cores. No Brasil as cores possuem as seguintes

@@ -1,12 +1,13 @@
-import Backimg from "../../assets/img/icons/icon_arrow_left.svg";
+import WomanRecy from "../../../assets/img/icons/icon_arrow_left.svg";
+import * as S from "./styles";
 
-const Step3 = () => {
+const Step3 = (backPage) => {
   return (
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
         <span>O que não é reciclável?</span>
-        <img src={Woman_recy} alt="woman recycling" />
+        <img src={WomanRecy} alt="woman recycling" />
         <span>
           Materiais como: papel-carbono, etiqueta adesiva, fita crepe,
           guardanapos, fotografias, filtro de cigarros, papéis sujos, papéis

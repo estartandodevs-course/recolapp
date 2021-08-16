@@ -1,12 +1,13 @@
-import Backimg from "../../assets/img/icons/icon_arrow_left.svg";
+import WomanRecy from "../../../assets/img/icons/icon_arrow_left.svg";
+import * as S from "./styles";
 
-const Step4 = () => {
+const Step4 = (backPage) => {
   return (
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
         <span>Como separar o lixo?</span>
-        <img src={Woman_recy} alt="woman recycling" />
+        <img src={WomanRecy} alt="woman recycling" />
         <span>
           Nunca misture o material reciclável e orgânico;
           <br /> Coloque os plásticos, vidros, metais e papéis em sacos

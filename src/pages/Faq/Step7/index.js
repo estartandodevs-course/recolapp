@@ -1,12 +1,13 @@
-import Backimg from "../../assets/img/icons/icon_arrow_left.svg";
+import WomanRecy from "../../../assets/img/icons/icon_arrow_left.svg";
+import * as S from "./styles";
 
-const Step7 = () => {
+const Step7 = (backPage) => {
   return (
     <>
       <S.backb handleBack={backPage} pageTitle="Dúvidas Frequentes" />
       <div>
         <span>Qual a importancia dos catadores para a reciclagem?</span>
-        <img src={Woman_recy} alt="woman recycling" />
+        <img src={WomanRecy} alt="woman recycling" />
         <span>
           Os catadores são os que organizam os materiais para a reciclagem. Eles
           coletam, separam, transportam e acondicionam.

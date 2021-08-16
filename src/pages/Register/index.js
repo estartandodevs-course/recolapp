@@ -3,10 +3,10 @@ import { useHistory } from "react-router-dom";
 
 import * as S from "./styles";
 
-import { removeMask, passwordMatch } from "../../services/RegisterValidate";
+import { removeMask, passwordMatch } from "../../mock/RegisterValidate";
 
-import { States } from "../../services/Select/states";
-import { typeUser } from "../../services/Select/typeUser";
+import { States } from "../../mock/Select/states";
+import { typeUser } from "../../mock/Select/typeUser";
 
 const Register = () => {
   const [errorRegister, SetErrorDisable] = useState({
