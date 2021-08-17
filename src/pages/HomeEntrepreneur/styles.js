@@ -4,17 +4,13 @@ import { Button } from "../../components/Button";
 import BackButton from "../../components/BackButton";
 
 export const PageE = styled.div`
-  /* height: 100vh; */
+  min-height: calc(100vh - var(--tabBarHeight));
   color: #fff8f4;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
 `;
 export const BackButtonHE = styled(BackButton)`
-  margin-top: 17px;
-  margin-bottom: 23px;
-  margin-left: 13.33px;
+  margin: 17px 0px 23px 13px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
 `;
@@ -33,7 +29,6 @@ export const mid = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  /* margin-bottom: 57px; */
 `;
 export const image = styled.img`
   width: 209px;
