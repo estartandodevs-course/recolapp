@@ -1,42 +1,18 @@
 import * as S from "./styles";
 
-const SelectMessage = ({ message, setMessage, ...rest }) => {
-  const onClick = (element) => {
-    setMessage((previous) => {
-      return previous.map((item) => {
-        if (item.text == element.text) {
-          return { ...item, status: !item.status };
-        }
-        return { ...item, status: false };
-      });
-    });
-  };
+const SelectMessage = ({ messages, selectedMessage, onClick, ...rest }) => {
   return (
     <>
       <S.ContainerAllMessages {...rest}>
-        {message?.map((element) => {
-          return (
-            <>
-              {element.show ? (
-                <S.ContainerMessage
-                  key={element.text}
-                  status={element.status}
-                  onClick={() => onClick(element)}
-                >
-                  <S.MessageText>{element?.text}</S.MessageText>
-                </S.ContainerMessage>
-              ) : (
-                <S.InputCancelled
-                  label="Outro:"
-                  labelColor="#000000"
-                  bgColor={element.status ? "#F28E36" : "#FDE5D7"}
-                  key={element.text}
-                  onClick={() => onClick(element)}
-                />
-              )}
-            </>
-          );
-        })}
+        {messages?.map((message) => (
+          <S.ContainerMessage
+            key={message}
+            selected={message === selectedMessage}
+            onClick={() => onClick(message)}
+          >
+            <S.MessageText>{message}</S.MessageText>
+          </S.ContainerMessage>
+        ))}
       </S.ContainerAllMessages>
     </>
   );

@@ -38,3 +38,8 @@ export const ContainerOptions = styled.div`
   gap: 31px;
   margin-bottom: 31px;
 `;
+
+export const InputCancelled = styled(Input)`
+  color: #000000;
+  padding-bottom: 33px;
+`;

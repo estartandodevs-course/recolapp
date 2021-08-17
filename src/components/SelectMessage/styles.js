@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Input } from "../../components/Input";
 
 export const ContainerAllMessages = styled.div`
   display: flex;
@@ -13,7 +12,7 @@ export const ContainerMessage = styled.div`
   align-items: flex-start;
 
   padding: 12px 10px;
-  background-color: ${({ status }) => (status ? "#F28E36" : "#FDE5D7")};
+  background-color: ${({ selected }) => (selected ? "#F28E36" : "#FDE5D7")};
   /* background-color: var(--inputBackground); */
   border-radius: 8px;
 `;
@@ -23,9 +22,4 @@ export const MessageText = styled.div`
   text-align: center;
   font-size: 14px;
   width: 100%;
-`;
-
-export const InputCancelled = styled(Input)`
-  color: #000000;
-  padding-bottom: 33px;
 `;

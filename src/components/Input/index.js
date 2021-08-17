@@ -4,6 +4,7 @@ const Input = ({
   id,
   type = "text",
   onChange,
+  placeholder,
   value,
   label,
   width = "100%",
@@ -23,6 +24,7 @@ const Input = ({
           width={width}
           bgColor={bgColor}
           labelColor={labelColor}
+          placeholder={placeholder}
         />
       </S.Container>
     </>
