@@ -8,7 +8,7 @@ import { Button } from "../../components/Button";
 import { TabBar } from "../../components/TabBar";
 import { SelectMessage } from "../../components/SelectMessage";
 
-const Cancelled = () => {
+const JustifyCancelled = () => {
   const history = useHistory();
   const options = [
     "Infelizmente tive um imprevisto e não poderei recebê-lo.",
@@ -52,7 +52,7 @@ const Cancelled = () => {
             value={otherMessage}
             bgColor={otherMessage.length > 0 ? "#F28E36" : "#FDE5D7"}
             onChange={handleOtherMessage}
-            placeholder="Digite o motivo do cancelamento"
+            placeholder="Deixe uma outra mensagem para o coletor"
           />
         </S.ContainerOptions>
         <Button
@@ -67,4 +67,4 @@ const Cancelled = () => {
   );
 };
 
-export default Cancelled;
+export default JustifyCancelled;
