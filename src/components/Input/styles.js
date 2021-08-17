@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const InputElement = styled.input`
-  background-color: #fde5d7;
+  background-color: ${({ bgColor }) => bgColor};
   width: calc(100% - 10px);
   height: 45px;
   border: none;
@@ -24,7 +24,7 @@ export const InputElement = styled.input`
 `;
 
 export const Label = styled.label`
-  color: #828282;
+  color: ${({ labelColor }) => labelColor};
   font-size: 12px;
   line-height: 18px;
 `;

@@ -7,6 +7,7 @@ import Login from "./Login";
 import RequestCollect from "./request-collection";
 import CollectConfirm from "./CollectionConfirm";
 import CollectCancelled from "./CollectionCancelled";
+import Cancelled from "./JustifyCancellation";
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   RequestCollect,
   CollectConfirm,
   CollectCancelled,
+  Cancelled,
 };
