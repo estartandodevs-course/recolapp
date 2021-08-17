@@ -1,6 +1,8 @@
+import React, { useState } from "react";
+
+import { useHistory } from "react-router-dom";
+
 import * as S from "./styles";
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 
 import { Button } from "../../components/Button";
 import { TabBar } from "../../components/TabBar";
@@ -9,26 +11,26 @@ import { SelectMessage } from "../../components/SelectMessage";
 const Cancelled = () => {
   const history = useHistory();
   const options = [
-    {
-      text: "Infelizmente tive um imprevisto e não poderei recebê-lo.",
-      status: false,
-      show: true,
-    },
-    {
-      text: "Vou precisar agendar em outro horário.",
-      status: false,
-      show: true,
-    },
-    {
-      text: "",
-      status: false,
-      show: false,
-    },
+    "Infelizmente tive um imprevisto e não poderei recebê-lo.",
+    "Vou precisar agendar em outro horário.",
   ];
 
-  const [message, setMessage] = useState(options);
+  const [selectedMessage, setSelectedMessage] = useState("");
+  const [otherMessage, setOtherMessage] = useState("");
 
-  useEffect(() => {}, [message]);
+  const disableButton =
+    selectedMessage.length === 0 && otherMessage.length === 0;
+
+  const handleOtherMessage = (event) => {
+    const newMessage = event.target.value;
+    setOtherMessage(newMessage);
+    setSelectedMessage("");
+  };
+
+  const handleSelectedMessage = (text) => {
+    setSelectedMessage(text);
+    setOtherMessage("");
+  };
 
   return (
     <>
@@ -39,9 +41,26 @@ const Cancelled = () => {
           opções abaixo:
         </S.SubTitle>
         <S.ContainerOptions>
-          <SelectMessage message={message} setMessage={setMessage} />
+          <SelectMessage
+            messages={options}
+            selectedMessage={selectedMessage}
+            onClick={handleSelectedMessage}
+          />
+          <S.InputCancelled
+            label="Outro:"
+            labelColor="#000000"
+            value={otherMessage}
+            bgColor={otherMessage.length > 0 ? "#F28E36" : "#FDE5D7"}
+            onChange={handleOtherMessage}
+            placeholder="Digite o motivo do cancelamento"
+          />
         </S.ContainerOptions>
-        <Button>Confirmar mensagem</Button>
+        <Button
+          disable={disableButton}
+          onClick={() => history.push("/collect-cancelled")}
+        >
+          Confirmar mensagem
+        </Button>
       </S.ContainerCancelled>
       <TabBar />
     </>
