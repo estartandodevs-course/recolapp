@@ -4,7 +4,7 @@ import { Button } from "../../components/Button";
 import BackButton from "../../components/BackButton";
 
 export const PageE = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
   color: #fff8f4;
   padding: 0;
   margin: 0;

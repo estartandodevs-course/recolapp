@@ -26,4 +26,7 @@ export const GlobalStyles = createGlobalStyle`
      padding: 0;
      font-family: Poppins;
     }
+    body {
+      background-color: var(--lightGray);
+    }
 `;
