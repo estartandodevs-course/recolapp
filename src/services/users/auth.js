@@ -13,7 +13,9 @@ export const auth = (email, password) => {
   return { auth: false };
 };
 
-export const signOut = () => {
+export const signOut = (history, setUser) => {
+  setUser({});
   localStorage.clear();
-  return { auth: false };
+  history.push("/");
+  return 1;
 };
