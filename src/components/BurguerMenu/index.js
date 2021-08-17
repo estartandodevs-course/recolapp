@@ -8,11 +8,11 @@ import main from "../../assets/img/icons/main.svg";
 import bepartofit from "../../assets/img/icons/peoples.svg";
 import whoweare from "../../assets/img/icons/trash.svg";
 
-const BurguerMenu = () => {
+const BurguerMenu = ({ ...rest }) => {
   const [mainShow, setMainShow] = useState(false);
 
   return (
-    <S.HeaderAll mainShow={mainShow}>
+    <S.HeaderAll mainShow={mainShow} {...rest}>
       <S.HeaderContainer>
         <S.HeaderLogo src={logo} />
       </S.HeaderContainer>

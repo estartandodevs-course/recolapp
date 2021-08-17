@@ -1,8 +1,4 @@
-import React from "react";
-
 import { useHistory } from "react-router-dom";
-
-import { BurguerMenu } from "../../components/BurguerMenu";
 
 import * as S from "./styles";
 
@@ -13,7 +9,8 @@ const Home = () => {
 
   return (
     <>
-      <BurguerMenu />
+      <S.HeaderDesktop />
+      <S.HeaderMobile />
       <S.Container>
         <S.Title>Faça parte dessa iniciativa!</S.Title>
         <S.Img src={image} alt="homeScreen" />

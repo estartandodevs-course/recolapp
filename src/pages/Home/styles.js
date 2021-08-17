@@ -1,6 +1,21 @@
 import styled from "styled-components";
 
 import { Button } from "../../components/Button";
+import { BurguerMenu } from "../../components/BurguerMenu";
+import { HeaderWeb } from "../../components/HeaderWeb";
+
+export const HeaderDesktop = styled(HeaderWeb)`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const HeaderMobile = styled(BurguerMenu)`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
 
 export const Container = styled.div`
   background-color: var(--lightGray);
