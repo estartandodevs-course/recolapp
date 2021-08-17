@@ -4,10 +4,18 @@ import { Button } from "../../components/Button";
 import { BurguerMenu } from "../../components/BurguerMenu";
 import { HeaderWeb } from "../../components/HeaderWeb";
 
+export const ContainerAll = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const HeaderDesktop = styled(HeaderWeb)`
   display: none;
   @media (min-width: 768px) {
     display: flex;
+    position: relative;
+    z-index: 1;
   }
 `;
 
@@ -24,6 +32,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 768px) {
+    width: 600px;
+  }
 `;
 export const Title = styled.h3`
   padding-top: 71px;
@@ -49,4 +61,8 @@ export const RedirectLogin = styled.a`
   cursor: pointer;
   text-decoration: underline;
   text-decoration-skip-ink: none;
+
+  @media (min-width: 768px) {
+    margin-bottom: 94px;
+  }
 `;
