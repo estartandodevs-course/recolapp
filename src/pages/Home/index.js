@@ -8,9 +8,10 @@ const Home = () => {
   const history = useHistory();
 
   return (
-    <>
+    <S.ContainerAll>
       <S.HeaderDesktop />
       <S.HeaderMobile />
+
       <S.Container>
         <S.Title>Faça parte dessa iniciativa!</S.Title>
         <S.Img src={image} alt="homeScreen" />
@@ -22,7 +23,7 @@ const Home = () => {
           Fazer login
         </S.RedirectLogin>
       </S.Container>
-    </>
+    </S.ContainerAll>
   );
 };
 

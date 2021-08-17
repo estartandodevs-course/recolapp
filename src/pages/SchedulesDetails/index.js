@@ -73,8 +73,8 @@ const SchedulesDetails = () => {
             {cancelButtonName}
           </S.DSCancelCollection>
         </S.DSContainer>
-        <S.DSTabBar />
       </S.DSContainerAll>
+      <S.DSTabBar />
     </>
   );
 };
