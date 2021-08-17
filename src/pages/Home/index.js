@@ -2,7 +2,7 @@ import React from "react";
 
 import { useHistory } from "react-router-dom";
 
-import { Button } from "../../components/Button";
+import { BurguerMenu } from "../../components/BurguerMenu";
 
 import * as S from "./styles";
 
@@ -13,16 +13,17 @@ const Home = () => {
 
   return (
     <>
+      <BurguerMenu />
       <S.Container>
         <S.Title>Faça parte dessa iniciativa!</S.Title>
         <S.Img src={image} alt="homeScreen" />
-        <S.ContainerBottom>
-          <Button onClick={() => history.push("/register")}>Cadastrar</Button>
-          <S.Pragraph>Já possuo cadastro</S.Pragraph>
-          <S.RedirectLogin onClick={() => history.push("/login")}>
-            Fazer login
-          </S.RedirectLogin>
-        </S.ContainerBottom>
+        <S.ButtonHome onClick={() => history.push("/register")}>
+          Cadastrar
+        </S.ButtonHome>
+        <S.Pragraph>Já possuo cadastro</S.Pragraph>
+        <S.RedirectLogin onClick={() => history.push("/login")}>
+          Fazer login
+        </S.RedirectLogin>
       </S.Container>
     </>
   );

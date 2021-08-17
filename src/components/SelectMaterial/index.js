@@ -4,7 +4,7 @@ const SelectMaterial = ({ material, setMaterial, ...rest }) => {
   const onClick = (element) => {
     setMaterial((previous) => {
       return previous.map((item) => {
-        if (item.name == element.name) {
+        if (item.name === element.name) {
           return { ...item, status: !item.status };
         }
         return item;

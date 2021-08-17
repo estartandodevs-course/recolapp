@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Mask } from "../../components/InputMask";
-import { BackButton } from "../../components/BackButton";
+import BackButton from "../../components/BackButton";
 import { Input } from "../../components/Input";
 import { Select } from "../../components/Select";
 import { Button } from "../../components/Button";
