@@ -14,8 +14,8 @@ const Register = () => {
     status: false,
   });
   const [count, setCount] = useState(1);
-  const [buttonDisable, setButtonDisable] = useState(true);
-  const [maskCPF, SetMaskCPF] = useState("");
+  const [disable, setDisable] = useState(true);
+  const [maskCertification, setMaskCertification] = useState("");
   const [data, setData] = useState({
     name: "",
     password: "",
@@ -59,10 +59,10 @@ const Register = () => {
     }
 
     if (lengthType >= 11 && count === 2) {
-      SetMaskCPF("99.999.999/9999-99");
+      setMaskCertification("99.999.999/9999-99");
       setCount(1);
     } else if (lengthType <= 11) {
-      SetMaskCPF("999.999.999-99");
+      setMaskCertification("999.999.999-99");
     }
   };
 
@@ -74,10 +74,10 @@ const Register = () => {
   useEffect(() => {
     for (const [key, value] of Object.entries(data)) {
       if ((value === "" || value === false) && key !== "password") {
-        setButtonDisable(true);
+        setDisable(true);
         break;
       }
-      setButtonDisable(false);
+      setDisable(false);
     }
   }, [data]);
 
@@ -92,7 +92,7 @@ const Register = () => {
           label="Nome Completo"
         />
         <S.MaskCertification
-          mask={maskCPF}
+          mask={maskCertification}
           id="cpf"
           value={data.certification}
           onChange={(event) => handleCertification(event)}
@@ -171,10 +171,7 @@ const Register = () => {
         {errorRegister.message}
       </S.ErrorMessage>
 
-      <S.ButtonRegister
-        disable={buttonDisable}
-        onClick={() => finishRegister()}
-      >
+      <S.ButtonRegister disable={disable} onClick={() => finishRegister()}>
         Finalizar cadastro
       </S.ButtonRegister>
     </S.Container>

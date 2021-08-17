@@ -8,8 +8,8 @@ export const getCollectionsByUserID = (user_id) => {
 };
 
 export const getCollectByID = (collect_id) => {
-  const response = collections.filter(
+  const response = collections.find(
     (collect) => collect.collection_id === collect_id
   );
-  return response[0];
+  return response;
 };

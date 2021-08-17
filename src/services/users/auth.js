@@ -1,7 +1,7 @@
 import { users } from "../../mock/users";
 
 export const auth = (email, password) => {
-  const response = users.filter((user) => user.email === email)[0];
+  const response = users.find((user) => user.email === email);
 
   if (response?.password === password) {
     return {
