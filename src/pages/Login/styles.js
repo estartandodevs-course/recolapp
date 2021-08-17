@@ -28,7 +28,6 @@ export const InputPassword = styled(Input)`
 `;
 
 export const ErrorMessage = styled.p`
-  /* font-family: Roboto; */
   font-size: 11px;
   color: ${({ disable }) => (disable ? "#FFFFFFAA" : "#FF0000FF")};
   margin-top: 6px;
