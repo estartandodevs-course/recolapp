@@ -13,7 +13,12 @@ export const ContainerHeaderWeb = styled.div`
   justify-content: space-evenly;
 `;
 
-export const HeaderWebLogo = styled.img``;
+export const HeaderWebLogo = styled.img`
+  margin-bottom: 5px;
+  width: 166px;
+  height: 53px;
+  cursor: pointer;
+`;
 
 export const HeaderWebCenterText = styled.div`
   display: flex;
@@ -26,16 +31,15 @@ export const HeaderWebCenterText = styled.div`
 
 export const HeaderWebWhoWeAre = styled.p`
   cursor: pointer;
-  margin-right: 32.25px;
+  margin-right: 65px;
 `;
 
 export const HeaderWebFrequentlyDoubts = styled.p`
   cursor: pointer;
-  margin-left: 32.25px;
 `;
 
 export const HeaderWebRight = styled.div`
-  display: flex;
+  display: ${({ logged }) => (!logged ? "flex" : "none")};
   align-items: center;
 `;
 
@@ -52,3 +56,20 @@ export const HeaderWebButtonLogin = styled(Button)`
   margin-left: 15px;
   width: 125px;
 `;
+
+export const HeaderWebLogged = styled.div`
+  display: ${({ logged }) => (logged ? "initial" : "none")};
+`;
+
+export const HeaderWebLoggedCollect = styled.p`
+  color: #2b7b2b;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+  cursor: pointer;
+  margin-right: 65px;
+
+  display: ${({ logged }) => (logged ? "initial" : "none")};
+`;
+
+export const HeaderWebLoggedImage = styled.img``;
