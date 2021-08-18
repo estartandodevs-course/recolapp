@@ -56,7 +56,9 @@ const Home = () => {
               junte-se a nós e participe desse movimento!
             </S.TextMei>
           </S.MainRight>
-          <S.ButtonHomeWeb>Cadastrar</S.ButtonHomeWeb>
+          <S.ButtonHomeWeb onClick={() => history.push("/register")}>
+            Cadastrar
+          </S.ButtonHomeWeb>
         </S.ContainerWebRight>
       </S.ContainerWeb>
       <S.FooterWeb> &copy; 2021 Recolapp</S.FooterWeb>
