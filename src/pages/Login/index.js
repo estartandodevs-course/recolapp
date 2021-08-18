@@ -40,9 +40,9 @@ const Login = () => {
   }, [email, password]);
 
   return (
-    <>
+    <S.Body>
+      <S.BackButtonLogin pageTitle="Faça seu login" />
       <S.Container>
-        <S.BackButtonLogin pageTitle="Faça seu login" />
         <S.Img src={image} alt="loginScreen" />
         <S.InputEmail
           id="email"
@@ -64,7 +64,7 @@ const Login = () => {
           Entrar
         </Button>
       </S.Container>
-    </>
+    </S.Body>
   );
 };
 
