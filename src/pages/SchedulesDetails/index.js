@@ -64,7 +64,7 @@ const SchedulesDetails = () => {
 
           <S.DSConfirmCollection
             hasCollector={hasCollector}
-            onClick={() => history.push("/confirm")}
+            onClick={() => history.push("/collect-confirm")}
           >
             Confirmar coleta
           </S.DSConfirmCollection>
@@ -73,8 +73,8 @@ const SchedulesDetails = () => {
             {cancelButtonName}
           </S.DSCancelCollection>
         </S.DSContainer>
-        <S.DSTabBar />
       </S.DSContainerAll>
+      <S.DSTabBar />
     </>
   );
 };

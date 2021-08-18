@@ -13,28 +13,29 @@ import { auth } from "../../services/users/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [buttonDisable, setButtonDisable] = useState(true);
-  const [errorDisable, SetErrorDisable] = useState(true);
+  const [disable, setDisable] = useState(true);
+  const [errorDisable, setErroDisable] = useState(true);
 
   const history = useHistory();
-  const context = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const authLogin = () => {
     const response = auth(email, password);
 
     if (response.auth) {
-      context.setUser(getUser(response.user.id));
+      localStorage.setItem("user", JSON.stringify(response.user));
+      setUser(getUser(response.user.id));
       history.push("/home");
     } else {
-      SetErrorDisable(false);
+      setErroDisable(false);
     }
   };
 
   useEffect(() => {
     if (email !== "" && password !== "") {
-      setButtonDisable(false);
+      setDisable(false);
     } else {
-      setButtonDisable(true);
+      setDisable(true);
     }
   }, [email, password]);
 
@@ -59,7 +60,7 @@ const Login = () => {
         <S.ErrorMessage disable={errorDisable}>
           O email ou senha está errado. Por favor, tente novamente
         </S.ErrorMessage>
-        <Button disable={buttonDisable} onClick={() => authLogin()}>
+        <Button disable={disable} onClick={() => authLogin()}>
           Entrar
         </Button>
       </S.Container>

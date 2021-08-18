@@ -1,5 +1,4 @@
 /* eslint-disable */
-// import * as S from "./styles";
 import React from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { withStyles } from "@material-ui/core/styles";

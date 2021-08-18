@@ -5,9 +5,8 @@ export const NavegationBar = styled.nav`
   justify-content: space-around;
   align-items: center;
   bottom: 0;
-
   width: 100%;
-  min-height: 64px;
+  min-height: var(--tabBarHeight);
   position: sticky;
   box-sizing: border-box;
   background-color: var(--lightGray);
