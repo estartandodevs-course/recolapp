@@ -6,9 +6,9 @@ const Step7 = ({ firstPage }) => {
     <>
       <S.body>
         <S.backb handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
-        <S.mainSpan>
-          Qual a importancia dos catadores para a reciclagem?
-        </S.mainSpan>
+        <S.mainTextAling>
+          <S.mainSpan>Como a reciclagem beneficia as empresas?</S.mainSpan>
+        </S.mainTextAling>
         <S.pageContent>
           <img src={WomanRecy} alt="woman recycling" />
           <S.contentSpan>

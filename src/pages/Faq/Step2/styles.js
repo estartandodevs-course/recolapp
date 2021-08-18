@@ -44,3 +44,7 @@ export const contentSpan = styled.span`
   border-radius: 8px;
   border: none;
 `;
+export const mainTextAling = styled.div`
+  display: flex;
+  justify-content: center;
+`;

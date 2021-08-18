@@ -6,7 +6,9 @@ const Step4 = ({ firstPage }) => {
     <>
       <S.body>
         <S.backb handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
-        <S.mainSpan>Como separar o lixo?</S.mainSpan>
+        <S.mainTextAling>
+          <S.mainSpan>Como separar o lixo?</S.mainSpan>
+        </S.mainTextAling>
         <S.pageContent>
           <img src={WomanRecy} alt="woman recycling" />
           <S.contentSpan>
