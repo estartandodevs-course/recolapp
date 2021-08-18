@@ -20,9 +20,14 @@ export const containers = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 30px;
-  margin-top: 12px;
+  margin-top: 10px;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 1px 24px;
+  * {
+    flex-grow: 0;
+    flex-basis: auto;
+  }
+  height: 370px;
 `;
 export const valuearea = styled.div`
   display: flex;
@@ -52,6 +57,7 @@ export const endPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 `;
 export const turnback = styled.div`
   display: flex;
