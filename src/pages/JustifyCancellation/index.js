@@ -18,8 +18,7 @@ const JustifyCancelled = () => {
   const [selectedMessage, setSelectedMessage] = useState("");
   const [otherMessage, setOtherMessage] = useState("");
 
-  const disableButton =
-    selectedMessage.length === 0 && otherMessage.length === 0;
+  const disable = selectedMessage.length === 0 && otherMessage.length === 0;
 
   const handleOtherMessage = (event) => {
     const newMessage = event.target.value;
@@ -56,7 +55,7 @@ const JustifyCancelled = () => {
           />
         </S.ContainerOptions>
         <Button
-          disable={disableButton}
+          disable={disable}
           onClick={() => history.push("/collect-cancelled")}
         >
           Confirmar mensagem
