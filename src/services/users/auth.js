@@ -12,8 +12,3 @@ export const auth = (email, password) => {
 
   return { auth: false };
 };
-
-export const signOut = () => {
-  localStorage.clear();
-  return { auth: false };
-};
