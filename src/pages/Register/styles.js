@@ -62,6 +62,15 @@ export const FormContainer = styled.form`
   }
 `;
 
+export const NameCert = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+  }
+`;
+
 export const InputRegister = styled(Input)`
   gap: 4px;
   padding-bottom: 16px;
@@ -76,12 +85,39 @@ export const MaskCertification = styled(Mask)`
   padding-bottom: 16px;
 `;
 
+export const EmailPass = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+  }
+`;
+
+export const PassCel = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+  }
+`;
+
 export const MaksCellphone = styled(Mask)`
   padding-bottom: 16px;
 `;
 
+export const AdressCity = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+  }
+`;
+
 export const MaskCep = styled(Mask)`
-  width: 138px;
+  width: 50%;
 `;
 
 export const Wrapper = styled.div`
@@ -90,15 +126,36 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 22px;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 50%;
+  }
 `;
 
 export const SelectStates = styled(Select)`
-  width: 138px;
+  width: 50%;
 `;
 
 export const SelectTypeUser = styled(Select)`
-  width: 114px;
+  width: 50%;
   margin-bottom: 16.5px;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+export const CepStates = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+  }
 `;
 
 export const CheckButton = styled.div`
