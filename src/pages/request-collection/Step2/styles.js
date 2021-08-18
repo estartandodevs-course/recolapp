@@ -21,6 +21,8 @@ export const containers = styled.div`
   flex-direction: row;
   margin-left: 30px;
   margin-top: 12px;
+  flex-wrap: wrap;
+  gap: 24px;
 `;
 export const valuearea = styled.div`
   display: flex;
@@ -47,7 +49,6 @@ export const kgvalue = styled.input`
 export const endPage = styled.div`
   gap: 11px;
   position: relative;
-  margin-top: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;

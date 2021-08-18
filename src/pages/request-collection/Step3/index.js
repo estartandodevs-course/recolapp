@@ -2,6 +2,22 @@ import { TabBar } from "../../../components/TabBar";
 import * as S from "./styles";
 
 const Step3 = ({ nextPage, backPage }) => {
+  // const inputs = {
+  //   DATE: "date",
+  //   HOURS: "hours",
+  // };
+
+  // const onChange = (event, input) => {
+  //   switch (input) {
+  //     case inputs.DATE:
+  //       const date = parseInt(event.target.value);
+  //       const year = date.slice(0, 3);
+  //       console.log(year);
+
+  //     case inputs.HOURS:
+  //   }
+  // };
+
   return (
     <>
       <S.body>
@@ -12,11 +28,23 @@ const Step3 = ({ nextPage, backPage }) => {
         <S.dateSection>
           <S.datediv>
             <S.dateSpan>Data:</S.dateSpan>
-            <S.inputDate type="date" min="2021-09-01" max="2022-01-01" />
+            <S.inputDate
+              // onChange={onChange}
+              // input={inputs.DATE}
+              type="date"
+              min="2021-09-01"
+              max="2022-01-01"
+            />
           </S.datediv>
           <S.hourdiv>
             <S.hourSpan>Hora:</S.hourSpan>
-            <S.inputHour type="time" min="08:00" max="17:00" />
+            <S.inputHour
+              // onChange={onChange}
+              // input={inputs.HOURS}
+              type="time"
+              min="08:00"
+              max="17:00"
+            />
           </S.hourdiv>
         </S.dateSection>
         <S.button onClick={nextPage}>Continuar</S.button>
