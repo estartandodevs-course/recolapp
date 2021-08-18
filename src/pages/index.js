@@ -10,7 +10,6 @@ import CollectConfirm from "./CollectionConfirm";
 import CollectCancelled from "./CollectionCancelled";
 import Cancelled from "./JustifyCancellation";
 
-
 export {
   Home,
   Login,

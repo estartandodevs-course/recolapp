@@ -34,25 +34,29 @@ export const Container = styled.div`
   align-items: center;
 
   @media (min-width: 768px) {
-    width: 600px;
+    width: var(--defaultScreenWebWidth);
   }
 `;
 export const Title = styled.h3`
-  padding-top: 71px;
+  margin-top: 70px;
 `;
 
 export const Img = styled.img`
-  margin-top: 84px;
+  margin-top: 80px;
 `;
 
 export const ButtonHome = styled(Button)`
-  margin-top: 106px;
+  margin-top: 50px;
 `;
 
 export const Pragraph = styled.p`
   margin-top: 8px;
   color: #4f4f4f;
   font-size: 14px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 export const RedirectLogin = styled.a`
   margin-top: 4px;
@@ -63,6 +67,6 @@ export const RedirectLogin = styled.a`
   text-decoration-skip-ink: none;
 
   @media (min-width: 768px) {
-    margin-bottom: 94px;
+    display: none;
   }
 `;

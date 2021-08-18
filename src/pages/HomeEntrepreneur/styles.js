@@ -27,7 +27,7 @@ export const BackButtonHE = styled(BackButton)`
   font-weight: 600;
 
   @media (min-width: 768px) {
-    margin: 113px 0px 98px 314px;
+    margin: 50px 0px 0px 100px;
   }
 `;
 
@@ -41,7 +41,7 @@ export const FirstText = styled.span`
   margin-bottom: 37px;
 
   @media (min-width: 768px) {
-    margin-bottom: 104px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -65,10 +65,6 @@ export const ButtonRequest = styled(Button)`
 
 export const ButtonSchedules = styled(Button)`
   width: 300px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 223px;
-  }
 `;
 
 export const TabBarHomeEnterpreneur = styled(TabBar)`
