@@ -7,8 +7,14 @@ export const Section = styled.div`
 
 export const Img = styled.img`
   width: 21.33px;
+  @media (min-width: 768px) {
+    width: 35px;
+  }
 `;
 export const Pagetitle = styled.span`
   font-size: 20px;
   font-weight: 200;
+  @media (min-width: 768px) {
+    font-size: 43px;
+  }
 `;
