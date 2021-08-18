@@ -8,13 +8,15 @@ export const Section = styled.div`
 export const Img = styled.img`
   width: 21.33px;
   @media (min-width: 768px) {
-    width: 35px;
+    width: 22px;
   }
 `;
 export const Pagetitle = styled.span`
   font-size: 20px;
   font-weight: 200;
+  font-weight: 600;
+  color: var(--textColor);
   @media (min-width: 768px) {
-    font-size: 43px;
+    font-size: 24px;
   }
 `;

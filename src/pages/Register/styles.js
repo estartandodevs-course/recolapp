@@ -47,7 +47,7 @@ export const RegisterTitle = styled.h1`
 
   @media (min-width: 768px) {
     display: flex;
-    font-size: 43px;
+    font-size: 24px;
     color: var(--textColor);
     margin: 98px 0 65px 0;
   }
@@ -162,7 +162,7 @@ export const CheckButton = styled.div`
   @media (min-width: 768px) {
     width: 600px;
     margin: auto;
-    margin-top: 240px;
+    margin-top: 100px;
   }
 `;
 
@@ -180,8 +180,8 @@ export const ButtonRegister = styled(Button)`
 
   @media (min-width: 768px) {
     border-radius: 18px;
-    height: 102px;
-    font-size: 32px;
+    height: 60px;
+    font-size: 26px;
   }
 `;
 
