@@ -21,6 +21,7 @@ export const GlobalStyles = createGlobalStyle`
         --lightTextColor: #ffffff;
         
         --tabBarHeight: 64px;
+        --defaultScreenWebWidth: 400px;
     }
 
     * {

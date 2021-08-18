@@ -23,7 +23,7 @@ const HomeEntrepreneur = () => {
           handleBack={() => signOut(history, setUser)}
           pageTitle="Sair"
         />
-        <S.FirstText>{`Olá ${user?.name}`}</S.FirstText>
+        <S.FirstText>{`Olá, ${user?.name}!`}</S.FirstText>
         <S.mid>
           <S.image src={ilustration} alt="bussines man" />
           <S.ButtonRequest onClick={() => history.push("/request-collect")}>
