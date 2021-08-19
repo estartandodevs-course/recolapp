@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../contexts";
@@ -11,13 +11,20 @@ import * as S from "./styles";
 const HomeEntrepreneur = () => {
   const history = useHistory();
 
-  const { user, setUser } = useContext(UserContext);
-  const isLogged = user?.name || false;
+  const { user, setUser, setOrder, setOrderTimestamp } =
+    useContext(UserContext);
+
+  const islogged = user?.name || false;
+
+  useEffect(() => {
+    setOrder([]);
+    setOrderTimestamp("");
+  }, []);
 
   return (
     <>
       <S.PageE>
-        <S.HeaderDesktop logged={isLogged} />
+        <S.HeaderDesktop logged={islogged} />
 
         <S.BackButtonHE
           handleBack={() => signOut(history, setUser)}

@@ -5,7 +5,7 @@ const SelectMaterial = ({ material, setMaterial, ...rest }) => {
     setMaterial((previous) => {
       return previous.map((item) => {
         if (item.name === element.name) {
-          return { ...item, status: !item.status };
+          return { ...item, status: !item.status, weight: 0 };
         }
         return item;
       });

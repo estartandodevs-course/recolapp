@@ -5,7 +5,8 @@ export const body = styled.div`
   background-color: #fff8f4;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: calc(100vh - var(--tabBarHeight));
+  overflow: auto;
   padding: 0;
   margin: 0;
 `;

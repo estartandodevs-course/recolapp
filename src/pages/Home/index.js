@@ -31,9 +31,11 @@ const Home = () => {
           <S.TitleWeb>Faça parte da nossa iniciativa!</S.TitleWeb>
           <S.Underline />
           <S.Presentation>
-            <strong>Prazer, somos a Recolapp!</strong> <br /> Uma iniciativa que
-            ajuda MEIs e Microempresas a se conectarem com cooperativas de
-            reciclagem para que seus resíduos sejam coletados e reciclados.
+            <strong>Prazer, somos a Recolapp!</strong>
+            <br />
+            Uma iniciativa que ajuda MEIs e Microempresas a se conectarem com
+            cooperativas de reciclagem para que seus resíduos sejam coletados e
+            reciclados.
           </S.Presentation>
           <S.OrderCollection>
             <S.OrdemCollectionImg src={location} />
@@ -56,7 +58,9 @@ const Home = () => {
               junte-se a nós e participe desse movimento!
             </S.TextMei>
           </S.MainRight>
-          <S.ButtonHomeWeb>Cadastrar</S.ButtonHomeWeb>
+          <S.ButtonHomeWeb onClick={() => history.push("/register")}>
+            Cadastrar
+          </S.ButtonHomeWeb>
         </S.ContainerWebRight>
       </S.ContainerWeb>
       <S.FooterWeb> &copy; 2021 Recolapp</S.FooterWeb>

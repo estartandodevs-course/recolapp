@@ -6,18 +6,52 @@ import { Scheduling } from "../../components/Scheduling";
 import { UserData } from "../../components/UserData";
 import { Button } from "../../components/Button";
 import { TabBar } from "../../components/TabBar";
+import { HeaderWeb } from "../../components/HeaderWeb";
 
+export const HeaderDesktop = styled(HeaderWeb)`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    position: relative;
+  }
+`;
 export const DSContainerAll = styled.div`
   position: ${({ showModal }) => (showModal ? "fixed" : "relative")};
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
 `;
 
 export const DSContainer = styled.div`
   padding: 0px 36px;
+  @media (min-width: 768px) {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+  }
+`;
+export const desktopContainer = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    padding: 70px 80px;
+    background-color: #ffffff;
+    border: solid 1px #3cb43c;
+    border-radius: 28px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const DSBackButton = styled(BackButton)`
   margin-left: 18.33px;
   margin-top: 30px;
+  @media (min-width: 768px) {
+    margin: 50px 0px 0px 100px;
+  }
 `;
 
 export const DSMaterialInfo = styled(MaterialInfo)`
@@ -73,9 +107,12 @@ export const DSConfirmCollection = styled(Button)`
 export const DSCancelCollection = styled(Button)`
   background-color: #f28e36;
   margin-top: 17px;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
 `;
 
-export const DSTabBar = styled(TabBar)`
+export const tabBar = styled(TabBar)`
   margin-top: 17px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;

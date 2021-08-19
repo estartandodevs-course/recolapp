@@ -5,7 +5,8 @@ import { Button } from "../../../components/Button";
 
 export const body = styled.div`
   background-color: #fff8f4;
-  height: 100vh;
+  min-height: calc(100vh - var(--tabBarHeight));
+  overflow: auto;
   margin: 0;
   padding: 0;
 `;
@@ -20,7 +21,14 @@ export const containers = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 30px;
-  margin-top: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 1px 24px;
+  * {
+    flex-grow: 0;
+    flex-basis: auto;
+  }
+  height: 370px;
 `;
 export const valuearea = styled.div`
   display: flex;
@@ -47,10 +55,10 @@ export const kgvalue = styled.input`
 export const endPage = styled.div`
   gap: 11px;
   position: relative;
-  margin-top: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 `;
 export const turnback = styled.div`
   display: flex;

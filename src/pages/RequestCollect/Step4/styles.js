@@ -7,9 +7,9 @@ import { Scheduling } from "../../../components/Scheduling";
 
 export const body = styled.div`
   background-color: #fff8f4;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  min-height: calc(100vh - var(--tabBarHeight));
+  margin-bottom: 24px;
+  overflow: auto;
 `;
 export const backb = styled(BackButton)`
   padding-top: 17px;
@@ -30,7 +30,6 @@ export const infos = styled.div`
 `;
 export const materialsList = styled(MaterialInfo)`
   width: 300px;
-  height: 152px;
 `;
 export const infolocation = styled(Scheduling)`
   width: 300px;

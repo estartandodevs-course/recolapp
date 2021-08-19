@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 import BackButton from "../../../components/BackButton";
 import { Button } from "../../../components/Button";
+import { Input } from "../../../components/Input";
 
 export const body = styled.div`
   background-color: #fff8f4;
-  height: 100vh;
+  min-height: calc(100vh - var(--tabBarHeight));
+  overflow: auto;
   margin: 0;
   padding: 0;
   display: flex;
@@ -46,12 +48,12 @@ export const dateSpan = styled.span`
 export const hourSpan = styled.span`
   font-size: 10px;
 `;
-export const inputDate = styled.input`
+export const inputDate = styled(Input)`
   background-color: rgba(253, 229, 215, 1);
   border-radius: 8px;
   width: 300px;
 `;
-export const inputHour = styled.input`
+export const inputHour = styled(Input)`
   background-color: rgba(253, 229, 215, 1);
   border-radius: 8px;
   width: 300px;

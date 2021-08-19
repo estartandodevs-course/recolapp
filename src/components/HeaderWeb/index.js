@@ -22,7 +22,7 @@ const HeaderWeb = ({ logged = false, ...rest }) => {
           Início
         </S.HeaderWebLoggedCollect>
         <S.HeaderWebWhoWeAre>Quem somos</S.HeaderWebWhoWeAre>
-        <S.HeaderWebFrequentlyDoubts>
+        <S.HeaderWebFrequentlyDoubts onClick={() => history.push("/faq")}>
           Dúvidas Frequentes
         </S.HeaderWebFrequentlyDoubts>
       </S.HeaderWebCenterText>
