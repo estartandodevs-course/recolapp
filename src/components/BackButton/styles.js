@@ -6,6 +6,7 @@ export const Section = styled.div`
 `;
 
 export const Img = styled.img`
+  cursor: pointer;
   width: 21.33px;
   @media (min-width: 768px) {
     width: 22px;
