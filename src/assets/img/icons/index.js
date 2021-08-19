@@ -7,6 +7,11 @@ import profileInactive from "./profile-inactive.svg";
 import checkMark from "./check-mark.svg";
 import location from "./location.svg";
 import recicle from "./recicle.svg";
+import profileUser from "./profile-user.svg";
+import verify from "./verify.svg";
+import edit from "./edit.svg";
+import star from "./star.svg";
+import whatsapp from "./whatsapp.svg";
 
 export {
   homeActive,
@@ -18,4 +23,9 @@ export {
   checkMark,
   location,
   recicle,
+  profileUser,
+  verify,
+  edit,
+  star,
+  whatsapp,
 };
