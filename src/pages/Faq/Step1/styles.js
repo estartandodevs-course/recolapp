@@ -42,24 +42,16 @@ export const sectionButtons = styled.button`
   color: rgba(0, 0, 0, 1);
   font-size: 14px;
   font-weight: 700;
-  height: 45px;
   width: 300px;
   padding: 10px;
   border-radius: 8px;
   border: none;
   outline: none;
-`;
-export const sectionButtonsLarge = styled.button`
-  background-color: rgba(253, 229, 215, 1);
-  color: rgba(0, 0, 0, 1);
-  font-size: 14px;
-  font-weight: 700;
-  height: 66px;
-  width: 300px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    padding: 15px 20px;
+  }
 `;
 export const tabBar = styled(TabBar)`
   margin-top: 17px;
