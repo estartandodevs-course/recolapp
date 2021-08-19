@@ -59,11 +59,13 @@ export const HeaderProfile = styled.div`
 `;
 
 export const UserProfileImg = styled.div`
+  position: relative;
+  align-self: initial;
+  margin-right: 40px;
   @media (min-width: 768px) {
     width: 100%;
     display: flex;
     justify-content: end;
-    /* padding-top: 13px; */
   }
 `;
 
@@ -104,12 +106,10 @@ export const UserDataImgProfileVerify = styled.div`
 
 export const ContainerUser = styled.div`
   display: flex;
-  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
   width: 100%;
   justify-content: center;
-  padding-left: 40px;
 
   @media (min-width: 768px) {
     width: 100%;
@@ -226,6 +226,7 @@ export const EditContainer = styled.div`
 export const EditName = styled.img`
   width: 24px;
   margin-left: 12px;
+  cursor: pointer;
 `;
 
 export const ContainerMainBottom = styled.div`
@@ -260,7 +261,6 @@ export const TitleInfo = styled.p`
 export const ContainerAddressCompany = styled.div`
   background-color: var(--inputBackground);
   border-radius: 8px;
-  /* height: 90px; */
 
   display: flex;
   flex-direction: column;
