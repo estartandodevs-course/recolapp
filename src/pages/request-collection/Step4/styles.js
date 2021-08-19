@@ -30,7 +30,6 @@ export const infos = styled.div`
 `;
 export const materialsList = styled(MaterialInfo)`
   width: 300px;
-  height: 152px;
 `;
 export const infolocation = styled(Scheduling)`
   width: 300px;
