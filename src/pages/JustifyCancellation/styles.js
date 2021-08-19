@@ -1,12 +1,47 @@
+import { Button } from "../../components/Button";
 import styled from "styled-components";
 import { Input } from "../../components/Input";
+import { HeaderWeb } from "../../components/HeaderWeb";
+import { TabBar } from "../../components/TabBar";
+
+export const HeaderWebCancelled = styled(HeaderWeb)`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    position: relative;
+    z-index: 1;
+  }
+`;
 
 export const ContainerCancelled = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 42px 30px 0px 30px;
+
   background-color: var(--lightGray);
-  height: 100vh;
+  min-height: calc(100vh - var(--tabBarHeight));
+  overflow: auto;
+  align-items: center;
+  margin-bottom: 0;
+
+  @media (min-width: 768px) {
+    min-height: calc(100vh - var(--headerWebHeight));
+  }
+`;
+
+export const ContainerMain = styled.div`
+  padding: 30px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: var(--defaultScreenWebWidth);
+
+    background-color: #ffffff;
+    border: solid 2px #ec6f6f;
+    border-radius: 28px;
+    margin: 30px 0;
+  }
 `;
 
 export const Title = styled.div`
@@ -25,7 +60,6 @@ export const SubTitle = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  /* padding: ; */
   font-size: 17.64px;
   color: var(--textColor);
   font-weight: 400;
@@ -41,5 +75,25 @@ export const ContainerOptions = styled.div`
 
 export const InputCancelled = styled(Input)`
   color: #000000;
-  padding-bottom: 33px;
+  padding-bottom: 20px;
+
+  @media (min-width: 768px) {
+    border-radius: 12px;
+  }
+`;
+
+export const ButtonCancelled = styled(Button)`
+  @media (min-width: 768px) {
+    display: flex;
+    align-self: center;
+    border-radius: 18px;
+    max-width: 190px;
+    height: 45px;
+    font-size: 12px;
+  }
+`;
+export const TabBarCancelled = styled(TabBar)`
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
