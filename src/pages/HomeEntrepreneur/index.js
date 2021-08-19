@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../contexts";
@@ -12,7 +12,13 @@ import * as S from "./styles";
 const HomeEntrepreneur = () => {
   const history = useHistory();
 
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser, setOrder, setOrderTimestamp } =
+    useContext(UserContext);
+
+  useEffect(() => {
+    setOrder([]);
+    setOrderTimestamp("");
+  }, []);
 
   return (
     <>
