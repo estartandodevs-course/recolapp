@@ -31,9 +31,11 @@ const Home = () => {
           <S.TitleWeb>Faça parte da nossa iniciativa!</S.TitleWeb>
           <S.Underline />
           <S.Presentation>
-            <strong>Prazer, somos a Recolapp!</strong> <br /> Uma iniciativa que
-            ajuda MEIs e Microempresas a se conectarem com cooperativas de
-            reciclagem para que seus resíduos sejam coletados e reciclados.
+            <strong>Prazer, somos a Recolapp!</strong>
+            <br />
+            Uma iniciativa que ajuda MEIs e Microempresas a se conectarem com
+            cooperativas de reciclagem para que seus resíduos sejam coletados e
+            reciclados.
           </S.Presentation>
           <S.OrderCollection>
             <S.OrdemCollectionImg src={location} />
