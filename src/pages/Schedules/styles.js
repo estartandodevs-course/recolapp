@@ -1,12 +1,26 @@
 import styled from "styled-components";
 import BackButton from "../../components/BackButton";
 import { ViewDetails } from "../../components/ViewDetails";
+import { HeaderWeb } from "../../components/HeaderWeb";
+import { TabBar } from "../../components/TabBar";
+
+export const HeaderDesktop = styled(HeaderWeb)`
+  display: none;
+@media (min-width: 768px) {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+`;
 
 export const CollectionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 30px;
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const CollectionsButton = styled(BackButton)`
@@ -16,9 +30,21 @@ export const CollectionsButton = styled(BackButton)`
 
 export const ViewSettings = styled(ViewDetails)`
   margin-bottom: 48px;
+  @media (min-width: 768px) {
+    width: 30%;
+  }
 `;
 
 export const CollectionsImg = styled.img`
   margin: auto;
   margin-bottom: 41px;
+`;
+
+export const MobileTabBar = styled(TabBar)`
+  display: flex;
+  position: relative;
+  z-index: 1;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;

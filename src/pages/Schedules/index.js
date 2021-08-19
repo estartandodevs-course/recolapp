@@ -1,19 +1,25 @@
 import { useHistory } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../contexts";
 
 import * as S from "./styles";
 
 import myCollections from "../../assets/img/illustrations/meus_agendamentos.svg";
 
-import { TabBar } from "../../components/TabBar";
 import { getCollectionsByUserID } from "../../services/collections";
 
 const Schedules = () => {
   const history = useHistory();
 
-  const collections = getCollectionsByUserID(0);
+  const { user } = useContext(UserContext);
+
+  const collections = getCollectionsByUserID(user.id);
+
+  const logged = user?.name;
 
   return (
     <>
+      <S.HeaderDesktop logged={logged} />
       <S.CollectionsContainer>
         <S.CollectionsButton pageTitle="Meus agendamentos" />
         <S.CollectionsImg src={myCollections} />
@@ -25,7 +31,7 @@ const Schedules = () => {
           />
         ))}
       </S.CollectionsContainer>
-      <TabBar />
+      <S.MobileTabBar />
     </>
   );
 };
