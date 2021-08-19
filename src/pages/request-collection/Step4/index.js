@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../../../contexts";
 
-import { TabBar } from "../../../components/TabBar";
-
 import * as S from "./styles";
 
 const Step4 = ({ firstPage, nextPage, backPage, order, orderTimestamp }) => {
@@ -14,8 +12,11 @@ const Step4 = ({ firstPage, nextPage, backPage, order, orderTimestamp }) => {
 
   const orderFilter = order?.filter((item) => item.status);
 
+  const logged = user?.name || false;
+
   return (
     <>
+      <S.HeaderWebRequest logged={logged} />
       <S.body>
         <S.backb handleBack={backPage} pageTitle="Veja os detalhes do pedido" />
         <S.infos>
@@ -37,7 +38,7 @@ const Step4 = ({ firstPage, nextPage, backPage, order, orderTimestamp }) => {
         </S.confirmations>
       </S.body>
 
-      <TabBar />
+      <S.TabBarRequest />
     </>
   );
 };
