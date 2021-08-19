@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-
 import { UserContext } from "../../contexts";
 
 import Step1 from "./Step1";
@@ -9,7 +8,8 @@ import Step4 from "./Step4";
 import Step5 from "./Step5";
 
 const RequestCollect = () => {
-  const { order, setOrder } = useContext(UserContext);
+  const { order, setOrder, orderTimestamp, setOrderTimestamp } =
+    useContext(UserContext);
 
   const [page, setPage] = useState(1);
 
@@ -38,12 +38,26 @@ const RequestCollect = () => {
       <Step3
         backPage={backPage}
         nextPage={nextPage}
-        order={order}
-        setOrder={setOrder}
+        setOrderTimestamp={setOrderTimestamp}
       />
     ),
-    4: <Step4 backPage={backPage} firstPage={firstPage} nextPage={nextPage} />,
-    5: <Step5 backPage={backPage} nextPage={nextPage} />,
+    4: (
+      <Step4
+        backPage={backPage}
+        firstPage={firstPage}
+        nextPage={nextPage}
+        order={order}
+        orderTimestamp={orderTimestamp}
+      />
+    ),
+    5: (
+      <Step5
+        backPage={backPage}
+        nextPage={nextPage}
+        order={order}
+        orderTimestamp={orderTimestamp}
+      />
+    ),
   };
 
   return Steps[page];

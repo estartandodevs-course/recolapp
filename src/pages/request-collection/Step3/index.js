@@ -1,22 +1,38 @@
+import { useEffect, useState } from "react";
 import { TabBar } from "../../../components/TabBar";
 import * as S from "./styles";
 
-const Step3 = ({ nextPage, backPage }) => {
-  // const inputs = {
-  //   DATE: "date",
-  //   HOURS: "hours",
-  // };
+const Step3 = ({ nextPage, backPage, setOrderTimestamp }) => {
+  const [dateFinish, setDateFinish] = useState("");
+  const [hoursFinish, setHoursFinish] = useState("");
+  const [disable, setDisable] = useState(true);
 
-  // const onChange = (event, input) => {
-  //   switch (input) {
-  //     case inputs.DATE:
-  //       const date = parseInt(event.target.value);
-  //       const year = date.slice(0, 3);
-  //       console.log(year);
+  const inputs = {
+    DATE: "date",
+    HOURS: "hours",
+  };
 
-  //     case inputs.HOURS:
-  //   }
-  // };
+  useEffect(() => {
+    const result = new Date(`${dateFinish} ${hoursFinish}`).getTime();
+    setOrderTimestamp(result);
+    setDisable(dateFinish === "" || hoursFinish === "");
+  }, [dateFinish, hoursFinish]);
+
+  const onChange = (event, input) => {
+    switch (input) {
+      case inputs.DATE: {
+        setDateFinish(event.target.value);
+        break;
+      }
+      case inputs.HOURS: {
+        setHoursFinish(event.target.value);
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+  };
 
   return (
     <>
@@ -29,8 +45,8 @@ const Step3 = ({ nextPage, backPage }) => {
           <S.datediv>
             <S.dateSpan>Data:</S.dateSpan>
             <S.inputDate
-              // onChange={onChange}
-              // input={inputs.DATE}
+              onChange={(e) => onChange(e, inputs.DATE)}
+              input={inputs.DATE}
               type="date"
               min="2021-09-01"
               max="2022-01-01"
@@ -39,15 +55,16 @@ const Step3 = ({ nextPage, backPage }) => {
           <S.hourdiv>
             <S.hourSpan>Hora:</S.hourSpan>
             <S.inputHour
-              // onChange={onChange}
-              // input={inputs.HOURS}
+              onChange={(e) => onChange(e, inputs.HOURS)}
               type="time"
               min="08:00"
               max="17:00"
             />
           </S.hourdiv>
         </S.dateSection>
-        <S.button onClick={nextPage}>Continuar</S.button>
+        <S.button disable={disable} onClick={nextPage}>
+          Continuar
+        </S.button>
       </S.body>
       <TabBar />
     </>
