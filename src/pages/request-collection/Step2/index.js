@@ -47,6 +47,7 @@ const Step2 = ({ nextPage, backPage, firstPage, order, setOrder }) => {
                 <S.materialname>{element?.name}</S.materialname>
                 <S.kgindex>KG</S.kgindex>
                 <S.kgvalue
+                  placeholder="   1kg a 50kg"
                   onChange={(e) => onChange(element, e)}
                   type="number"
                   step="0.5"
