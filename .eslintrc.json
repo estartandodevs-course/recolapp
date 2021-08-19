@@ -1,40 +1,38 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": ["react"],
-    "rules": {
-        "react/jsx-filename-extension": [
-            1,
-            {
-              "extensions": [".js", ".jsx"]
-            }
-          ],
-          "quotes": ["error", "double"],
-          "arrow-body-style": 0,
-          "import/prefer-default-export": "off",
-          "react/prop-types": 0,
-          "react/react-in-jsx-scope": "off",
-          "object-curly-newline": ["error", {
-            "ObjectExpression": "always",
-            "ObjectPattern": { "multiline": true },
-            "ImportDeclaration": "never",
-            "ExportDeclaration": { "multiline": true, "minProperties": 3 }
-        }],
-        "linebreak-style": 0,
-        "eslint linebreak-style": [0, "error", "windows"],
-        "react/jsx-props-no-spreading": 0
-    }
+    "quotes": ["error", "double"],
+    "arrow-body-style": 0,
+    "import/prefer-default-export": "off",
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": "off",
+    "object-curly-newline": 0,
+    "linebreak-style": 0,
+    "eslint linebreak-style": [0, "error", "windows"],
+    "react/jsx-props-no-spreading": 0,
+    "no-restricted-syntax": 0,
+    "radix": 0,
+    "operator-linebreak": 0,
+    "implicit-arrow-linebreak": 0,
+    "react/jsx-curly-newline": 0,
+    "camelcase": "off"
+  }
 }
