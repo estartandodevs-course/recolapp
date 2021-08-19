@@ -6,7 +6,8 @@ import { Input } from "../../../components/Input";
 
 export const body = styled.div`
   background-color: #fff8f4;
-  height: 100vh;
+  min-height: calc(100vh - var(--tabBarHeight));
+  overflow: auto;
   margin: 0;
   padding: 0;
   display: flex;
