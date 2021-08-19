@@ -17,8 +17,8 @@ export const CollectionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 30px;
+  min-height: calc(100vh - var(--tabBarHeight));
   overflow: auto;
-  height: 100vh;
   @media (min-width: 768px) {
     align-items: center;
   }
@@ -38,7 +38,7 @@ export const ViewSettings = styled(ViewDetails)`
 
 export const CollectionsImg = styled.img`
   margin: auto;
-  margin-bottom: 41px;
+  /* margin-bottom: 41px; */
 `;
 
 export const MobileTabBar = styled(TabBar)`

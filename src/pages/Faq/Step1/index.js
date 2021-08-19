@@ -31,8 +31,8 @@ const Step1 = ({ setPage }) => {
             Qual a importância dos catadores para a reciclagem?
           </S.sectionButtonsLarge>
         </S.pageContent>
-        <TabBar />
       </S.body>
+      <TabBar />
     </>
   );
 };
