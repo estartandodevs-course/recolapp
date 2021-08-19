@@ -9,7 +9,7 @@ import { States } from "../../mock/Select/states";
 import { typeUser } from "../../mock/Select/typeUser";
 
 const Register = () => {
-  const [errorRegister, SetErrorDisable] = useState({
+  const [errorRegister, setErrorDisable] = useState({
     message: "",
     status: false,
   });
@@ -29,7 +29,7 @@ const Register = () => {
     typeUser: "",
     boxCheck: false,
   });
-  const [password, SetPassword] = useState({
+  const [password, setPassword] = useState({
     one: "",
     two: "",
   });
@@ -38,7 +38,7 @@ const Register = () => {
 
   const finishRegister = () => {
     if (passwordMatch(password.one, password.two) === false) {
-      SetErrorDisable({
+      setErrorDisable({
         message: "Senhas não são iguais!",
         status: true,
       });
@@ -113,7 +113,9 @@ const Register = () => {
             <S.InputRegister
               id="password1"
               value={password.one}
-              onChange={(e) => SetPassword({ ...password, one: e.target.value })}
+              onChange={(e) =>
+                setPassword({ ...password, one: e.target.value })
+              }
               label="Senha"
               type="password"
             />
@@ -122,7 +124,9 @@ const Register = () => {
             <S.InputRegister
               id="password2"
               value={password.two}
-              onChange={(e) => SetPassword({ ...password, two: e.target.value })}
+              onChange={(e) =>
+                setPassword({ ...password, two: e.target.value })
+              }
               label="Confirmar Senha"
               type="password"
             />
@@ -130,7 +134,9 @@ const Register = () => {
               mask="(99)99999-9999"
               id="celular"
               value={data.cellphone}
-              onChange={(e) => setData({ ...data, cellphone: removeMask(e.target.value) })}
+              onChange={(e) =>
+                setData({ ...data, cellphone: removeMask(e.target.value) })
+              }
               label="Celular"
             />
           </S.PassCel>
@@ -154,7 +160,9 @@ const Register = () => {
                 mask="99999-999"
                 id="cep"
                 value={data.zip}
-                onChange={(e) => setData({ ...data, zip: removeMask(e.target.value) })}
+                onChange={(e) =>
+                  setData({ ...data, zip: removeMask(e.target.value) })
+                }
                 label="CEP"
               />
               <S.SelectStates
