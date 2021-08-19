@@ -24,6 +24,7 @@ const Routes = () => {
             <Route exact path="/request-collect" component={R.RequestCollect} />
             <Route exact path="/cancelled" component={R.Cancelled} />
             <Route exact path="/collect-confirm" component={R.CollectConfirm} />
+            <Route exact path="/profile" component={R.Profile} />
             <Route
               exact
               path="/collect-cancelled"

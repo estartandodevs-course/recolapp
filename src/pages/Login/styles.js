@@ -33,7 +33,7 @@ export const BackButtonLogin = styled(BackButton)`
   align-self: flex-start;
 
   @media (min-width: 768px) {
-    margin: 50px 0px 0px 100px;
+    margin: 50px 0px 55px 100px;
   }
 `;
 
