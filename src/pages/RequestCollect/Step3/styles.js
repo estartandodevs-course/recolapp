@@ -1,8 +1,19 @@
 import styled from "styled-components";
 
+import { HeaderWeb } from "../../../components/HeaderWeb";
 import BackButton from "../../../components/BackButton";
 import { Button } from "../../../components/Button";
 import { Input } from "../../../components/Input";
+import { TabBar } from "../../../components/TabBar";
+
+export const HeaderWebRequest = styled(HeaderWeb)`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    position: relative;
+    z-index: 1;
+  }
+`;
 
 export const body = styled.div`
   background-color: #fff8f4;
@@ -62,4 +73,10 @@ export const dateSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const TabBarRequest = styled(TabBar)`
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;

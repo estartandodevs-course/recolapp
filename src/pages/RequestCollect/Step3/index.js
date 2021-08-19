@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import { TabBar } from "../../../components/TabBar";
+
 import * as S from "./styles";
+
+import { useContext } from "react";
+import { UserContext } from "../../../contexts";
 
 const Step3 = ({ nextPage, backPage, setOrderTimestamp }) => {
   const [dateFinish, setDateFinish] = useState("");
@@ -34,8 +37,12 @@ const Step3 = ({ nextPage, backPage, setOrderTimestamp }) => {
     }
   };
 
+  const { user } = useContext(UserContext);
+  const logged = user?.name || false;
+
   return (
     <>
+      <S.HeaderWebRequest logged={logged} />
       <S.body>
         <S.backb
           handleBack={backPage}
@@ -66,7 +73,7 @@ const Step3 = ({ nextPage, backPage, setOrderTimestamp }) => {
           Continuar
         </S.button>
       </S.body>
-      <TabBar />
+      <S.TabBarRequest />
     </>
   );
 };

@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 import * as S from "./styles";
 
 import plusicon from "../../../assets/img/icons/+icon.svg";
-import { TabBar } from "../../../components/TabBar";
+
+import { useContext } from "react";
+import { UserContext } from "../../../contexts";
 
 const Step2 = ({ nextPage, backPage, firstPage, order, setOrder }) => {
   const [disable, setDisable] = useState(true);
@@ -33,8 +35,12 @@ const Step2 = ({ nextPage, backPage, firstPage, order, setOrder }) => {
     });
   };
 
+  const { user } = useContext(UserContext);
+  const logged = user?.name || false;
+
   return (
     <>
+      <S.HeaderWebRequest logged={logged} />
       <S.body>
         <S.backb
           handleBack={backPage}
@@ -69,7 +75,7 @@ const Step2 = ({ nextPage, backPage, firstPage, order, setOrder }) => {
           </S.button>
         </S.endPage>
       </S.body>
-      <TabBar />
+      <S.TabBarRequest />
     </>
   );
 };

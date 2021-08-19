@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { SelectMaterial } from "../../../components/SelectMaterial";
-import { TabBar } from "../../../components/TabBar";
 import { getDefaultMaterials } from "../../../services/defaultMaterials";
+import { useContext } from "react";
+import { UserContext } from "../../../contexts";
 
 import * as S from "./styles";
 
@@ -25,13 +25,20 @@ const Step1 = ({ nextPage, order, setOrder }) => {
     setDisable(materialsQuantity <= 0);
   }, [material]);
 
+  const { user } = useContext(UserContext);
+  const logged = user?.name || false;
+
   return (
     <>
+      <S.HeaderWebRequest logged={logged} />
       <S.body>
         <S.backb pageTitle="Informe os materiais que serão coletados" />
         <S.materialselect>
-          <span>Escolha quantas opções desejar.</span>
-          <SelectMaterial material={material} setMaterial={setMaterial} />
+          <S.materialspan>Escolha quantas opções desejar.</S.materialspan>
+          <S.SelectMaterialRerquest
+            material={material}
+            setMaterial={setMaterial}
+          />
         </S.materialselect>
         <S.bottonpage>
           <S.itensselected>
@@ -43,7 +50,7 @@ const Step1 = ({ nextPage, order, setOrder }) => {
           </S.button>
         </S.bottonpage>
       </S.body>
-      <TabBar />
+      <S.TabBarRequest />
     </>
   );
 };
