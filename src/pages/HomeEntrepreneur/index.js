@@ -14,6 +14,8 @@ const HomeEntrepreneur = () => {
   const { user, setUser, setOrder, setOrderTimestamp } =
     useContext(UserContext);
 
+  const islogged = user?.name || false;
+
   useEffect(() => {
     setOrder([]);
     setOrderTimestamp("");
@@ -22,7 +24,7 @@ const HomeEntrepreneur = () => {
   return (
     <>
       <S.PageE>
-        <S.HeaderDesktop logged={isLogged} />
+        <S.HeaderDesktop logged={islogged} />
 
         <S.BackButtonHE
           handleBack={() => signOut(history, setUser)}
