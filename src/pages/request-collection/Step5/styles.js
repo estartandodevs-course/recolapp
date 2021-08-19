@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
+import { HeaderWeb } from "../../../components/HeaderWeb";
 import { Button } from "../../../components/Button";
+
+export const HeaderWebRequest = styled(HeaderWeb)`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    position: relative;
+    z-index: 1;
+  }
+`;
 
 export const body = styled.div`
   background-color: #fff8f4;
@@ -11,7 +21,12 @@ export const body = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 70px;
+
+  @media (min-width: 768px) {
+    min-height: calc(100vh - var(--headerWebHeight));
+  }
 `;
+
 export const warn = styled.span`
   margin-top: 100px;
   color: rgba(79, 79, 79, 1);
