@@ -1,4 +1,6 @@
 import { useHistory } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../contexts";
 
 import * as S from "./styles";
 
@@ -9,11 +11,15 @@ import { getCollectionsByUserID } from "../../services/collections";
 const Schedules = () => {
   const history = useHistory();
 
-  const collections = getCollectionsByUserID(0);
+  const { user } = useContext(UserContext);
+
+  const collections = getCollectionsByUserID(user.id);
+
+  const logged = user?.name;
 
   return (
     <>
-      <S.HeaderDesktop logged="true" />
+      <S.HeaderDesktop logged={logged} />
       <S.CollectionsContainer>
         <S.CollectionsButton pageTitle="Meus agendamentos" />
         <S.CollectionsImg src={myCollections} />
