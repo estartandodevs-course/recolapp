@@ -37,7 +37,10 @@ const HeaderWeb = ({ logged = false, ...rest }) => {
       </S.HeaderWebRight>
 
       <S.HeaderWebLogged logged={logged}>
-        <S.HeaderWebLoggedImage src={profile} />
+        <S.HeaderWebLoggedImage
+          src={profile}
+          onClick={() => history.push("/profile")}
+        />
       </S.HeaderWebLogged>
     </S.ContainerHeaderWeb>
   );
