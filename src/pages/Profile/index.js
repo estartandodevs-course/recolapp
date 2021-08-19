@@ -1,9 +1,9 @@
+import { useContext } from "react";
 import * as S from "./styles";
 
 import { verify, edit, star, whatsapp } from "../../assets/img/icons";
 
 import { profile } from "../../assets/img/illustrations/index";
-import { useContext } from "react";
 import { UserContext } from "../../contexts";
 
 const Profile = () => {
