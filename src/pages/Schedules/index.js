@@ -8,7 +8,6 @@ import * as S from "./styles";
 
 import myCollections from "../../assets/img/illustrations/meus_agendamentos.svg";
 
-import { TabBar } from "../../components/TabBar";
 import { getCollectionsByUserID } from "../../services/collections";
 
 const Schedules = () => {

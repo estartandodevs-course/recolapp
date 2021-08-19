@@ -20,6 +20,7 @@ const Routes = () => {
             <Route exact path="/home" component={R.HomeEntrepreneur} />
             <Route exact path="/schedules/:id" component={R.SchedulesDetails} />
             <Route exact path="/schedules" component={R.Schedules} />
+            <Route exact path="/faq" component={R.Faq} />
             <Route exact path="/request-collect" component={R.RequestCollect} />
             <Route exact path="/cancelled" component={R.Cancelled} />
             <Route exact path="/collect-confirm" component={R.CollectConfirm} />
@@ -28,6 +29,7 @@ const Routes = () => {
               path="/collect-cancelled"
               component={R.CollectCancelled}
             />
+
             <Redirect to="/home" />
           </>
         ) : (

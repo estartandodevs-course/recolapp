@@ -4,6 +4,7 @@ import HomeEntrepreneur from "./HomeEntrepreneur";
 import SchedulesDetails from "./SchedulesDetails";
 import Schedules from "./Schedules";
 import Login from "./Login";
+import Faq from "./Faq";
 import RequestCollect from "./request-collection";
 import CollectConfirm from "./CollectionConfirm";
 import CollectCancelled from "./CollectionCancelled";
@@ -16,6 +17,7 @@ export {
   Register,
   Schedules,
   SchedulesDetails,
+  Faq,
   RequestCollect,
   CollectConfirm,
   CollectCancelled,
