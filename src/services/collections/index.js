@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 
-import { Settings } from "../../Settings";
+import { SETTINGS } from "../../settings";
 
 export const getCollectionsByUserID = (user_id) => {
   const collections =
-    JSON.parse(localStorage.getItem(Settings.TABLES_NAME.COLLECTIONS)) || [];
+    JSON.parse(localStorage.getItem(SETTINGS.TABLES_NAME.COLLECTIONS)) || [];
   const response = collections.filter((collect) => collect.user_id === user_id);
   return response;
 };
 
 export const getCollectByID = (collect_id) => {
   const collections =
-    JSON.parse(localStorage.getItem(Settings.TABLES_NAME.COLLECTIONS)) || [];
+    JSON.parse(localStorage.getItem(SETTINGS.TABLES_NAME.COLLECTIONS)) || [];
 
   const response = collections.find(
     (collect) => collect.collection_id === collect_id
