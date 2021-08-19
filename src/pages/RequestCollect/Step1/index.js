@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import { getDefaultMaterials } from "../../../services/defaultMaterials";
-import { useContext } from "react";
 import { UserContext } from "../../../contexts";
 
 import * as S from "./styles";
@@ -33,22 +32,26 @@ const Step1 = ({ nextPage, order, setOrder }) => {
       <S.HeaderWebRequest logged={logged} />
       <S.body>
         <S.backb pageTitle="Informe os materiais que serão coletados" />
-        <S.materialselect>
-          <S.materialspan>Escolha quantas opções desejar.</S.materialspan>
-          <S.SelectMaterialRerquest
-            material={material}
-            setMaterial={setMaterial}
-          />
-        </S.materialselect>
-        <S.bottonpage>
-          <S.itensselected>
-            <S.indicator>Itens selecionados</S.indicator>
-            <S.spannum>{materialsQuantity}</S.spannum>
-          </S.itensselected>
-          <S.button disable={disable} onClick={nextPage}>
-            Confirme
-          </S.button>
-        </S.bottonpage>
+        <S.desktopAling>
+          <S.desktopContainer>
+            <S.materialselect>
+              <S.materialspan>Escolha quantas opções desejar.</S.materialspan>
+              <S.SelectMaterialRerquest
+                material={material}
+                setMaterial={setMaterial}
+              />
+            </S.materialselect>
+            <S.bottonpage>
+              <S.itensselected>
+                <S.indicator>Itens selecionados</S.indicator>
+                <S.spannum>{materialsQuantity}</S.spannum>
+              </S.itensselected>
+              <S.button disable={disable} onClick={nextPage}>
+                Confirme
+              </S.button>
+            </S.bottonpage>
+          </S.desktopContainer>
+        </S.desktopAling>
       </S.body>
       <S.TabBarRequest />
     </>

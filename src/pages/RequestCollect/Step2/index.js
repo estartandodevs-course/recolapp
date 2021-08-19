@@ -46,34 +46,38 @@ const Step2 = ({ nextPage, backPage, firstPage, order, setOrder }) => {
           handleBack={backPage}
           pageTitle="Informe a quantidade média em quilos de cada material"
         />
-        <S.containers>
-          {orderFilter.map((element) => {
-            return (
-              <S.valuearea key={element?.name}>
-                <S.materialname>{element?.name}</S.materialname>
-                <S.kgindex>KG</S.kgindex>
-                <S.kgvalue
-                  placeholder="   1kg a 50kg"
-                  onChange={(e) => onChange(element, e)}
-                  type="number"
-                  step="0.5"
-                  min="1"
-                  max="50"
-                />
-              </S.valuearea>
-            );
-          })}
-        </S.containers>
+        <S.desktopAling>
+          <S.desktopContainer>
+            <S.containers>
+              {orderFilter.map((element) => {
+                return (
+                  <S.valuearea key={element?.name}>
+                    <S.materialname>{element?.name}</S.materialname>
+                    <S.kgindex>KG</S.kgindex>
+                    <S.kgvalue
+                      placeholder="   1kg a 50kg"
+                      onChange={(e) => onChange(element, e)}
+                      type="number"
+                      step="0.5"
+                      min="1"
+                      max="50"
+                    />
+                  </S.valuearea>
+                );
+              })}
+            </S.containers>
 
-        <S.endPage>
-          <S.turnback onClick={firstPage}>
-            <S.turnbackbutton type="image" src={plusicon} alt="plusicon" />
-            <S.buttonspan>Adicionar outro item</S.buttonspan>
-          </S.turnback>
-          <S.button disable={disable} onClick={nextPage}>
-            Continuar
-          </S.button>
-        </S.endPage>
+            <S.endPage>
+              <S.turnback onClick={firstPage}>
+                <S.turnbackbutton type="image" src={plusicon} alt="plusicon" />
+                <S.buttonspan>Adicionar outro item</S.buttonspan>
+              </S.turnback>
+              <S.button disable={disable} onClick={nextPage}>
+                Continuar
+              </S.button>
+            </S.endPage>
+          </S.desktopContainer>
+        </S.desktopAling>
       </S.body>
       <S.TabBarRequest />
     </>

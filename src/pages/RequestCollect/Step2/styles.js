@@ -35,11 +35,12 @@ export const containers = styled.div`
   margin-top: 10px;
   flex-wrap: wrap;
   gap: 1px 24px;
-  * {
-    flex-grow: 0;
-    flex-basis: auto;
-  }
   height: 370px;
+  @media (min-width: 768px) {
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+  }
 `;
 export const valuearea = styled.div`
   display: flex;
@@ -87,10 +88,30 @@ export const buttonspan = styled.span`
 `;
 export const button = styled(Button)`
   width: 300px;
+  @media (min-width: 768px) {
+    width: 400px;
+  }
 `;
 
 export const TabBarRequest = styled(TabBar)`
   @media (min-width: 768px) {
     display: none;
+  }
+`;
+export const desktopContainer = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 600px;
+    padding: 70px 80px;
+    border-radius: 28px;
+    margin-bottom: 30px;
+  }
+`;
+export const desktopAling = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
   }
 `;

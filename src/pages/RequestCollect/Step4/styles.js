@@ -66,3 +66,22 @@ export const TabBarRequest = styled(TabBar)`
     display: none;
   }
 `;
+export const desktopContainer = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    padding: 70px 80px;
+    background-color: #ffffff;
+    border: solid 1px #3cb43c;
+    border-radius: 28px;
+    margin-bottom: 30px;
+  }
+`;
+export const desktopAling = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
+`;

@@ -19,23 +19,27 @@ const Step4 = ({ firstPage, nextPage, backPage, order, orderTimestamp }) => {
       <S.HeaderWebRequest logged={logged} />
       <S.body>
         <S.backb handleBack={backPage} pageTitle="Veja os detalhes do pedido" />
-        <S.infos>
-          <S.materialsList info={orderFilter} />
-          <S.infolocation
-            street={user?.street}
-            date={dateCollect}
-            hour={hourCollect}
-          />
-        </S.infos>
-        <S.confirmations>
-          <S.confirmationspan>
-            Deseja confirmar o agendamento ?
-          </S.confirmationspan>
-          <S.button onClick={nextPage}>Sim, quero agendar</S.button>
-          <S.button bgColor="rgba(242, 142, 54, 1)" onClick={firstPage}>
-            Não, quero corrigir
-          </S.button>
-        </S.confirmations>
+        <S.desktopAling>
+          <S.desktopContainer>
+            <S.infos>
+              <S.materialsList info={orderFilter} />
+              <S.infolocation
+                street={user?.street}
+                date={dateCollect}
+                hour={hourCollect}
+              />
+            </S.infos>
+            <S.confirmations>
+              <S.confirmationspan>
+                Deseja confirmar o agendamento ?
+              </S.confirmationspan>
+              <S.button onClick={nextPage}>Sim, quero agendar</S.button>
+              <S.button bgColor="rgba(242, 142, 54, 1)" onClick={firstPage}>
+                Não, quero corrigir
+              </S.button>
+            </S.confirmations>
+          </S.desktopContainer>
+        </S.desktopAling>
       </S.body>
 
       <S.TabBarRequest />

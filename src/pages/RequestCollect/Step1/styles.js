@@ -41,7 +41,6 @@ export const materialspan = styled.p`
   font-weight: 400;
   font-size: 14px;
   text-align: justify;
-
   @media (min-width: 768px) {
     width: 500px;
   }
@@ -53,10 +52,8 @@ export const materialselect = styled.div`
   width: 100%;
   margin-bottom: 100px;
   align-items: center;
-
   @media (min-width: 768px) {
-    /* width: 500px; */
-    /* padding: ; */
+    margin-bottom: 30px;
   }
 `;
 
@@ -84,18 +81,44 @@ export const spannum = styled.span`
   padding: 2px 10px 2px 10px;
   border: 1px solid #ffb06b;
   border-radius: 8px;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 export const button = styled(Button)`
   width: 300px;
+  @media (min-width: 768px) {
+    width: 400px;
+  }
 `;
 export const indicator = styled.span`
   color: rgba(130, 130, 130, 1);
   font-size: 16px;
   font-weight: 700;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const TabBarRequest = styled(TabBar)`
   @media (min-width: 768px) {
     display: none;
+  }
+`;
+export const desktopContainer = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    padding: 70px 80px;
+    border-radius: 28px;
+    margin-bottom: 30px;
+  }
+`;
+export const desktopAling = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
   }
 `;
