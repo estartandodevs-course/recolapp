@@ -16,9 +16,9 @@ export const HeaderDesktop = styled(HeaderWeb)`
 export const CollectionsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin: 0 30px;
   overflow: auto;
+  height: 100vh;
   @media (min-width: 768px) {
     align-items: center;
   }

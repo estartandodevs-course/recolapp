@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../contexts";
@@ -17,10 +15,13 @@ const Schedules = () => {
 
   const collections = getCollectionsByUserID(user.id);
 
+  const logged = user?.name;
+
   return (
     <>
       {collections && (
         <>
+          <S.HeaderDesktop logged={logged} />
           <S.CollectionsContainer>
             <S.CollectionsButton pageTitle="Meus agendamentos" />
             <S.CollectionsImg src={myCollections} />
