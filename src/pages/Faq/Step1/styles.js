@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import BackButton from "../../../components/BackButton";
+import { TabBar } from "../../../components/TabBar";
+import { HeaderWeb } from "../../../components/HeaderWeb";
 
+export const HeaderDesktop = styled(HeaderWeb)`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
+    position: relative;
+  }
+`;
 export const body = styled.div`
   background-color: #fff8f4;
   display: flex;
@@ -46,4 +55,29 @@ export const sectionButtonsLarge = styled.button`
   border-radius: 8px;
   border: none;
   outline: none;
+`;
+export const tabBar = styled(TabBar)`
+  margin-top: 17px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+export const desktopContainer = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    padding: 70px 80px;
+    /* background-color: #ffffff; */
+    /* border: solid 1px #3cb43c; */
+    border-radius: 28px;
+    margin-bottom: 30px;
+  }
+`;
+export const desktopAling = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
