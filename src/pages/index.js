@@ -5,10 +5,11 @@ import SchedulesDetails from "./SchedulesDetails";
 import Schedules from "./Schedules";
 import Login from "./Login";
 import Faq from "./Faq";
-import RequestCollect from "./request-collection";
+import RequestCollect from "./RequestCollect";
 import CollectConfirm from "./CollectionConfirm";
 import CollectCancelled from "./CollectionCancelled";
 import Cancelled from "./JustifyCancellation";
+import Profile from "./Profile";
 
 export {
   Home,
@@ -22,4 +23,5 @@ export {
   CollectConfirm,
   CollectCancelled,
   Cancelled,
+  Profile,
 };
