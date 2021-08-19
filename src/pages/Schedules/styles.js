@@ -6,11 +6,11 @@ import { TabBar } from "../../components/TabBar";
 
 export const HeaderDesktop = styled(HeaderWeb)`
   display: none;
-@media (min-width: 768px) {
-  display: flex;
-  position: relative;
-  z-index: 1;
-}
+  @media (min-width: 768px) {
+    display: flex;
+    position: relative;
+    z-index: 1;
+  }
 `;
 
 export const CollectionsContainer = styled.div`
@@ -18,6 +18,7 @@ export const CollectionsContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin: 0 30px;
+  overflow: auto;
   @media (min-width: 768px) {
     align-items: center;
   }
@@ -41,9 +42,6 @@ export const CollectionsImg = styled.img`
 `;
 
 export const MobileTabBar = styled(TabBar)`
-  display: flex;
-  position: relative;
-  z-index: 1;
   @media (min-width: 768px) {
     display: none;
   }

@@ -32,7 +32,7 @@ const Schedules = () => {
               />
             ))}
           </S.CollectionsContainer>
-          <TabBar />
+          <S.MobileTabBar />
         </>
       )}
     </>
