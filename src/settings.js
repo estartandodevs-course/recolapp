@@ -1,4 +1,4 @@
-export const Settings = {
+export const SETTINGS = {
   TABLES_NAME: {
     COLLECTIONS: "collections",
   },
