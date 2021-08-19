@@ -25,6 +25,11 @@ export const backB = styled(BackButton)`
   margin-left: 13.33px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
+  margin-left: 18.33px;
+  margin-top: 30px;
+  @media (min-width: 768px) {
+    margin: 50px 0px 50px 100px;
+  }
 `;
 export const pageContent = styled.div`
   display: flex;
@@ -69,8 +74,6 @@ export const desktopContainer = styled.div`
     position: relative;
     width: 400px;
     padding: 70px 80px;
-    /* background-color: #ffffff; */
-    /* border: solid 1px #3cb43c; */
     border-radius: 28px;
     margin-bottom: 30px;
   }
