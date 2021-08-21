@@ -15,67 +15,96 @@ export const HeaderWebRequest = styled(HeaderWeb)`
   }
 `;
 
-export const body = styled.div`
+export const Body = styled.div`
   background-color: #fff8f4;
   min-height: calc(100vh - var(--tabBarHeight));
+  width: 100%;
   overflow: auto;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    min-height: calc(100vh - var(--headerWebHeight));
+  }
 `;
-export const backb = styled(BackButton)`
+export const BackB = styled(BackButton)`
   padding-top: 17px;
-  margin-bottom: 8px;
+  padding-bottom: 42px;
   margin-left: 13.33px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
-`;
-export const button = styled(Button)`
-  width: 300px;
-  margin-top: 300px;
+
   @media (min-width: 768px) {
-    width: 400px;
-    margin-top: 100px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: flex-start;
   }
 `;
-export const submitbutton = styled.input`
+export const ButtonConfirm = styled(Button)`
+  width: 300px;
+  margin-top: 250px;
+  @media (min-width: 768px) {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+`;
+export const SubmitButton = styled.input`
   display: none;
 `;
 
-export const datediv = styled.div`
+export const DateDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    display: flex;
+    padding-bottom: 0px;
+  }
+`;
+export const HourDiv = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const hourdiv = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-export const dateSpan = styled.span`
+export const DateSpan = styled.span`
   font-size: 10px;
 `;
-export const hourSpan = styled.span`
+export const HourSpan = styled.span`
   font-size: 10px;
 `;
-export const inputDate = styled(Input)`
+export const InputDate = styled(Input)`
   background-color: rgba(253, 229, 215, 1);
   border-radius: 8px;
   width: 300px;
+  @media (min-width: 768px) {
+    width: 250px;
+  }
 `;
-export const inputHour = styled(Input)`
+export const InputHour = styled(Input)`
   background-color: rgba(253, 229, 215, 1);
   border-radius: 8px;
   width: 300px;
+  @media (min-width: 768px) {
+    width: 250px;
+  }
 `;
-export const dateSection = styled.div`
+export const DateSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 150px;
+  justify-content: space-between;
+
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    margin-bottom: 265px;
   }
 `;
 
@@ -84,20 +113,25 @@ export const TabBarRequest = styled(TabBar)`
     display: none;
   }
 `;
-export const desktopContainer = styled.div`
+export const DesktopContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
-    position: relative;
-    width: 600px;
-    padding: 70px 80px;
-    border-radius: 28px;
-    margin-bottom: 30px;
+    justify-content: center;
   }
 `;
-export const desktopAling = styled.div`
+export const DesktopAling = styled.div`
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
+  }
+`;
+
+export const ContainerMain = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
   }
 `;
