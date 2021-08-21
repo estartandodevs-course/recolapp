@@ -1,12 +1,11 @@
 /* eslint-disable */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
 import * as S from "./styles";
 
 import plusicon from "../../../assets/img/icons/+icon.svg";
 
-import { useContext } from "react";
 import { UserContext } from "../../../contexts";
 
 const Step2 = ({ nextPage, backPage, firstPage, order, setOrder }) => {
@@ -41,44 +40,46 @@ const Step2 = ({ nextPage, backPage, firstPage, order, setOrder }) => {
   return (
     <>
       <S.HeaderWebRequest logged={logged} />
-      <S.body>
-        <S.backb
-          handleBack={backPage}
-          pageTitle="Informe a quantidade média em quilos de cada material"
-        />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.containers>
-              {orderFilter.map((element) => {
-                return (
-                  <S.valuearea key={element?.name}>
-                    <S.materialname>{element?.name}</S.materialname>
-                    <S.kgindex>KG</S.kgindex>
-                    <S.kgvalue
-                      placeholder="   1kg a 50kg"
-                      onChange={(e) => onChange(element, e)}
-                      type="number"
-                      step="0.5"
-                      min="1"
-                      max="50"
-                    />
-                  </S.valuearea>
-                );
-              })}
-            </S.containers>
+      <S.DesktopContainer>
+        <S.DesktopAling>
+          <S.Body>
+            <S.BackB
+              handleBack={backPage}
+              pageTitle="Informe a quantidade média em quilos de cada material"
+            />
+            <S.ContainerMaterials>
+              <S.Containers>
+                {orderFilter.map((element) => {
+                  return (
+                    <S.ValueArea key={element?.name}>
+                      <S.MaterialName>{element?.name}</S.MaterialName>
+                      <S.KgIndex>kg</S.KgIndex>
+                      <S.KgValue
+                        placeholder="1kg a 50kg"
+                        onChange={(e) => onChange(element, e)}
+                        type="number"
+                        step="0.5"
+                        min="1"
+                        max="50"
+                      />
+                    </S.ValueArea>
+                  );
+                })}
+              </S.Containers>
+            </S.ContainerMaterials>
 
-            <S.endPage>
-              <S.turnback onClick={firstPage}>
-                <S.turnbackbutton type="image" src={plusicon} alt="plusicon" />
-                <S.buttonspan>Adicionar outro item</S.buttonspan>
-              </S.turnback>
-              <S.button disable={disable} onClick={nextPage}>
+            <S.EndPage>
+              <S.TurnBack onClick={firstPage}>
+                <S.TurnBackButton type="image" src={plusicon} alt="plusicon" />
+                <S.ButtonSpan>Adicionar outro item</S.ButtonSpan>
+              </S.TurnBack>
+              <S.ButtonConfirm disable={disable} onClick={nextPage}>
                 Continuar
-              </S.button>
-            </S.endPage>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ButtonConfirm>
+            </S.EndPage>
+          </S.Body>
+        </S.DesktopAling>
+      </S.DesktopContainer>
       <S.TabBarRequest />
     </>
   );
