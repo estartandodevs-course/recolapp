@@ -19,8 +19,9 @@ export const GlobalStyles = createGlobalStyle`
         --textColor: #4f4f4f;
         --middleOrange: #FFB06B;
         --lightTextColor: #ffffff;
-        
+
         --tabBarHeight: 64px;
+        --headerWebHeight: 80px;
         --defaultScreenWebWidth: 400px;
     }
 
