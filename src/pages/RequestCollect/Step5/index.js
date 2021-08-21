@@ -28,13 +28,17 @@ const Step5 = ({ order, orderTimestamp }) => {
   return (
     <>
       <S.HeaderWebRequest logged={logged} />
-      <S.body>
-        <S.warn>Agendamento realizado com sucesso!</S.warn>
-        <S.ilustration src={Recycling} alt="recycling ilustration" />
-        <S.button onClick={() => history.push("/home")}>
-          Voltar para tela inicial
-        </S.button>
-      </S.body>
+      <S.DesktopContainer>
+        <S.DesktopAling>
+          <S.Body>
+            <S.Title>Agendamento realizado com sucesso!</S.Title>
+            <S.Ilustration src={Recycling} alt="recycling ilustration" />
+            <S.ButtonFinish onClick={() => history.push("/home")}>
+              Voltar para tela inicial
+            </S.ButtonFinish>
+          </S.Body>
+        </S.DesktopAling>
+      </S.DesktopContainer>
     </>
   );
 };
