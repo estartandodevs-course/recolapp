@@ -81,8 +81,8 @@ const SchedulesDetails = () => {
             </S.DSCancelCollection>
           </S.desktopContainer>
         </S.DSContainer>
+        <S.tabBar />
       </S.DSContainerAll>
-      <S.tabBar />
     </>
   );
 };
