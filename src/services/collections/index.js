@@ -37,7 +37,7 @@ export const createCollect = ({ user, order, orderTimestamp }) => {
 
   collections.push(collect);
   localStorage.setItem(
-    Settings.TABLES_NAME.COLLECTIONS,
+    SETTINGS.TABLES_NAME.COLLECTIONS,
     JSON.stringify(collections)
   );
   return collect;
