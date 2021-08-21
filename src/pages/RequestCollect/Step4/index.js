@@ -17,30 +17,31 @@ const Step4 = ({ firstPage, nextPage, backPage, order, orderTimestamp }) => {
   return (
     <>
       <S.HeaderWebRequest logged={logged} />
-      <S.body>
-        <S.backb handleBack={backPage} pageTitle="Veja os detalhes do pedido" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.infos>
-              <S.materialsList info={orderFilter} />
-              <S.infolocation
+      <S.Body>
+        <S.BackB handleBack={backPage} pageTitle="Veja os detalhes do pedido" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.TitlePage>Veja os detalhes do pedido:</S.TitlePage>
+            <S.Infos>
+              <S.MaterialsList info={orderFilter} />
+              <S.InfoLocation
                 street={user?.street}
                 date={dateCollect}
                 hour={hourCollect}
               />
-            </S.infos>
-            <S.confirmations>
-              <S.confirmationspan>
+            </S.Infos>
+            <S.Confirmations>
+              <S.ConfirmationSpan>
                 Deseja confirmar o agendamento ?
-              </S.confirmationspan>
-              <S.button onClick={nextPage}>Sim, quero agendar</S.button>
-              <S.button bgColor="rgba(242, 142, 54, 1)" onClick={firstPage}>
+              </S.ConfirmationSpan>
+              <S.ButtonYes onClick={nextPage}>Sim, quero agendar</S.ButtonYes>
+              <S.ButtonNo bgColor="rgba(242, 142, 54, 1)" onClick={firstPage}>
                 Não, quero corrigir
-              </S.button>
-            </S.confirmations>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ButtonNo>
+            </S.Confirmations>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
 
       <S.TabBarRequest />
     </>
