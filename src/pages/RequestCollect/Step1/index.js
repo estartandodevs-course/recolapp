@@ -30,29 +30,29 @@ const Step1 = ({ nextPage, order, setOrder }) => {
   return (
     <>
       <S.HeaderWebRequest logged={logged} />
-      <S.body>
-        <S.backb pageTitle="Informe os materiais que serão coletados" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.materialselect>
-              <S.materialspan>Escolha quantas opções desejar.</S.materialspan>
+      <S.Body>
+        <S.BackB pageTitle="Informe os materiais que serão coletados" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.MaterialSelect>
+              <S.MaterialSpan>Escolha quantas opções desejar.</S.MaterialSpan>
               <S.SelectMaterialRerquest
                 material={material}
                 setMaterial={setMaterial}
               />
-            </S.materialselect>
-            <S.bottonpage>
-              <S.itensselected>
-                <S.indicator>Itens selecionados</S.indicator>
-                <S.spannum>{materialsQuantity}</S.spannum>
-              </S.itensselected>
-              <S.button disable={disable} onClick={nextPage}>
+            </S.MaterialSelect>
+            <S.BottonPage>
+              <S.ItensSelected>
+                <S.Indicator>Itens selecionados</S.Indicator>
+                <S.SpanNum>{materialsQuantity}</S.SpanNum>
+              </S.ItensSelected>
+              <S.ButtonConfirm disable={disable} onClick={nextPage}>
                 Confirme
-              </S.button>
-            </S.bottonpage>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ButtonConfirm>
+            </S.BottonPage>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
       <S.TabBarRequest />
     </>
   );
