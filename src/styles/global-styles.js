@@ -22,7 +22,8 @@ export const GlobalStyles = createGlobalStyle`
 
         --tabBarHeight: 64px;
         --headerWebHeight: 80px;
-        --defaultScreenWebWidth: 400px;
+        --defaultScreenWebWidth: 600px;
+
     }
 
     * {
