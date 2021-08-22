@@ -46,7 +46,6 @@ export const MaterialSpan = styled.p`
   @media (min-width: 768px) {
     width: 500px;
     font-size: 18px;
-    margin-bottom: 30px;
     margin-left: 25px;
   }
 `;
@@ -58,7 +57,7 @@ export const MaterialSelect = styled.div`
   margin-bottom: 100px;
   align-items: center;
   @media (min-width: 768px) {
-    margin-bottom: 100px;
+    margin-bottom: 68px;
   }
 `;
 
@@ -80,6 +79,10 @@ export const ItensSelected = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 70px;
+  }
 `;
 export const SpanNum = styled.span`
   color: rgba(242, 142, 54, 1);
@@ -89,9 +92,6 @@ export const SpanNum = styled.span`
   padding: 2px 10px 2px 10px;
   border: 1px solid #ffb06b;
   border-radius: 8px;
-  @media (min-width: 768px) {
-    /* display: none; */
-  }
 `;
 export const ButtonConfirm = styled(Button)`
   width: 300px;
@@ -103,9 +103,6 @@ export const Indicator = styled.span`
   color: rgba(130, 130, 130, 1);
   font-size: 16px;
   font-weight: 700;
-  @media (min-width: 768px) {
-    /* display: none; */
-  }
 `;
 
 export const TabBarRequest = styled(TabBar)`
