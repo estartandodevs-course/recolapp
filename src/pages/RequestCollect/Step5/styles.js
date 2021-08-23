@@ -39,6 +39,7 @@ export const Title = styled.p`
     padding-top: 70px;
   }
 `;
+
 export const Ilustration = styled.img`
   width: 180px;
   height: 120px;
@@ -49,6 +50,7 @@ export const Ilustration = styled.img`
     margin-bottom: 10px;
   }
 `;
+
 export const ButtonFinish = styled(Button)`
   width: 300px;
   @media (min-width: 768px) {
@@ -58,6 +60,7 @@ export const ButtonFinish = styled(Button)`
     height: 35px;
   }
 `;
+
 export const DesktopContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;
@@ -67,6 +70,7 @@ export const DesktopContainer = styled.div`
     border-radius: 28px;
   }
 `;
+
 export const DesktopAling = styled.div`
   @media (min-width: 768px) {
     display: flex;

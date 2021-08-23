@@ -29,21 +29,21 @@ export const Body = styled.div`
 
   @media (min-width: 768px) {
     min-height: calc(100vh - var(--headerWebHeight));
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
+
 export const BackB = styled(BackButton)`
   padding-top: 17px;
-  padding-bottom: 42px;
-  margin-left: 13.33px;
+  margin: 0 13px 8px 13px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
-
-  @media (min-width: 768px) {
-    margin-left: 0px;
-    display: flex;
-    justify-content: flex-start;
-  }
 `;
+
 export const ButtonConfirm = styled(Button)`
   width: 300px;
   margin-top: 250px;
@@ -54,6 +54,7 @@ export const ButtonConfirm = styled(Button)`
     margin: auto;
   }
 `;
+
 export const SubmitButton = styled.input`
   display: none;
 `;
@@ -67,44 +68,53 @@ export const DateDiv = styled.div`
     padding-bottom: 0px;
   }
 `;
+
 export const HourDiv = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const DateSpan = styled.span`
   font-size: 10px;
 `;
+
 export const HourSpan = styled.span`
   font-size: 10px;
 `;
+
 export const InputDate = styled(Input)`
   background-color: rgba(253, 229, 215, 1);
   border-radius: 8px;
   width: 300px;
   @media (min-width: 768px) {
-    width: 250px;
+    width: 230px;
   }
 `;
+
 export const InputHour = styled(Input)`
   background-color: rgba(253, 229, 215, 1);
   border-radius: 8px;
   width: 300px;
   @media (min-width: 768px) {
-    width: 250px;
+    width: 230px;
   }
 `;
+
 export const DateSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 150px;
   justify-content: space-between;
+  margin-top: 42px;
 
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 20px;
-    margin-bottom: 265px;
+    margin-bottom: 240px;
+    width: 462px;
   }
 `;
 
@@ -113,6 +123,7 @@ export const TabBarRequest = styled(TabBar)`
     display: none;
   }
 `;
+
 export const DesktopContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;
@@ -120,6 +131,7 @@ export const DesktopContainer = styled.div`
     justify-content: center;
   }
 `;
+
 export const DesktopAling = styled.div`
   @media (min-width: 768px) {
     display: flex;
@@ -132,6 +144,7 @@ export const ContainerMain = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
   }
 `;

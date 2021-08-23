@@ -26,12 +26,12 @@ export const Body = styled.div`
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - var(--headerWebHeight));
+    max-width: 600px;
   }
 `;
 export const BackB = styled(BackButton)`
   padding-top: 17px;
-  margin-bottom: 8px;
-  margin-left: 13.33px;
+  margin: 0 13px 8px 13px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
 
@@ -43,18 +43,22 @@ export const BackB = styled(BackButton)`
 export const ContainerMaterials = styled.div`
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  height: 370px;
+  margin-bottom: 30px;
 
   @media (min-width: 768px) {
-    margin-bottom: 130px;
+    margin-bottom: 90px;
+    height: 250px;
   }
 `;
+
 export const Containers = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 10px;
   flex-wrap: wrap;
-  gap: 1px 24px;
-  height: 370px;
+  gap: 40px 24px;
   width: 300px;
 
   @media (min-width: 768px) {
@@ -65,21 +69,25 @@ export const Containers = styled.div`
     width: 462px;
   }
 `;
+
 export const ValueArea = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const MaterialName = styled.span`
   font-weight: 700;
   font-size: 18px;
   color: rgba(79, 79, 79, 1);
 `;
+
 export const KgIndex = styled.span`
   color: rgba(130, 130, 130, 1);
   font-weight: 400;
   font-size: 12px;
   margin-bottom: 2px;
 `;
+
 export const KgValue = styled.input`
   border: none;
   border-radius: 8px;
@@ -90,6 +98,7 @@ export const KgValue = styled.input`
   text-indent: 15px;
   padding-right: 4px;
 `;
+
 export const EndPage = styled.div`
   gap: 11px;
   position: relative;
@@ -98,24 +107,29 @@ export const EndPage = styled.div`
   align-items: center;
   justify-content: flex-end;
 `;
+
 export const TurnBack = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 13px;
 `;
+
 export const TurnBackButton = styled.input`
   width: 17px;
   height: 17px;
   margin-top: 1px;
 `;
+
 export const ButtonSpan = styled.span`
   font-size: 14px;
   font-weight: 400;
   color: rgba(79, 79, 79, 1);
 `;
+
 export const ButtonConfirm = styled(Button)`
   width: 300px;
+
   @media (min-width: 768px) {
     width: 400px;
   }
@@ -126,14 +140,15 @@ export const TabBarRequest = styled(TabBar)`
     display: none;
   }
 `;
+
 export const DesktopContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
-    width: 600px;
     justify-content: center;
     align-items: center;
     margin: auto;
+    width: 100%;
   }
 `;
 
@@ -142,5 +157,6 @@ export const DesktopAling = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 `;
