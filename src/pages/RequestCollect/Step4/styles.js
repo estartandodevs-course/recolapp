@@ -27,10 +27,10 @@ export const Body = styled.div`
     justify-content: center;
   }
 `;
+
 export const BackB = styled(BackButton)`
   padding-top: 17px;
-  margin-bottom: 8px;
-  margin-left: 13.33px;
+  margin: 0 13px 8px 13px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
 
@@ -108,10 +108,12 @@ export const Infos = styled.div`
 export const MaterialsList = styled(MaterialInfo)`
   width: 300px;
 `;
+
 export const InfoLocation = styled(Scheduling)`
   width: 300px;
   height: 100px;
 `;
+
 export const Confirmations = styled.div`
   margin-top: 24px;
   display: flex;
@@ -119,6 +121,7 @@ export const Confirmations = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
 export const ConfirmationSpan = styled.span`
   color: rgba(79, 79, 79, 1);
   font-size: 20px;

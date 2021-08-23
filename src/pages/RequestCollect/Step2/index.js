@@ -45,7 +45,7 @@ const Step2 = ({ nextPage, backPage, firstPage, order, setOrder }) => {
           <S.Body>
             <S.BackB
               handleBack={backPage}
-              pageTitle="Informe a quantidade média em quilos de cada material"
+              pageTitle="Informe o peso médio em kg de cada material"
             />
             <S.ContainerMaterials>
               <S.Containers>

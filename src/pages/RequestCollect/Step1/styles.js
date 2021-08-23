@@ -32,9 +32,7 @@ export const Body = styled.div`
 
 export const BackB = styled(BackButton)`
   padding-top: 17px;
-  margin-bottom: 8px;
-  margin-left: 13.33px;
-  margin-right: 13.33px;
+  margin: 0 13px 8px 13px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
 `;
@@ -56,8 +54,10 @@ export const MaterialSelect = styled.div`
   width: 100%;
   margin-bottom: 100px;
   align-items: center;
+
   @media (min-width: 768px) {
     margin-bottom: 68px;
+    height: 250px;
   }
 `;
 
@@ -65,9 +65,6 @@ export const SelectMaterialRerquest = styled(SelectMaterial)`
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  @media (min-width: 768px) {
-  }
 `;
 
 export const BottonPage = styled.div`
@@ -79,11 +76,8 @@ export const ItensSelected = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-
-  @media (min-width: 768px) {
-    padding-bottom: 70px;
-  }
 `;
+
 export const SpanNum = styled.span`
   color: rgba(242, 142, 54, 1);
   font-weight: 700;
@@ -93,12 +87,14 @@ export const SpanNum = styled.span`
   border: 1px solid #ffb06b;
   border-radius: 8px;
 `;
+
 export const ButtonConfirm = styled(Button)`
   width: 300px;
   @media (min-width: 768px) {
     width: 400px;
   }
 `;
+
 export const Indicator = styled.span`
   color: rgba(130, 130, 130, 1);
   font-size: 16px;
@@ -110,6 +106,7 @@ export const TabBarRequest = styled(TabBar)`
     display: none;
   }
 `;
+
 export const DesktopContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;
@@ -121,6 +118,7 @@ export const DesktopContainer = styled.div`
     margin-bottom: 30px;
   }
 `;
+
 export const DesktopAling = styled.div`
   @media (min-width: 768px) {
     display: flex;

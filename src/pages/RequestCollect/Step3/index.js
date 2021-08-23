@@ -42,13 +42,13 @@ const Step3 = ({ nextPage, backPage, setOrderTimestamp }) => {
   return (
     <>
       <S.HeaderWebRequest logged={logged} />
-      <S.Body>
-        <S.BackB
-          handleBack={backPage}
-          pageTitle="Escolha a data e o horário para a coleta"
-        />
+      <S.DesktopContainer>
         <S.DesktopAling>
-          <S.DesktopContainer>
+          <S.Body>
+            <S.BackB
+              handleBack={backPage}
+              pageTitle="Escolha a data e o horário para a coleta"
+            />
             <S.ContainerMain>
               <S.DateSection>
                 <S.DateDiv>
@@ -75,9 +75,9 @@ const Step3 = ({ nextPage, backPage, setOrderTimestamp }) => {
                 Continuar
               </S.ButtonConfirm>
             </S.ContainerMain>
-          </S.DesktopContainer>
+          </S.Body>
         </S.DesktopAling>
-      </S.Body>
+      </S.DesktopContainer>
       <S.TabBarRequest />
     </>
   );
