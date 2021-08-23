@@ -9,6 +9,8 @@ export const Img = styled.img`
   width: 21px;
   height: 21px;
   margin-top: 5px;
+  cursor: pointer;
+
   @media (min-width: 768px) {
     margin-top: 7px;
   }
