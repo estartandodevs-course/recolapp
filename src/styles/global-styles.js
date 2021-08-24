@@ -1,16 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import PoppinsRegular from "../assets/fonts/Poppins-Regular.ttf";
-import PoppinsBold from "../assets/fonts/Poppins-Bold.ttf";
 
 export const GlobalStyles = createGlobalStyle`
-     @font-face {
-  font-family: Poppins;
-  src: url(${PoppinsRegular});
-}
-@font-face {
-  font-family: Poppins-Bold;
-  src: url(${PoppinsBold});
-}
     :root {
         --orange:#F28E36;
         --green:#008000;
