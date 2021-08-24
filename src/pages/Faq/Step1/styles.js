@@ -76,26 +76,3 @@ export const desktopAling = styled.div`
     justify-content: center;
   }
 `;
-export const tabBar = styled(TabBar)`
-  margin-top: 17px;
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
-export const desktopContainer = styled.div`
-  @media (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 400px;
-    padding: 70px 80px;
-    border-radius: 28px;
-    margin-bottom: 30px;
-  }
-`;
-export const desktopAling = styled.div`
-  @media (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-  }
-`;

@@ -45,7 +45,7 @@ const Step1 = ({ setPage }) => {
                 <S.sectionButtons key={text} onClick={() => setPage(page)}>
                   {text}
                 </S.sectionButtons>
-
+              ))}
             </S.pageContent>
           </S.desktopContainer>
         </S.desktopAling>
