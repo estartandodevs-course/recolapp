@@ -33,6 +33,9 @@
     "operator-linebreak": 0,
     "implicit-arrow-linebreak": 0,
     "react/jsx-curly-newline": 0,
-    "camelcase": "off"
+    "camelcase": "off",
+    "comma-dangle": 0,
+    "function-paren-newline": 0,
+    "no-restricted-globals": 0
   }
 }
