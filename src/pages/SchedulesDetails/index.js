@@ -6,15 +6,16 @@ import * as S from "./styles";
 
 import states from "../../assets/img/icons/icon_clock.svg";
 
-import { getUser } from "../../services/users";
+import { getUser } from "../../services/auth.service";
 
-import { getCollectByID } from "../../services/collections";
+import { getCollectByID } from "../../services/recycleCollection.service";
 
 import { Modal } from "../../components/Modal";
 
 const SchedulesDetails = () => {
   const history = useHistory();
   const { id } = useParams();
+  const [showModal, setShowModal] = useState(false);
 
   const collectID = parseInt(id);
 
@@ -28,8 +29,6 @@ const SchedulesDetails = () => {
   const cancelButtonName = hasCollector
     ? "Cancelar coleta"
     : "Cancelar solicitação";
-
-  const [showModal, setShowModal] = useState(false);
 
   const timestamp = new Date(parseInt(collect.timestamp));
   const dateCollect = timestamp.toLocaleDateString("pt-BR");

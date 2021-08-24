@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../../contexts";
-import { createCollect } from "../../../services/collections";
+import { createCollect } from "../../../services/recycleCollection.service";
 
 import * as S from "./styles";
 

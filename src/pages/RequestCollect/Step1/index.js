@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import { getDefaultMaterials } from "../../../services/defaultMaterials";
+import { getDefaultMaterials } from "../../../services/materials.service";
 import { UserContext } from "../../../contexts";
 
 import * as S from "./styles";

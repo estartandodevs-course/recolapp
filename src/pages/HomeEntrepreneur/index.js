@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../contexts";
-import { signOut } from "../../services/users/auth";
+import { signOut } from "../../services/auth.service";
 
 import ilustration from "../../assets/img/illustrations/empreendedor_ilu.svg";
 
