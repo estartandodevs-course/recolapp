@@ -13,7 +13,7 @@ const Schedules = () => {
 
   const { user } = useContext(UserContext);
 
-  const collections = getCollectionsByUserID(user.id);
+  const collections = getCollectionsByUserID(user?.id);
 
   const logged = user?.name;
 
