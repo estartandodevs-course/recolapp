@@ -45,4 +45,4 @@ const Step4 = ({ firstPage }) => {
     </>
   );
 };
-export default Step4;
+export { Step4 };
