@@ -14,7 +14,7 @@ const Routes = () => {
     const response = JSON.parse(localStorage.getItem("user"));
     setUser(response);
   }, []);
-
+  console.log("teste", currentUser);
   return (
     <BrowserRouter>
       <Switch>
@@ -33,6 +33,11 @@ const Routes = () => {
               path="/collect-cancelled"
               component={R.CollectCancelled}
             />
+            <Route
+              exact
+              path="/schedules-collector"
+              component={R.SchedulesCollector}
+            />
 
             <Redirect to="/home" />
           </>
@@ -41,7 +46,7 @@ const Routes = () => {
             <Route exact path="/" component={R.Home} />
             <Route exact path="/login" component={R.Login} />
             <Route exact path="/register" component={R.Register} />
-            <Redirect to="/" />
+            {/* <Redirect to="/" /> */}
           </>
         )}
       </Switch>
