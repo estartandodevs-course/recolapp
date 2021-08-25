@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 import * as S from "./styles";
 
@@ -7,6 +7,7 @@ import { removeMask, passwordMatch } from "../../mock/RegisterValidate";
 
 import { States } from "../../mock/Select/states";
 import { typeUser } from "../../mock/Select/typeUser";
+import { registerWithEmailAndPassword } from "../../services/auth.service";
 
 const Register = () => {
   const [errorRegister, setErrorDisable] = useState({
@@ -18,7 +19,6 @@ const Register = () => {
   const [maskCertification, setMaskCertification] = useState("");
   const [data, setData] = useState({
     name: "",
-    password: "",
     certification: "",
     email: "",
     cellphone: "",
@@ -34,9 +34,9 @@ const Register = () => {
     two: "",
   });
 
-  const history = useHistory();
+  // const history = useHistory();
 
-  const finishRegister = () => {
+  const finishRegister = async () => {
     if (passwordMatch(password.one, password.two) === false) {
       setErrorDisable({
         message: "Senhas não são iguais!",
@@ -45,8 +45,14 @@ const Register = () => {
       return 0;
     }
 
-    setData({ ...data, password: password.one });
-
+    await registerWithEmailAndPassword(
+      {
+        email: data.email,
+        password: password.one,
+      },
+      data.typeUser,
+      data
+    );
     return history.push("/home");
   };
 

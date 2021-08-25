@@ -20,7 +20,7 @@ const Routes = () => {
       <Switch>
         {currentUser ? (
           <>
-            <Route exact path="/home" component={R.HomeEntrepreneur} />
+            <Route exact path="/home" component={R.Home} />
             <Route exact path="/schedules/:id" component={R.SchedulesDetails} />
             <Route exact path="/schedules" component={R.Schedules} />
             <Route exact path="/faq" component={R.Faq} />
@@ -38,7 +38,7 @@ const Routes = () => {
           </>
         ) : (
           <>
-            <Route exact path="/" component={R.Home} />
+            <Route exact path="/" component={R.Introduction} />
             <Route exact path="/login" component={R.Login} />
             <Route exact path="/register" component={R.Register} />
             <Redirect to="/" />
