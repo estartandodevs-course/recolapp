@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
-import { TabBar } from "../../../components/TabBar";
+import { useEffect, useState, useContext } from "react";
+
 import * as S from "./styles";
+
+import { UserContext } from "../../../contexts";
 
 const Step3 = ({ nextPage, backPage, setOrderTimestamp }) => {
   const [dateFinish, setDateFinish] = useState("");
@@ -34,39 +36,49 @@ const Step3 = ({ nextPage, backPage, setOrderTimestamp }) => {
     }
   };
 
+  const { user } = useContext(UserContext);
+  const logged = user?.name || false;
+
   return (
     <>
-      <S.body>
-        <S.backb
-          handleBack={backPage}
-          pageTitle="Escolha a data e o horário para a coleta"
-        />
-        <S.dateSection>
-          <S.datediv>
-            <S.dateSpan>Data:</S.dateSpan>
-            <S.inputDate
-              onChange={(e) => onChange(e, inputs.DATE)}
-              input={inputs.DATE}
-              type="date"
-              min="2021-09-01"
-              max="2022-01-01"
+      <S.HeaderWebRequest logged={logged} />
+      <S.DesktopContainer>
+        <S.DesktopAling>
+          <S.Body>
+            <S.BackB
+              handleBack={backPage}
+              pageTitle="Escolha a data e o horário para a coleta"
             />
-          </S.datediv>
-          <S.hourdiv>
-            <S.hourSpan>Hora:</S.hourSpan>
-            <S.inputHour
-              onChange={(e) => onChange(e, inputs.HOURS)}
-              type="time"
-              min="08:00"
-              max="17:00"
-            />
-          </S.hourdiv>
-        </S.dateSection>
-        <S.button disable={disable} onClick={nextPage}>
-          Continuar
-        </S.button>
-      </S.body>
-      <TabBar />
+            <S.ContainerMain>
+              <S.DateSection>
+                <S.DateDiv>
+                  <S.DateSpan>Data:</S.DateSpan>
+                  <S.InputDate
+                    onChange={(e) => onChange(e, inputs.DATE)}
+                    input={inputs.DATE}
+                    type="date"
+                    min="2021-10-09"
+                    max="2022-01-01"
+                  />
+                </S.DateDiv>
+                <S.HourDiv>
+                  <S.HourSpan>Hora:</S.HourSpan>
+                  <S.InputHour
+                    onChange={(e) => onChange(e, inputs.HOURS)}
+                    type="time"
+                    min="08:00"
+                    max="17:00"
+                  />
+                </S.HourDiv>
+              </S.DateSection>
+              <S.ButtonConfirm disable={disable} onClick={nextPage}>
+                Continuar
+              </S.ButtonConfirm>
+            </S.ContainerMain>
+          </S.Body>
+        </S.DesktopAling>
+      </S.DesktopContainer>
+      <S.TabBarRequest />
     </>
   );
 };

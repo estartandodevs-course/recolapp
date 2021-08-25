@@ -12,7 +12,7 @@ export const defaultMaterials = {
       weight: 0,
     },
     {
-      name: "Plastico",
+      name: "Plástico",
       status: false,
       weight: 0,
     },

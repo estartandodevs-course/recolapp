@@ -39,4 +39,4 @@ const Step7 = ({ firstPage }) => {
     </>
   );
 };
-export default Step7;
+export { Step7 };

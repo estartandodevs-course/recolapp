@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
-import { SelectMaterial } from "../../../components/SelectMaterial";
-import { TabBar } from "../../../components/TabBar";
 import { getDefaultMaterials } from "../../../services/defaultMaterials";
+import { UserContext } from "../../../contexts";
 
 import * as S from "./styles";
 
@@ -25,25 +24,36 @@ const Step1 = ({ nextPage, order, setOrder }) => {
     setDisable(materialsQuantity <= 0);
   }, [material]);
 
+  const { user } = useContext(UserContext);
+  const logged = user?.name || false;
+
   return (
     <>
-      <S.body>
-        <S.backb pageTitle="Informe os materiais que serão coletados" />
-        <S.materialselect>
-          <span>Escolha quantas opções desejar.</span>
-          <SelectMaterial material={material} setMaterial={setMaterial} />
-        </S.materialselect>
-        <S.bottonpage>
-          <S.itensselected>
-            <S.indicator>Itens selecionados</S.indicator>
-            <S.spannum>{materialsQuantity}</S.spannum>
-          </S.itensselected>
-          <S.button disable={disable} onClick={nextPage}>
-            Confirme
-          </S.button>
-        </S.bottonpage>
-      </S.body>
-      <TabBar />
+      <S.HeaderWebRequest logged={logged} />
+      <S.Body>
+        <S.BackB pageTitle="Informe os materiais que serão coletados" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.MaterialSelect>
+              <S.MaterialSpan>Escolha quantas opções desejar.</S.MaterialSpan>
+              <S.SelectMaterialRerquest
+                material={material}
+                setMaterial={setMaterial}
+              />
+            </S.MaterialSelect>
+            <S.BottonPage>
+              <S.ItensSelected>
+                <S.Indicator>Itens selecionados</S.Indicator>
+                <S.SpanNum>{materialsQuantity}</S.SpanNum>
+              </S.ItensSelected>
+              <S.ButtonConfirm disable={disable} onClick={nextPage}>
+                Confirme
+              </S.ButtonConfirm>
+            </S.BottonPage>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
+      <S.TabBarRequest />
     </>
   );
 };

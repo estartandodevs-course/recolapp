@@ -6,18 +6,23 @@ export const Section = styled.div`
 `;
 
 export const Img = styled.img`
+  width: 21px;
+  height: 21px;
+  margin-top: 5px;
   cursor: pointer;
-  width: 21.33px;
+
   @media (min-width: 768px) {
-    width: 22px;
+    margin-top: 7px;
   }
 `;
+
 export const Pagetitle = styled.span`
   font-size: 20px;
   font-weight: 200;
   font-weight: 600;
   color: var(--textColor);
+
   @media (min-width: 768px) {
-    font-size: 24px;
+    font-size: 22px;
   }
 `;

@@ -7,6 +7,10 @@ export const ContainerSelectMaterial = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 16px;
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
 `;
 
 export const ContainerMaterial = styled.div`
