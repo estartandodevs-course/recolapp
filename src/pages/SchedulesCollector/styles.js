@@ -13,10 +13,12 @@ export const Header = styled(HeaderWeb)`
 `;
 
 export const BackSC = styled(BackButton)`
-  margin-top: 10px;
+  margin-top: 22px;
+  margin-left: 13px;
 
   @media (min-width: 768px) {
-    margin-top: 10px;
+    margin-top: 50px;
+    margin-left: 300px;
   }
 `;
 

@@ -8,8 +8,7 @@ import * as S from "./styles";
 const SchedulesCollector = () => {
   const { user } = useContext(UserContext);
 
-  // console.log("teste", user);
-  const collections = getCollectionsByUserID(0);
+  const collections = getCollectionsByUserID(1);
 
   const logged = user?.name;
   return (
