@@ -38,4 +38,4 @@ const Step6 = ({ firstPage }) => {
     </>
   );
 };
-export default Step6;
+export { Step6 };

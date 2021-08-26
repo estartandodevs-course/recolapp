@@ -1,6 +1,6 @@
-import Home from "./Home";
+import Introduction from "./Introduction";
 import Register from "./Register";
-import HomeEntrepreneur from "./HomeEntrepreneur";
+import Home from "./Home";
 import SchedulesDetails from "./SchedulesDetails";
 import Schedules from "./Schedules";
 import Login from "./Login";
@@ -10,11 +10,12 @@ import CollectConfirm from "./CollectionConfirm";
 import CollectCancelled from "./CollectionCancelled";
 import Cancelled from "./JustifyCancellation";
 import Profile from "./Profile";
+import SchedulesCollector from "./SchedulesCollector";
 
 export {
-  Home,
+  Introduction,
   Login,
-  HomeEntrepreneur,
+  Home,
   Register,
   Schedules,
   SchedulesDetails,
@@ -24,4 +25,5 @@ export {
   CollectCancelled,
   Cancelled,
   Profile,
+  SchedulesCollector,
 };
