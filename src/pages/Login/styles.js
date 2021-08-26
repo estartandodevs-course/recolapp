@@ -39,6 +39,7 @@ export const BackButtonLogin = styled(BackButton)`
 
 export const Img = styled.img`
   width: 100%;
+  height: 158px;
   margin: 37px auto auto auto;
 `;
 
