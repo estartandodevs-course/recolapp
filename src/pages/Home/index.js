@@ -35,8 +35,8 @@ const Home = () => {
 
   return (
     <>
+      <S.HeaderDesktop logged={islogged} />
       <S.PageE>
-        <S.HeaderDesktop logged={islogged} />
         <S.BackButtonHE
           handleBack={() => signOut(history, setUser)}
           pageTitle="Sair"
