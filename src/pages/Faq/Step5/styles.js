@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BackButton from "../../../components/BackButton";
 import { HeaderWeb } from "../../../components/HeaderWeb";
 
-export const body = styled.div`
+export const Body = styled.div`
   background-color: #fff8f4;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ export const body = styled.div`
   margin: 0;
   padding: 0;
 `;
-export const backb = styled(BackButton)`
+export const BackB = styled(BackButton)`
   padding-top: 17px;
   margin-bottom: 40px;
   margin-left: 13.33px;
@@ -22,7 +22,7 @@ export const backb = styled(BackButton)`
   }
 `;
 
-export const mainSpan = styled.span`
+export const MainSpan = styled.span`
   text-align: center;
   padding-top: 26px;
   padding-bottom: 26px;
@@ -38,12 +38,12 @@ export const mainSpan = styled.span`
     margin-bottom: 50px;
   }
 `;
-export const pageContent = styled.div`
+export const PageContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-export const contentSpan = styled.span`
+export const ContentSpan = styled.span`
   background-color: rgba(253, 229, 215, 1);
   color: rgba(0, 0, 0, 1);
   font-size: 14px;
@@ -56,7 +56,7 @@ export const contentSpan = styled.span`
   border: none;
   margin-top: 50px;
 `;
-export const mainTextAling = styled.div`
+export const MainTextAling = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -67,7 +67,7 @@ export const HeaderDesktop = styled(HeaderWeb)`
     position: relative;
   }
 `;
-export const desktopContainer = styled.div`
+export const DesktopContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ export const desktopContainer = styled.div`
     margin-bottom: 30px;
   }
 `;
-export const desktopAling = styled.div`
+export const DesktopAling = styled.div`
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
