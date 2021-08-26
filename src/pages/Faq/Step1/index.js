@@ -55,4 +55,4 @@ const Step1 = ({ setPage }) => {
   );
 };
 
-export default Step1;
+export { Step1 };

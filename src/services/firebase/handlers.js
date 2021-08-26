@@ -1,10 +1,5 @@
 import { firebaseDatabase } from "./config";
 
-// save("coletas", {
-//   produtos: [],
-//   endereco: "",
-// });
-
 export const save = async (path, body) => {
   const query = await firebaseDatabase.collection(path).add(body);
 

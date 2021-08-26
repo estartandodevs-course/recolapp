@@ -6,6 +6,15 @@ import { SETTINGS } from "../settings";
 
 // garbage collection = coleta de lixo
 
+export const getCollectionsByCollectorID = (user_id) => {
+  const collections =
+    JSON.parse(localStorage.getItem(SETTINGS.TABLES_NAME.COLLECTIONS)) || [];
+  const response = collections.filter(
+    (collect) => collect.collector_id === user_id
+  );
+  return response;
+};
+
 export const getCollectionsByUserID = (user_id) => {
   const collections =
     JSON.parse(localStorage.getItem(SETTINGS.TABLES_NAME.COLLECTIONS)) || [];

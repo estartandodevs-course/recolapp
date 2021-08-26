@@ -18,7 +18,7 @@ export const emailProviderRegister = async (email, password) => {
     displayName,
     photoURL,
     email,
-    uuid: uid,
+    id: uid,
     phoneNumber,
   };
 
@@ -31,7 +31,6 @@ export const emailProviderRegister = async (email, password) => {
 
 export const emailProviderLogin = async (email, password) => {
   const result = await firebaseAuth.signInWithEmailAndPassword(email, password);
-  console.log("RESULT DO FB", result);
 
   const idToken = await firebaseAuth.currentUser.getIdToken();
 
@@ -45,7 +44,7 @@ export const emailProviderLogin = async (email, password) => {
     displayName,
     photoURL,
     email,
-    uuid: uid,
+    id: uid,
     phoneNumber,
   };
 

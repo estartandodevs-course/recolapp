@@ -17,10 +17,14 @@ export const CollectionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 30px;
-  min-height: calc(100vh - var(--tabBarHeight));
+  min-height: calc(100vh - var(--headerWebHeight));
   overflow: auto;
+
   @media (min-width: 768px) {
     align-items: center;
+    max-width: 560px;
+    overflow: initial;
+    margin: auto;
   }
 `;
 
@@ -32,17 +36,25 @@ export const CollectionsButton = styled(BackButton)`
 export const ViewSettings = styled(ViewDetails)`
   margin-bottom: 48px;
   @media (min-width: 768px) {
-    width: 30%;
+    width: 100%;
   }
 `;
 
 export const CollectionsImg = styled.img`
-  margin: auto;
-  /* margin-bottom: 41px; */
+  margin: 40px auto 40px auto;
+
+  @media (min-width: 768px) {
+    margin: ${(props) => props.marginDesktop};
+  }
 `;
 
 export const MobileTabBar = styled(TabBar)`
   @media (min-width: 768px) {
     display: none;
   }
+`;
+
+export const NoItemsMessage = styled.p`
+  margin-bottom: auto;
+  text-align: center;
 `;
