@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../../components/Button";
 import { HeaderWeb } from "../../components/HeaderWeb";
 import { TabBar } from "../../components/TabBar";
 
@@ -25,6 +26,9 @@ export const MainContainer = styled.div`
     min-height: calc(100vh - var(--headerWebHeight));
   }
 `;
+
+export const ButtonYes = styled(Button)``;
+export const ButtonNo = styled(Button)``;
 
 export const TabBarMobile = styled(TabBar)`
   @media (min-width: 768px) {
