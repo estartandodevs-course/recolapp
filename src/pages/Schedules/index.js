@@ -6,14 +6,24 @@ import * as S from "./styles";
 
 import myCollections from "../../assets/img/illustrations/meus_agendamentos.svg";
 
-import { getCollectionsByUserID } from "../../services/recycleCollection.service";
+import {
+  getCollectionsByUserID,
+  getCollectionsByCollectorID,
+} from "../../services/recycleCollection.service";
+
+import { SETTINGS } from "../../settings";
 
 const Schedules = () => {
   const history = useHistory();
 
   const { user } = useContext(UserContext);
 
-  const collections = getCollectionsByUserID(user?.id);
+  const getCollections =
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+      ? getCollectionsByUserID
+      : getCollectionsByCollectorID;
+
+  const collections = getCollections(user?.id);
 
   const logged = user?.name;
 
@@ -37,8 +47,11 @@ const Schedules = () => {
               return (
                 <S.ViewSettings
                   key={collection_id}
-                  title={title}
-                  date={`${week[day]}, ${date} - ${time}h`}
+                  title={
+                    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+                      ? title
+                      : user?.name
+                  }
                   onClick={() => history.push(`schedules/${collection_id}`)}
                 />
               );

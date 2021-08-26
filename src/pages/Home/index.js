@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../contexts";
 import { signOut } from "../../services/auth.service";
+import { SETTINGS } from "../../settings";
 
 import ilustration from "../../assets/img/illustrations/empreendedor_ilu.svg";
 
@@ -15,10 +16,12 @@ const Home = () => {
     useContext(UserContext);
 
   const requestCollectRoute =
-    user?.typeUser === "Empreendedor" ? "/request-collect" : "/search-collect";
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+      ? "/request-collect"
+      : "/search-collect";
 
   const requestCollectButtonName =
-    user?.typeUser === "Empreendedor" ? "Solicitar" : "Buscar";
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR ? "Solicitar" : "Buscar";
 
   const islogged = user?.name;
 
