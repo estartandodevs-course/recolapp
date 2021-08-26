@@ -6,20 +6,21 @@ import * as R from "./pages";
 import { getCurrentUser } from "./services/auth.service";
 
 const Routes = () => {
-  const { setUser } = useContext(UserContext);
-
-  const currentUser = getCurrentUser();
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
-    const response = JSON.parse(localStorage.getItem("user"));
-    setUser(response);
+    const currentUser = async () => {
+      const response = await getCurrentUser();
+      setUser(response);
+    };
+    currentUser();
   }, []);
-  console.log("teste", currentUser);
+
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/faq" component={R.Faq} />
-        {currentUser ? (
+        {user?.name ? (
           <>
             <Route exact path="/home" component={R.Home} />
             <Route exact path="/schedules/:id" component={R.SchedulesDetails} />
@@ -43,10 +44,10 @@ const Routes = () => {
           </>
         ) : (
           <>
-            <Route exact path="/" component={R.Home} />
+            <Route exact path="/" component={R.Introduction} />
             <Route exact path="/login" component={R.Login} />
             <Route exact path="/register" component={R.Register} />
-            {/* <Redirect to="/" /> */}
+            <Redirect to="/" />
           </>
         )}
       </Switch>
