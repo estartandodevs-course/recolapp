@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { defaultMaterials } from "../../mock/defaultMaterials";
+import { defaultMaterials } from "../mock/defaultMaterials";
 
 export const getDefaultMaterials = () => {
   return defaultMaterials.material;

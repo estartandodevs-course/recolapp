@@ -3,9 +3,12 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { UserContext } from "./contexts";
 
 import * as R from "./pages";
+import { getCurrentUser } from "./services/auth.service";
 
 const Routes = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
+
+  const currentUser = getCurrentUser();
 
   useEffect(() => {
     const response = JSON.parse(localStorage.getItem("user"));
@@ -16,9 +19,9 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/faq" component={R.Faq} />
-        {user?.name ? (
+        {currentUser ? (
           <>
-            <Route exact path="/home" component={R.HomeEntrepreneur} />
+            <Route exact path="/home" component={R.Home} />
             <Route exact path="/schedules/:id" component={R.SchedulesDetails} />
             <Route exact path="/schedules" component={R.Schedules} />
             <Route exact path="/request-collect" component={R.RequestCollect} />
