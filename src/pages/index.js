@@ -10,6 +10,8 @@ import CollectConfirm from "./CollectionConfirm";
 import CollectCancelled from "./CollectionCancelled";
 import Cancelled from "./JustifyCancellation";
 import Profile from "./Profile";
+import SearchCollect from "./SearchCollect";
+import OrderDetail from "./OrderDetail";
 
 export {
   Home,
@@ -24,4 +26,6 @@ export {
   CollectCancelled,
   Cancelled,
   Profile,
+  SearchCollect,
+  OrderDetail,
 };

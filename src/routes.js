@@ -41,7 +41,9 @@ const Routes = () => {
             <Route exact path="/" component={R.Home} />
             <Route exact path="/login" component={R.Login} />
             <Route exact path="/register" component={R.Register} />
-            <Redirect to="/" />
+            <Route exact path="/search-collect" component={R.SearchCollect} />
+            <Route exact path="/order-detail" component={R.OrderDetail} />
+            {/* <Redirect to="/" /> */}
           </>
         )}
       </Switch>
