@@ -9,16 +9,16 @@ const Step3 = ({ firstPage }) => {
   return (
     <>
       <S.HeaderDesktop logged={isLogged} />
-      <S.body>
-        <S.backb handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.mainTextAling>
-              <S.mainSpan>O que não é reciclável?</S.mainSpan>
-            </S.mainTextAling>
-            <S.pageContent>
+      <S.Body>
+        <S.BackB handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.MainTextAling>
+              <S.MainSpan>O que não é reciclável?</S.MainSpan>
+            </S.MainTextAling>
+            <S.PageContent>
               <img src={WomanRecy} alt="woman recycling" />
-              <S.contentSpan>
+              <S.ContentSpan>
                 Materiais como: papel-carbono, etiqueta adesiva, fita crepe,
                 guardanapos, fotografias, filtro de cigarros, papéis sujos,
                 papéis sanitários, copos de papel, cabos de panela e tomadas,
@@ -30,11 +30,11 @@ const Step3 = ({ firstPage }) => {
                 incandescentes e fluorescentes, óleo de cozinha, entre outros,
                 devem ser descartados em locais apropriados, senão prejudicam o
                 meio ambiente.
-              </S.contentSpan>
-            </S.pageContent>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ContentSpan>
+            </S.PageContent>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
     </>
   );
 };
