@@ -24,6 +24,14 @@ export const DSContainerAll = styled.div`
   }
 `;
 
+export const Body = styled.div`
+  @media (min-width: 768px) {
+    max-width: 600px;
+    margin: auto;
+    min-height: calc(100vh - var(--headerWebHeight));
+  }
+`;
+
 export const DSContainer = styled.div`
   padding: 0px 36px;
   @media (min-width: 768px) {
@@ -49,9 +57,6 @@ export const desktopContainer = styled.div`
 export const DSBackButton = styled(BackButton)`
   margin-left: 18.33px;
   margin-top: 30px;
-  @media (min-width: 768px) {
-    margin: 50px 0px 0px 100px;
-  }
 `;
 
 export const DSMaterialInfo = styled(MaterialInfo)`
