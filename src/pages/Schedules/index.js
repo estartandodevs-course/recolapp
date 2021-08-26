@@ -34,14 +34,17 @@ const Schedules = () => {
           <S.HeaderDesktop logged={logged} />
           <S.CollectionsContainer>
             <S.CollectionsButton pageTitle="Meus agendamentos" />
-            <S.CollectionsImg
-              src={myCollections}
-              marginDesktop={
-                collections.length ? "50px 0 50px 0" : "100px auto 0 auto"
-              }
-            />
-            {collections.length ? (
-              collections.map(({ collection_id, title }) => (
+            <S.CollectionsImg src={myCollections} />
+            {collections.map(({ collection_id, title, timestamp }) => {
+              const timeStamp = new Date(timestamp);
+
+              const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
+              const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
+
+              const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+              const day = timeStamp.getDay();
+
+              return (
                 <S.ViewSettings
                   key={collection_id}
                   title={
@@ -51,10 +54,8 @@ const Schedules = () => {
                   }
                   onClick={() => history.push(`schedules/${collection_id}`)}
                 />
-              ))
-            ) : (
-              <S.NoItemsMessage>Nenhum agendamento encontrado</S.NoItemsMessage>
-            )}
+              );
+            })}
           </S.CollectionsContainer>
           <S.MobileTabBar />
         </>

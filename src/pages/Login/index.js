@@ -20,8 +20,8 @@ const Login = () => {
 
   const authLogin = async () => {
     const response = await loginWithEmailAndPassword(email, password);
+
     if (response?.idToken) {
-      // localStorage.setItem("user", JSON.stringify(response.user));
       setUser(response.user);
       history.push("/home");
     } else {

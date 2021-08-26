@@ -6,7 +6,7 @@ import * as S from "./styles";
 
 import states from "../../assets/img/icons/icon_clock.svg";
 
-import { getUser } from "../../services/auth.service";
+import { getUserById } from "../../services/users.service";
 
 import { getCollectByID } from "../../services/recycleCollection.service";
 
@@ -22,7 +22,7 @@ const SchedulesDetails = () => {
   const collectID = parseInt(id);
 
   const collect = getCollectByID(collectID);
-  const userEnd = getUser(
+  const userEnd = getUserById(
     user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
       ? collect?.collector_id
       : collect?.user_id

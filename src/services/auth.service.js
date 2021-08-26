@@ -1,23 +1,10 @@
-import { users } from "../mock/users";
 import {
   emailProviderLogin,
   emailProviderRegister,
 } from "./firebase/authEmail";
 import { getById, save, update } from "./firebase/handlers";
 import { firebaseAuth } from "./firebase/config";
-
-export const auth = (email, password) => {
-  const response = users.find((user) => user.email === email);
-
-  if (response?.password === password) {
-    return {
-      auth: true,
-      user: response,
-    };
-  }
-
-  return { auth: false };
-};
+import { SETTINGS } from "../settings";
 
 export const signOut = (history, setUser) => {
   firebaseAuth.signOut();
@@ -28,50 +15,27 @@ export const signOut = (history, setUser) => {
   location.reload();
 };
 
-// vai ralar
-export const getUser = (user_id) => {
-  const response = users.find((user) => user.id === user_id);
-  return response;
-};
-
-// ___________________________________
-
-const basePath = "#21/recolapp";
-
 export const registerWithEmailAndPassword = async (
   credentials, // { email, password, name }
   profileType, // "empreedor" || "coletor"
   profileData // { ... }
 ) => {
-  const { user, idToken, isNewUser } = await emailProviderRegister(
+  const { user, idToken } = await emailProviderRegister(
     credentials.email,
     credentials.password
   );
 
-  const { name } = credentials;
+  const { name } = profileData;
 
-  if (isNewUser) {
-    const newUser = await save(`${basePath}/users`, {
-      ...profileData,
-      ...user,
-      name,
-      profileType,
-    });
-
-    return {
-      user: newUser,
-      idToken,
-    };
-  }
-
-  const userData = await getById(
-    `${basePath}/${profileType}s`,
-    "email",
-    user.email
-  );
+  const newUser = await save(`${SETTINGS.TABLES_NAME.BASE_URL}/users`, {
+    ...profileData,
+    ...user,
+    name,
+    profileType,
+  });
 
   return {
-    user: userData,
+    user: newUser,
     idToken,
   };
 };
@@ -79,7 +43,11 @@ export const registerWithEmailAndPassword = async (
 export const loginWithEmailAndPassword = async (email, password) => {
   const { user, idToken } = await emailProviderLogin(email, password);
 
-  const userData = await getById(`${basePath}/users`, "email", user.email);
+  const userData = await getById(
+    `${SETTINGS.TABLES_NAME.BASE_URL}/users`,
+    "id",
+    user.id
+  );
 
   return {
     user: userData,
@@ -88,7 +56,11 @@ export const loginWithEmailAndPassword = async (email, password) => {
 };
 
 export const updateUserData = async (id, profileData) => {
-  const response = await update(`${basePath}/users`, id, profileData);
+  const response = await update(
+    `${SETTINGS.TABLES_NAME.BASE_URL}/users`,
+    id,
+    profileData
+  );
 
   return response;
 };

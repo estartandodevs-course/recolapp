@@ -18,7 +18,7 @@ export const emailProviderRegister = async (email, password) => {
     displayName,
     photoURL,
     email,
-    uuid: uid,
+    id: uid,
     phoneNumber,
   };
 
@@ -44,7 +44,7 @@ export const emailProviderLogin = async (email, password) => {
     displayName,
     photoURL,
     email,
-    uuid: uid,
+    id: uid,
     phoneNumber,
   };
 
