@@ -11,16 +11,22 @@ import { getUser } from "../../services/auth.service";
 import { getCollectByID } from "../../services/recycleCollection.service";
 
 import { Modal } from "../../components/Modal";
+import { SETTINGS } from "../../settings";
 
 const SchedulesDetails = () => {
   const history = useHistory();
   const { id } = useParams();
+  const { user } = useContext(UserContext);
   const [showModal, setShowModal] = useState(false);
 
   const collectID = parseInt(id);
 
   const collect = getCollectByID(collectID);
-  const collector = getUser(collect.collector_id);
+  const userEnd = getUser(
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+      ? collect?.collector_id
+      : collect?.user_id
+  );
   const hasCollector = collect.collector_id !== -1;
 
   const collectState = hasCollector
@@ -34,7 +40,6 @@ const SchedulesDetails = () => {
   const dateCollect = timestamp.toLocaleDateString("pt-BR");
   const hourCollect = timestamp.toLocaleTimeString("pt-BR").slice(0, 5);
 
-  const { user } = useContext(UserContext);
   const isLogged = user?.name || false;
 
   return (
@@ -53,8 +58,8 @@ const SchedulesDetails = () => {
             />
             <S.DSUserData
               hasCollector={hasCollector}
-              name={collector?.name}
-              office={`${collector?.office} a ${collect.title}`}
+              name={userEnd?.name}
+              office={`${userEnd?.office} a ${collect.title}`}
             />
             <S.DSCollectionStates>
               {collectState}
