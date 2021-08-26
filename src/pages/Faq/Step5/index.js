@@ -49,6 +49,7 @@ const Step5 = ({ firstPage }) => {
           </S.DesktopContainer>
         </S.DesktopAling>
       </S.Body>
+      <S.TabBarFaq />
     </>
   );
 };
