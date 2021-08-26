@@ -18,17 +18,20 @@ export const Body = styled.div`
   overflow: auto;
   padding: 0;
   margin: 0;
+
+  @media (min-width: 768px) {
+    max-width: 600px;
+    margin: auto;
+    min-height: calc(100vh - var(--headerWebHeight));
+  }
 `;
 export const BackB = styled(BackButton)`
-  /* padding-top: 17px; */
-  margin-bottom: 40px;
   margin-left: 13.33px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
-  margin-left: 18.33px;
-  margin-top: 30px;
+  margin-top: 17px;
   @media (min-width: 768px) {
-    margin: 50px 0px 50px 100px;
+    margin: 40px 0px 40px 0px;
   }
 `;
 export const PageContent = styled.div`
@@ -36,6 +39,7 @@ export const PageContent = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  margin: 30px 0;
 `;
 export const SectionButtons = styled.button`
   background-color: rgba(253, 229, 215, 1);
@@ -54,7 +58,6 @@ export const SectionButtons = styled.button`
   }
 `;
 export const TabBarFaq = styled(TabBar)`
-  /* margin-top: 17px; */
   @media (min-width: 768px) {
     display: none;
   }
@@ -65,9 +68,7 @@ export const DesktopContainer = styled.div`
     flex-direction: column;
     position: relative;
     width: 400px;
-    padding: 70px 80px;
     border-radius: 28px;
-    margin-bottom: 30px;
   }
 `;
 export const DesktopAling = styled.div`
