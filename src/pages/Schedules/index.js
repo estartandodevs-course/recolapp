@@ -24,14 +24,23 @@ const Schedules = () => {
           <S.HeaderDesktop logged={logged} />
           <S.CollectionsContainer>
             <S.CollectionsButton pageTitle="Meus agendamentos" />
-            <S.CollectionsImg src={myCollections} />
-            {collections.map(({ collection_id, title }) => (
-              <S.ViewSettings
-                key={collection_id}
-                title={title}
-                onClick={() => history.push(`schedules/${collection_id}`)}
-              />
-            ))}
+            <S.CollectionsImg
+              src={myCollections}
+              marginDesktop={
+                collections.length ? "50px 0 50px 0" : "100px auto 0 auto"
+              }
+            />
+            {collections.length ? (
+              collections.map(({ collection_id, title }) => (
+                <S.ViewSettings
+                  key={collection_id}
+                  title={title}
+                  onClick={() => history.push(`schedules/${collection_id}`)}
+                />
+              ))
+            ) : (
+              <S.NoItemsMessage>Nenhum agendamento encontrado</S.NoItemsMessage>
+            )}
           </S.CollectionsContainer>
           <S.MobileTabBar />
         </>

@@ -52,4 +52,4 @@ const Step5 = ({ firstPage }) => {
     </>
   );
 };
-export default Step5;
+export { Step5 };
