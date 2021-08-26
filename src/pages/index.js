@@ -13,6 +13,8 @@ import Profile from "./Profile";
 import SearchCollect from "./SearchCollect";
 import OrderDetail from "./OrderDetail";
 import SchedulesCollector from "./SchedulesCollector";
+import CollectionAccepted from "./CollectionAccepted";
+import CollectionDenied from "./CollectionDenied";
 
 export {
   Introduction,
@@ -30,4 +32,6 @@ export {
   SchedulesCollector,
   SearchCollect,
   OrderDetail,
+  CollectionAccepted,
+  CollectionDenied,
 };
