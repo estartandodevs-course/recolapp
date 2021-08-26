@@ -7,8 +7,7 @@ import { Button } from "../../components/Button";
 import * as S from "./styles";
 
 import image from "../../assets/img/illustrations/login.svg";
-import { getUser } from "../../services/users";
-import { auth } from "../../services/users/auth";
+import { loginWithEmailAndPassword } from "../../services/auth.service";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,12 +18,11 @@ const Login = () => {
   const history = useHistory();
   const { setUser } = useContext(UserContext);
 
-  const authLogin = () => {
-    const response = auth(email, password);
-
-    if (response.auth) {
-      localStorage.setItem("user", JSON.stringify(response.user));
-      setUser(getUser(response.user.id));
+  const authLogin = async () => {
+    const response = await loginWithEmailAndPassword(email, password);
+    if (response?.idToken) {
+      // localStorage.setItem("user", JSON.stringify(response.user));
+      setUser(response.user);
       history.push("/home");
     } else {
       setErroDisable(false);

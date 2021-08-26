@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 
-import { SETTINGS } from "../../settings";
+import { SETTINGS } from "../settings";
+
+// garbage collection = coleta de lixo
 
 export const getCollectionsByUserID = (user_id) => {
   const collections =

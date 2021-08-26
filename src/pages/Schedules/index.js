@@ -6,14 +6,14 @@ import * as S from "./styles";
 
 import myCollections from "../../assets/img/illustrations/meus_agendamentos.svg";
 
-import { getCollectionsByUserID } from "../../services/collections";
+import { getCollectionsByUserID } from "../../services/recycleCollection.service";
 
 const Schedules = () => {
   const history = useHistory();
 
   const { user } = useContext(UserContext);
 
-  const collections = getCollectionsByUserID(user.id);
+  const collections = getCollectionsByUserID(user?.id);
 
   const logged = user?.name;
 
