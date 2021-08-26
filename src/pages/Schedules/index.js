@@ -52,6 +52,7 @@ const Schedules = () => {
                       ? title
                       : user?.name
                   }
+                  date={`${week[day]}, ${date} - ${time}h`}
                   onClick={() => history.push(`schedules/${collection_id}`)}
                 />
               );

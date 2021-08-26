@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import * as S from "./styles";
 
@@ -34,7 +34,7 @@ const Register = () => {
     two: "",
   });
 
-  // const history = useHistory();
+  const history = useHistory();
 
   const finishRegister = async () => {
     if (passwordMatch(password.one, password.two) === false) {
