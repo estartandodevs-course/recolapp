@@ -1,7 +1,16 @@
 import styled from "styled-components";
-import { Button } from "../../components/Button";
+
 import { HeaderWeb } from "../../components/HeaderWeb";
+import BackButton from "../../components/BackButton";
+import { MaterialInfo } from "../../components/CardMaterialInfo";
+import { Scheduling } from "../../components/Scheduling";
+import { UserData } from "../../components/UserData";
+import { Button } from "../../components/Button";
 import { TabBar } from "../../components/TabBar";
+
+export const OrderDetailsBody = styled.div`
+  padding: 0px 35px;
+`;
 
 export const HeaderDesktop = styled(HeaderWeb)`
   display: none;
@@ -12,23 +21,36 @@ export const HeaderDesktop = styled(HeaderWeb)`
   }
 `;
 
-export const MainContainer = styled.div`
-  background-color: #fff8f4;
-  min-height: calc(100vh - var(--tabBarHeight));
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-
-  @media (min-width: 768px) {
-    max-width: 600px;
-    margin: auto;
-    min-height: calc(100vh - var(--headerWebHeight));
-  }
+export const OrderDetailsBackButton = styled(BackButton)`
+  margin: 30px 0px 26px 19px;
 `;
 
-export const ButtonYes = styled(Button)``;
-export const ButtonNo = styled(Button)``;
+export const OrderDetailsMaterialInfo = styled(MaterialInfo)``;
+
+export const OrderDetailsScheduling = styled(Scheduling)`
+  margin-top: 24px;
+`;
+
+export const OrderDetailsUserData = styled(UserData)`
+  margin-top: 18px;
+`;
+
+export const OrderDetailsAsk = styled.div`
+  text-align: center;
+  margin-top: 22px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #4f4f4f;
+`;
+
+export const ButtonYes = styled(Button)`
+  margin-top: 19px;
+`;
+
+export const ButtonNo = styled(Button)`
+  margin: 17px 0px 22px 0px;
+`;
 
 export const TabBarMobile = styled(TabBar)`
   @media (min-width: 768px) {

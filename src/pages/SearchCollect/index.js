@@ -1,43 +1,31 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { useHistory } from "react-router-dom";
-import * as S from "./styles";
 import { UserContext } from "../../contexts";
+import { getCollectionsInZone } from "../../services/recycleCollection.service";
+import { getUserById } from "../../services/users.service";
+
+import * as S from "./styles";
 
 const SearchCollect = () => {
-  const infoCompany = [
-    {
-      company: "Confeitaria Docinho",
-      address: "Rua Osvaldo Cruz, 84",
-    },
-    {
-      company: "Confeitaria Docinho",
-      address: "Rua Osvaldo Cruz, 84",
-    },
-    {
-      company: "Confeitaria Docinho",
-      address: "Rua Osvaldo Cruz, 84",
-    },
-    {
-      company: "Confeitaria Docinho",
-      address: "Rua Osvaldo Cruz, 84",
-    },
-  ];
+  const [userEnd, setUserEnd] = useState("");
 
-  const history = useHistory();
   const [selectedCollection, setSelectedCollection] = useState("");
+  const [collectionID, setCollectionID] = useState(undefined);
+  const history = useHistory();
+  const { user } = useContext(UserContext);
+  const collections = getCollectionsInZone(user?.city);
 
-  const handleselectedCollection = (text) => {
-    setSelectedCollection(text);
+  const onClick = (collect_id) => {
+    setSelectedCollection(collect_id);
+    setCollectionID(collect_id);
   };
 
-  const disable = selectedCollection.length === 0;
+  const disable = selectedCollection === "" || collectionID === undefined;
 
-  const { user } = useContext(UserContext);
-  const logged = user?.name || false;
+  const logged = user?.name;
 
-  const countResult = infoCompany.length;
-
+  const countResult = collections.length;
   const isResultPlural = `Resultado${countResult === 1 ? "" : "s"}`;
 
   return (
@@ -45,36 +33,52 @@ const SearchCollect = () => {
       <S.HeaderWebSelCollection logged={logged} />
       <S.MainContainer>
         <S.BackButtonSC pageTitle="Aqui estão as solicitações de coleta na sua região:" />
+
         <S.ContainerSC>
-          <S.ContainerTitle>
-            <S.ContainerNumRes>{countResult}</S.ContainerNumRes>
-            <S.ResultsName>{isResultPlural}</S.ResultsName>
-          </S.ContainerTitle>
-          <S.ResultSection>
-            {infoCompany?.map((element) => {
-              return (
-                <>
-                  <S.ContainerResults
-                    key={element}
-                    onClick={handleselectedCollection}
-                    selected={element === selectedCollection}
-                  >
-                    <S.Company>{element.company}</S.Company>
-                    <S.Address>{element.address}</S.Address>
-                  </S.ContainerResults>
-                </>
-              );
-            })}
-          </S.ResultSection>
+          {collections.length ? (
+            <>
+              <S.ContainerTitle>
+                <S.ContainerNumRes>{countResult}</S.ContainerNumRes>
+                <S.ResultsName>{isResultPlural}</S.ResultsName>
+              </S.ContainerTitle>
+              <S.ResultSection>
+                {collections?.map(({ user_id, collection_id, street }) => {
+                  useEffect(() => {
+                    const fetchUser = async () => {
+                      const response = await getUserById(user_id);
+                      setUserEnd(response);
+                    };
+                    fetchUser();
+                  }, []);
+
+                  const { name } = userEnd;
+
+                  return (
+                    <S.ContainerResults
+                      key={collection_id}
+                      selected={collection_id === selectedCollection}
+                      onClick={() => onClick(collection_id)}
+                    >
+                      <S.Company>{name}</S.Company>
+                      <S.Address>{street}</S.Address>
+                    </S.ContainerResults>
+                  );
+                })}
+              </S.ResultSection>
+            </>
+          ) : (
+            <S.CollectionsEmpty>
+              Infelizmente não há coleta(s) na sua região!
+            </S.CollectionsEmpty>
+          )}
         </S.ContainerSC>
-        {/* <S.ButtonContainer> */}
+
         <S.ButtonSC
           disable={disable}
-          onClick={() => history.push("/order-detail")}
+          onClick={() => history.push(`/order-detail/${collectionID}`)}
         >
           Continuar
         </S.ButtonSC>
-        {/* </S.ButtonContainer> */}
       </S.MainContainer>
       <S.TabBarSelCollection />
     </>

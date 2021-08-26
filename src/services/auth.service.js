@@ -8,9 +8,7 @@ import { SETTINGS } from "../settings";
 
 export const signOut = (history, setUser) => {
   firebaseAuth.signOut();
-
   setUser({});
-  localStorage.clear();
   history.push("/");
   location.reload();
 };

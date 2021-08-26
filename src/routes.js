@@ -40,10 +40,10 @@ const Routes = () => {
               component={R.SchedulesCollector}
             />
             <Route exact path="/search-collect" component={R.SearchCollect} />
-            <Route exact path="/order-detail" component={R.OrderDetail} />
+            <Route exact path="/order-detail/:id" component={R.OrderDetail} />
             <Route
               exact
-              path="/collection-accepted"
+              path="/collection-accepted/:id"
               component={R.CollectionAccepted}
             />
             <Route

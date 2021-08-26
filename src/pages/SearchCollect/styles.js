@@ -24,7 +24,6 @@ export const MainContainer = styled.div`
   align-items: center;
   margin-bottom: 0;
   padding: 0 25px;
-  /* width: 100%; */
 
   @media (min-width: 768px) {
     min-height: calc(100vh - var(--headerWebHeight));
@@ -39,7 +38,7 @@ export const BackButtonSC = styled(BackButton)`
 
 export const ContainerSC = styled.div`
   width: 100%;
-  min-height: 80%;
+  height: 300px;
 `;
 
 export const ContainerTitle = styled.div`
@@ -64,31 +63,32 @@ export const ResultSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  min-height: 300px;
 `;
 
 export const ContainerResults = styled.div`
-  background-color: ${({ selected }) => (selected ? "red" : "#FDE5D7")};
+  background-color: ${({ selected }) => (selected ? "#F28E36" : "#FDE5D7")};
   border-radius: 8px;
 
   width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 `;
 
-export const Company = styled.p`
+export const Company = styled.span`
   font-size: 14px;
   font-weight: 700;
   color: var(--textColor);
   padding-left: 15px;
 `;
 
-export const Address = styled.p`
+export const Address = styled.span`
   font-size: 14px;
   font-weight: 400;
   color: var(--textColor);
   padding-left: 15px;
 `;
-
-// export const ButtonContainer = styled.div``;
 
 export const ButtonSC = styled(Button)`
   margin: 24px 0;
@@ -98,4 +98,13 @@ export const TabBarSelCollection = styled(TabBar)`
   @media (min-width: 768px) {
     display: none;
   }
+`;
+
+export const CollectionsEmpty = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
