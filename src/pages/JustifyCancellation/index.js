@@ -6,6 +6,7 @@ import { UserContext } from "../../contexts";
 import * as S from "./styles";
 
 import { SelectMessage } from "../../components/SelectMessage";
+import { SETTINGS } from "../../settings";
 
 const JustifyCancellation = () => {
   const history = useHistory();
@@ -32,6 +33,10 @@ const JustifyCancellation = () => {
 
   const { user } = useContext(UserContext);
   const logged = user?.name;
+  const subTitle =
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+      ? "o Coletor"
+      : "o Empreendedor";
 
   return (
     <>
@@ -39,10 +44,7 @@ const JustifyCancellation = () => {
       <S.ContainerCancelled>
         <S.ContainerMain>
           <S.Title>Sua coleta foi CANCELADA.</S.Title>
-          <S.SubTitle>
-            Para deixar uma mensagem para o Coletor, basta clicar em alguma das
-            opções abaixo:
-          </S.SubTitle>
+          <S.SubTitle>{`Para deixar uma mensagem para ${subTitle}, basta clicar ou digitar abaixo:`}</S.SubTitle>
           <S.ContainerOptions>
             <SelectMessage
               messages={options}

@@ -30,16 +30,18 @@ const Home = () => {
     setOrderTimestamp("");
   }, []);
 
+  const fullName = user?.name;
+  const firstName = fullName.split(" ");
+
   return (
     <>
       <S.PageE>
         <S.HeaderDesktop logged={islogged} />
-
         <S.BackButtonHE
           handleBack={() => signOut(history, setUser)}
           pageTitle="Sair"
         />
-        <S.FirstText>{`Olá, ${user?.name}!`}</S.FirstText>
+        <S.FirstText>{`Olá, ${firstName.find((item) => item)}!`}</S.FirstText>
         <S.mid>
           <S.image src={ilustration} alt="bussines man" />
           <S.ButtonRequest onClick={() => history.push(requestCollectRoute)}>
