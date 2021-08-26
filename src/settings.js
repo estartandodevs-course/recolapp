@@ -1,7 +1,7 @@
 export const SETTINGS = {
   TYPE_USER: {
     COLLECTOR: "Coletor",
-    CORPORATE: "Corperativa",
+    CORPORATE: "Cooperativa",
     EMTREPRENEUR: "Empreendedor",
   },
   TABLES_NAME: {
