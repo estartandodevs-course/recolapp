@@ -7,6 +7,7 @@ export const ContainerViewDetails = styled.div`
   padding-left: 15px;
   padding-right: 30.33px;
   line-height: 19.2px;
+  box-sizing: border-box;
 
   color: #ffffff;
   font-size: 16px;
