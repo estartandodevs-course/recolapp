@@ -110,8 +110,8 @@ export const MaterialsList = styled(MaterialInfo)`
 `;
 
 export const InfoLocation = styled(Scheduling)`
-  width: 300px;
   height: 100px;
+  width: 300px;
 `;
 
 export const Confirmations = styled.div`

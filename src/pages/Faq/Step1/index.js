@@ -35,22 +35,22 @@ const Step1 = ({ setPage }) => {
 
   return (
     <>
-      <S.body>
-        <S.HeaderDesktop logged={isLogged} />
-        <S.backB pageTitle="Dúvidas Frequentes" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.pageContent>
+      <S.HeaderDesktop logged={isLogged} />
+      <S.Body>
+        <S.BackB pageTitle="Dúvidas Frequentes" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.PageContent>
               {faqTexts.map(({ text, page }) => (
-                <S.sectionButtons key={text} onClick={() => setPage(page)}>
+                <S.SectionButtons key={text} onClick={() => setPage(page)}>
                   {text}
-                </S.sectionButtons>
+                </S.SectionButtons>
               ))}
-            </S.pageContent>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
-      <S.tabBar />
+            </S.PageContent>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
+      <S.TabBarFaq />
     </>
   );
 };

@@ -1,30 +1,37 @@
 import styled from "styled-components";
 import BackButton from "../../../components/BackButton";
 import { HeaderWeb } from "../../../components/HeaderWeb";
+import { TabBar } from "../../../components/TabBar";
 
-export const body = styled.div`
+export const Body = styled.div`
   background-color: #fff8f4;
+  min-height: calc(100vh - var(--tabBarHeight));
 
-  height: 100vh;
+  @media (min-width: 768px) {
+    max-width: 600px;
+    margin: auto;
+    min-height: calc(100vh - var(--headerWebHeight));
+  }
 `;
-export const pageContent = styled.div`
+export const PageContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const backb = styled(BackButton)`
+export const BackB = styled(BackButton)`
   padding-top: 17px;
   margin-bottom: 40px;
   margin-left: 13.33px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
-  margin-left: 18.33px;
+
   @media (min-width: 768px) {
-    margin: 50px 0px 50px 100px;
+    margin: 40px 0px 40px 0px;
+    padding: 0;
   }
 `;
-export const mainSpan = styled.span`
+export const MainSpan = styled.span`
   text-align: center;
   padding-top: 15.5px;
   padding-bottom: 15.5px;
@@ -36,24 +43,24 @@ export const mainSpan = styled.span`
   border-radius: 8px;
   border: none;
   margin-bottom: 22px;
+
   @media (min-width: 768px) {
     margin-bottom: 50px;
   }
 `;
-export const contentSpan = styled.span`
+export const ContentSpan = styled.span`
   background-color: rgba(253, 229, 215, 1);
   color: rgba(0, 0, 0, 1);
   font-size: 14px;
   text-align: justify;
   font-weight: 400;
   margin-top: 50px;
-  height: 230px;
   width: 290px;
   padding: 10px;
   border-radius: 8px;
   border: none;
 `;
-export const mainTextAling = styled.div`
+export const MainTextAling = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -64,22 +71,28 @@ export const HeaderDesktop = styled(HeaderWeb)`
     position: relative;
   }
 `;
-export const desktopContainer = styled.div`
+export const DesktopContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 400px;
-    padding: 70px 80px;
+    padding: 40px 40px;
     background-color: #ffffff;
-    border: solid 1px #f28e36;
+    border: solid 2px #f28e36;
     border-radius: 28px;
     margin-bottom: 30px;
   }
 `;
-export const desktopAling = styled.div`
+export const DesktopAling = styled.div`
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
+  }
+`;
+
+export const TabBarFaq = styled(TabBar)`
+  @media (min-width: 768px) {
+    display: none;
   }
 `;

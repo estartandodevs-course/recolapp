@@ -63,7 +63,7 @@ const Introduction = () => {
           </S.ButtonHomeWeb>
         </S.ContainerWebRight>
       </S.ContainerWeb>
-      <S.FooterWeb> &copy; 2021 Recolapp</S.FooterWeb>
+      {/* <S.FooterWeb> &copy; 2021 Recolapp</S.FooterWeb> */}
     </S.ContainerAll>
   );
 };

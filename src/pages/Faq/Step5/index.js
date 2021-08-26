@@ -9,16 +9,16 @@ const Step5 = ({ firstPage }) => {
   return (
     <>
       <S.HeaderDesktop logged={isLogged} />
-      <S.body>
-        <S.backb handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.mainTextAling>
-              <S.mainSpan>O que fazer para facilitar a separação?</S.mainSpan>
-            </S.mainTextAling>
-            <S.pageContent>
+      <S.Body>
+        <S.BackB handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.MainTextAling>
+              <S.MainSpan>O que fazer para facilitar a separação?</S.MainSpan>
+            </S.MainTextAling>
+            <S.PageContent>
               <img src={WomanRecy} alt="woman recycling" />
-              <S.contentSpan>
+              <S.ContentSpan>
                 Para facilitar a separação existe a coleta seletiva, e a
                 separação através das cores. No Brasil as cores possuem as
                 seguintes classificações:
@@ -44,11 +44,12 @@ const Step5 = ({ firstPage }) => {
                 <br />
                 Cinza: resíduo geral não reciclável
                 <br />
-              </S.contentSpan>
-            </S.pageContent>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ContentSpan>
+            </S.PageContent>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
+      <S.TabBarFaq />
     </>
   );
 };
