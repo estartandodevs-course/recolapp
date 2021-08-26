@@ -7,7 +7,7 @@ export const ConfirmationContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 30px;
+  padding: 0 30px;
 `;
 
 export const ConfirmationText = styled.h2`
