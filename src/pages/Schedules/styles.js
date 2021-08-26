@@ -57,4 +57,7 @@ export const MobileTabBar = styled(TabBar)`
 export const NoItemsMessage = styled.p`
   margin-bottom: auto;
   text-align: center;
+  font-weight: 700;
+  color: #4f4f4f;
+  margin-top: 30px;
 `;
