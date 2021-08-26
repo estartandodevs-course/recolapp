@@ -1,14 +1,21 @@
 import styled from "styled-components";
 import BackButton from "../../../components/BackButton";
 import { HeaderWeb } from "../../../components/HeaderWeb";
+import { TabBar } from "../../../components/TabBar";
 
 export const Body = styled.div`
   background-color: #fff8f4;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: calc(100vh - var(--tabBarHeight));
   margin: 0;
   padding: 0;
+
+  @media (min-width: 768px) {
+    max-width: 600px;
+    margin: auto;
+    min-height: calc(100vh - var(--headerWebHeight));
+  }
 `;
 export const BackB = styled(BackButton)`
   padding-top: 17px;
@@ -16,9 +23,10 @@ export const BackB = styled(BackButton)`
   margin-left: 13.33px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
-  margin-left: 18.33px;
+
   @media (min-width: 768px) {
-    margin: 50px 0px 50px 100px;
+    margin: 40px 0px 40px 0px;
+    padding: 0;
   }
 `;
 export const MainSpan = styled.span`
@@ -41,7 +49,6 @@ export const PageContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
 `;
 export const ContentSpan = styled.span`
   background-color: rgba(253, 229, 215, 1);
@@ -49,11 +56,12 @@ export const ContentSpan = styled.span`
   font-size: 14px;
   text-align: justify;
   font-weight: 400;
-  height: 405px;
   width: 290px;
   padding: 10px;
   border-radius: 8px;
   border: none;
+  margin-bottom: 30px;
+  margin-top: 50px;
 `;
 export const MainTextAling = styled.div`
   display: flex;
@@ -72,9 +80,9 @@ export const DesktopContainer = styled.div`
     flex-direction: column;
     position: relative;
     width: 400px;
-    padding: 70px 80px;
+    padding: 40px 40px;
     background-color: #ffffff;
-    border: solid 1px #f28e36;
+    border: solid 2px #f28e36;
     border-radius: 28px;
     margin-bottom: 30px;
   }
@@ -83,5 +91,11 @@ export const DesktopAling = styled.div`
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
+  }
+`;
+
+export const TabBarFaq = styled(TabBar)`
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
