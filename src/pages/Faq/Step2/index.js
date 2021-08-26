@@ -8,28 +8,28 @@ const Step2 = ({ firstPage }) => {
   const isLogged = user?.name || false;
   return (
     <>
-      <S.body>
-        <S.HeaderDesktop logged={isLogged} />
-        <S.backb handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.mainTextAling>
-              <S.mainSpan>O que é reciclável?</S.mainSpan>
-            </S.mainTextAling>
-            <S.pageContent>
+      <S.HeaderDesktop logged={isLogged} />
+      <S.Body>
+        <S.BackB handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.MainTextAling>
+              <S.MainSpan>O que é reciclável?</S.MainSpan>
+            </S.MainTextAling>
+            <S.PageContent>
               <img src={WomanRecy} alt="woman recycling" />
-              <S.contentSpan>
+              <S.ContentSpan>
                 Resíduos descartados que podem retornar à cadeia produtiva para
                 virar o mesmo produto ou produtos diferentes dos originais, como
                 a maioria dos papéis, vidros e plásticos, papelão e alumínio.
                 Estes podem ser separados e entregues à coleta seletiva. Já o
                 lixo eletrônico pode ser reciclado, após triagem, e deve ser
                 descartado em pontos específicos com essa finalidade..
-              </S.contentSpan>
-            </S.pageContent>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ContentSpan>
+            </S.PageContent>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
     </>
   );
 };
