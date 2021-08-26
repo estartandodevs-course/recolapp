@@ -39,6 +39,18 @@ const Routes = () => {
               path="/schedules-collector"
               component={R.SchedulesCollector}
             />
+            <Route exact path="/search-collect" component={R.SearchCollect} />
+            <Route exact path="/order-detail" component={R.OrderDetail} />
+            <Route
+              exact
+              path="/collection-accepted"
+              component={R.CollectionAccepted}
+            />
+            <Route
+              exact
+              path="/collection-denied"
+              component={R.CollectionDenied}
+            />
 
             <Redirect to="/home" />
           </>
@@ -47,9 +59,8 @@ const Routes = () => {
             <Route exact path="/" component={R.Introduction} />
             <Route exact path="/login" component={R.Login} />
             <Route exact path="/register" component={R.Register} />
-            <Route exact path="/search-collect" component={R.SearchCollect} />
-            <Route exact path="/order-detail" component={R.OrderDetail} />
-            {/* <Redirect to="/" /> */}
+
+            <Redirect to="/" />
           </>
         )}
       </Switch>
