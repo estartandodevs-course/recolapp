@@ -8,8 +8,6 @@ import { getUserById } from "../../services/users.service";
 import * as S from "./styles";
 
 const SearchCollect = () => {
-  const [userEnd, setUserEnd] = useState("");
-
   const [selectedCollection, setSelectedCollection] = useState("");
   const [collectionID, setCollectionID] = useState(undefined);
   const history = useHistory();
@@ -43,6 +41,8 @@ const SearchCollect = () => {
               </S.ContainerTitle>
               <S.ResultSection>
                 {collections?.map(({ user_id, collection_id, street }) => {
+                  const [userEnd, setUserEnd] = useState("");
+
                   useEffect(() => {
                     const fetchUser = async () => {
                       const response = await getUserById(user_id);
@@ -51,15 +51,13 @@ const SearchCollect = () => {
                     fetchUser();
                   }, []);
 
-                  const { name } = userEnd;
-
                   return (
                     <S.ContainerResults
                       key={collection_id}
                       selected={collection_id === selectedCollection}
                       onClick={() => onClick(collection_id)}
                     >
-                      <S.Company>{name}</S.Company>
+                      <S.Company>{userEnd?.name}</S.Company>
                       <S.Address>{street}</S.Address>
                     </S.ContainerResults>
                   );

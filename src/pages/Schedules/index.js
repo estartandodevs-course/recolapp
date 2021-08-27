@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts";
+import { getUserById } from "../../services/users.service";
 
 import * as S from "./styles";
 
@@ -35,28 +36,40 @@ const Schedules = () => {
           <S.CollectionsContainer>
             <S.CollectionsButton pageTitle="Meus agendamentos" />
             <S.CollectionsImg src={myCollections} />
-            {collections.map(({ collection_id, title, timestamp }) => {
-              const timeStamp = new Date(timestamp);
+            {collections.map(
+              ({ user_id, collector_id, collection_id, timestamp }) => {
+                const timeStamp = new Date(timestamp);
 
-              const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
-              const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
+                const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
+                const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
 
-              const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
-              const day = timeStamp.getDay();
+                const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+                const day = timeStamp.getDay();
 
-              return (
-                <S.ViewSettings
-                  key={collection_id}
-                  title={
-                    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
-                      ? title
-                      : user?.name
-                  }
-                  date={`${week[day]}, ${date} - ${time}h`}
-                  onClick={() => history.push(`schedules/${collection_id}`)}
-                />
-              );
-            })}
+                const [userEnd, setUserEnd] = useState("");
+
+                useEffect(() => {
+                  const fetchUser = async () => {
+                    const typeUser =
+                      user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+                        ? collector_id
+                        : user_id;
+                    const response = await getUserById(typeUser);
+                    setUserEnd(response);
+                  };
+                  fetchUser();
+                }, []);
+
+                return (
+                  <S.ViewSettings
+                    key={collection_id}
+                    title={userEnd?.name}
+                    date={`${week[day]}, ${date} - ${time}h`}
+                    onClick={() => history.push(`schedules/${collection_id}`)}
+                  />
+                );
+              }
+            )}
           </S.CollectionsContainer>
           <S.MobileTabBar />
         </>

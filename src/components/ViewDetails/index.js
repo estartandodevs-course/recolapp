@@ -5,9 +5,8 @@ import * as S from "./styles";
 import image from "../../assets/img/icons/icon_recycle.svg";
 
 const ViewDetails = ({
-  title = "Cooperativa Pinheiro",
-  date = "Sáb, 24/07 - 15:30h",
-  details = "Ver detalhes",
+  title = "Aguardando coletor ou cooperativa",
+  date = "N/A",
   onClick,
   ...rest
 }) => {
@@ -16,7 +15,9 @@ const ViewDetails = ({
       <S.ContainerViewDetailsLeft>
         <S.TitleViewDetails>{title}</S.TitleViewDetails>
         <S.DataViewDetails>{date}</S.DataViewDetails>
-        <S.OptionViewDetails onClick={onClick}>{details}</S.OptionViewDetails>
+        <S.OptionViewDetails onClick={onClick}>
+          Ver detalhes
+        </S.OptionViewDetails>
       </S.ContainerViewDetailsLeft>
       <S.ContainerViewDetailsImg image={image} />
     </S.ContainerViewDetails>
