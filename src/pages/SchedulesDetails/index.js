@@ -55,7 +55,6 @@ const SchedulesDetails = () => {
       <S.DSContainerAll key={id} showModal={showModal}>
         <S.Body>
           <S.DSBackButton pageTitle="Detalhes do agendamento" />
-
           <S.DSContainer>
             <S.desktopContainer>
               <S.DSMaterialInfo info={collect?.material} />
