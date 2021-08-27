@@ -21,7 +21,6 @@ const SchedulesDetails = () => {
   const [userEnd, setUserEnd] = useState("");
 
   const collect = getCollectByID(id);
-  console.log("collect", collect);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -34,8 +33,6 @@ const SchedulesDetails = () => {
     };
     fetchUser();
   }, []);
-
-  console.log("collect.collector_id", collect.collector_id);
 
   const hasCollector = collect.collector_id !== "";
 

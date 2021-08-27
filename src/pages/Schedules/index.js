@@ -24,9 +24,45 @@ const Schedules = () => {
       ? getCollectionsByUserID
       : getCollectionsByCollectorID;
 
-  const collections = getCollections(user?.id);
+  const [collections, setCollections] = useState([]);
 
   const logged = user?.name;
+
+  useEffect(() => {
+    (async () => {
+      const collectionsResponse = await getCollections(user?.id); // [ {...} ]
+
+      const collectionsMapped = await Promise.all(
+        collectionsResponse.map(async (collection) => {
+          const timeStamp = new Date(collection.timestamp);
+
+          const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
+          const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
+
+          const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+          const day = timeStamp.getDay();
+
+          const userId =
+            user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+              ? collection.collector_id
+              : collection.user_id;
+
+          const userEnd = await getUserById(userId);
+
+          return {
+            ...collection,
+            date,
+            time,
+            week,
+            day,
+            userEnd,
+          };
+        })
+      );
+
+      setCollections(collectionsMapped);
+    })();
+  }, []);
 
   return (
     <>
@@ -37,38 +73,14 @@ const Schedules = () => {
             <S.CollectionsButton pageTitle="Meus agendamentos" />
             <S.CollectionsImg src={myCollections} />
             {collections.map(
-              ({ user_id, collector_id, collection_id, timestamp }) => {
-                const timeStamp = new Date(timestamp);
-
-                const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
-                const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
-
-                const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
-                const day = timeStamp.getDay();
-
-                const [userEnd, setUserEnd] = useState("");
-
-                useEffect(() => {
-                  const fetchUser = async () => {
-                    const typeUser =
-                      user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
-                        ? collector_id
-                        : user_id;
-                    const response = await getUserById(typeUser);
-                    setUserEnd(response);
-                  };
-                  fetchUser();
-                }, []);
-
-                return (
-                  <S.ViewSettings
-                    key={collection_id}
-                    title={userEnd?.name}
-                    date={`${week[day]}, ${date} - ${time}h`}
-                    onClick={() => history.push(`schedules/${collection_id}`)}
-                  />
-                );
-              }
+              ({ collection_id, date, time, week, day, userEnd }) => (
+                <S.ViewSettings
+                  key={collection_id}
+                  title={userEnd?.name}
+                  date={`${week[day]}, ${date} - ${time}h`}
+                  onClick={() => history.push(`schedules/${collection_id}`)}
+                />
+              )
             )}
           </S.CollectionsContainer>
           <S.MobileTabBar />
