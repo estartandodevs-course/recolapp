@@ -20,7 +20,6 @@ export const ContainerViewDetails = styled.div`
 export const TitleViewDetails = styled.p`
   max-width: 200px;
   max-height: 20px;
-  margin-top: 17px;
   font-weight: 600;
 
   text-overflow: ellipsis;

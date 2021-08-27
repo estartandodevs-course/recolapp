@@ -17,7 +17,6 @@ export const HeaderDesktop = styled(HeaderWeb)`
   }
 `;
 export const DSContainerAll = styled.div`
-  position: ${({ showModal }) => (showModal ? "fixed" : "relative")};
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
