@@ -19,16 +19,18 @@ export const PageE = styled.div`
   color: #fff8f4;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    max-width: 600px;
+    margin: auto;
+    min-height: calc(100vh - var(--headerWebHeight));
+  }
 `;
 
 export const BackButtonHE = styled(BackButton)`
   margin: 17px 0px 23px 13px;
   color: rgba(79, 79, 79, 1);
   font-weight: 600;
-
-  @media (min-width: 768px) {
-    margin: 50px 0px 0px 100px;
-  }
 `;
 
 export const FirstText = styled.span`

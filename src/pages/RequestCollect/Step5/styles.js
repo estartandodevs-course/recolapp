@@ -16,7 +16,7 @@ export const Body = styled.div`
   background-color: #fff8f4;
   height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +24,7 @@ export const Body = styled.div`
 
   @media (min-width: 768px) {
     height: calc(100vh - var(--headerWebHeight));
+    padding: 0;
   }
 `;
 

@@ -42,7 +42,7 @@ export const HeaderProfile = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 265px;
+  min-height: 265px;
   background-color: #228b22;
   width: 100%;
   padding-top: 13px;
@@ -136,6 +136,8 @@ export const UserName = styled.p`
   font-size: 24px;
   font-weight: 400;
   line-height: 36px;
+  padding: 0 10px;
+  text-align: center;
 
   @media (min-width: 768px) {
     color: #000000;
@@ -196,10 +198,11 @@ export const PhoneContainer = styled.div`
   background-color: #f28e36;
   padding: 6px 8px 6px 23px;
   border-radius: 3px;
+  margin-bottom: 10px;
 `;
 
 export const PhoneNumber = styled.p`
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--lightTextColor);
 `;
