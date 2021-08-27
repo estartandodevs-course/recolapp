@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts";
+import { getUserById } from "../../services/users.service";
 
 import * as S from "./styles";
 
@@ -23,9 +24,45 @@ const Schedules = () => {
       ? getCollectionsByUserID
       : getCollectionsByCollectorID;
 
-  const collections = getCollections(user?.id);
+  const [collections, setCollections] = useState([]);
 
   const logged = user?.name;
+
+  useEffect(() => {
+    (async () => {
+      const collectionsResponse = await getCollections(user?.id); // [ {...} ]
+
+      const collectionsMapped = await Promise.all(
+        collectionsResponse.map(async (collection) => {
+          const timeStamp = new Date(collection.timestamp);
+
+          const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
+          const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
+
+          const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+          const day = timeStamp.getDay();
+
+          const userId =
+            user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+              ? collection.collector_id
+              : collection.user_id;
+
+          const userEnd = await getUserById(userId);
+
+          return {
+            ...collection,
+            date,
+            time,
+            week,
+            day,
+            userEnd,
+          };
+        })
+      );
+
+      setCollections(collectionsMapped);
+    })();
+  }, []);
 
   return (
     <>
@@ -45,42 +82,18 @@ const Schedules = () => {
                   />
                 </S.ContainerImg>
                 {collections.length ? (
-                  collections.map(({ collection_id, title, timestamp }) => {
-                    const timeStamp = new Date(timestamp);
-
-                    const date = timeStamp
-                      .toLocaleDateString("pt-BR")
-                      .slice(0, 5);
-                    const time = timeStamp
-                      .toLocaleTimeString("pt-BR")
-                      .slice(0, 5);
-
-                    const week = [
-                      "Dom",
-                      "Seg",
-                      "Ter",
-                      "Qua",
-                      "Qui",
-                      "Sex",
-                      "Sáb",
-                    ];
-                    const day = timeStamp.getDay();
-
-                    return (
+                  collections.map(
+                    ({ collection_id, date, time, week, day, userEnd }) => (
                       <S.ViewSettings
                         key={collection_id}
-                        title={
-                          user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
-                            ? title
-                            : user?.name
-                        }
+                        title={userEnd?.name}
                         date={`${week[day]}, ${date} - ${time}h`}
                         onClick={() =>
                           history.push(`schedules/${collection_id}`)
                         }
                       />
-                    );
-                  })
+                    )
+                  )
                 ) : (
                   <S.NoItemsMessage>
                     Ops...

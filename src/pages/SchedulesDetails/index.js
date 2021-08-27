@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { UserContext } from "../../contexts";
 
@@ -18,16 +18,23 @@ const SchedulesDetails = () => {
   const { id } = useParams();
   const { user } = useContext(UserContext);
   const [showModal, setShowModal] = useState(false);
+  const [userEnd, setUserEnd] = useState("");
 
-  const collectID = parseInt(id);
+  const collect = getCollectByID(id);
 
-  const collect = getCollectByID(collectID);
-  const userEnd = getUserById(
-    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
-      ? collect?.collector_id
-      : collect?.user_id
-  );
-  const hasCollector = collect.collector_id !== -1;
+  useEffect(() => {
+    const fetchUser = async () => {
+      const response = await getUserById(
+        user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+          ? collect?.collector_id
+          : collect?.user_id
+      );
+      setUserEnd(response);
+    };
+    fetchUser();
+  }, []);
+
+  const hasCollector = collect.collector_id !== "";
 
   const collectState = hasCollector
     ? "Coleta em andamento"
@@ -36,7 +43,7 @@ const SchedulesDetails = () => {
     ? "Cancelar coleta"
     : "Cancelar solicitação";
 
-  const timestamp = new Date(parseInt(collect.timestamp));
+  const timestamp = new Date(parseInt(collect?.timestamp));
   const dateCollect = timestamp.toLocaleDateString("pt-BR");
   const hourCollect = timestamp.toLocaleTimeString("pt-BR").slice(0, 5);
 
@@ -45,7 +52,7 @@ const SchedulesDetails = () => {
   return (
     <>
       <S.HeaderDesktop logged={isLogged} />
-      <S.DSContainerAll key={collectID} showModal={showModal}>
+      <S.DSContainerAll key={id} showModal={showModal}>
         <S.Body>
           <S.DSBackButton pageTitle="Detalhes do agendamento" />
 
@@ -76,11 +83,17 @@ const SchedulesDetails = () => {
 
               <S.DSConfirmCollection
                 hasCollector={hasCollector}
-                onClick={() => history.push("/collect-confirm")}
+                onClick={() =>
+                  history.push(`/collect-confirm/${collect?.collection_id}`)
+                }
               >
                 Confirmar coleta
               </S.DSConfirmCollection>
-              <Modal showModal={showModal} setShowModal={setShowModal} />
+              <Modal
+                id={collect?.collection_id}
+                showModal={showModal}
+                setShowModal={setShowModal}
+              />
               <S.DSCancelCollection onClick={() => setShowModal(true)}>
                 {cancelButtonName}
               </S.DSCancelCollection>

@@ -22,8 +22,8 @@ const UserData = ({
             <S.UserDataImgProfileVerify image={verify} />
           </S.UserDataImgProfile>
           <S.UserDataContainerRight>
-            <S.UserDataName>{name}</S.UserDataName>
-            <S.UserDataOffice>{office}</S.UserDataOffice>
+            <S.UserDataName>{name && name}</S.UserDataName>
+            <S.UserDataOffice>{office && office}</S.UserDataOffice>
           </S.UserDataContainerRight>
         </S.UserDataContainerTop>
         <S.UserDataContainerBottom onClick={onClick}>

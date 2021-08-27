@@ -1,22 +1,22 @@
 import React, { useContext } from "react";
 import { useHistory, useParams } from "react-router-dom";
-
 import { Confirmation } from "../../components/Confirmation";
 import { collectionConfirmation } from "../../assets/img/illustrations/index";
-import { removeCollection } from "../../services/recycleCollection.service";
+import { setCollectionCollector } from "../../services/recycleCollection.service";
 import { UserContext } from "../../contexts";
 
-const CollectConfirm = () => {
+const CollectionAccepted = () => {
   const history = useHistory();
   const { user } = useContext(UserContext);
   const { id } = useParams();
 
-  removeCollection(id, user?.id);
+  setCollectionCollector(id, user?.id);
 
   return (
     <>
       <Confirmation
-        message="Coleta realizada com sucesso!"
+        message="Parabéns!
+        Você aceitou o pedido de coleta da Confeitaria Docinho."
         img={collectionConfirmation}
         alt="foto"
         buttonMessage="Voltar para tela inicial"
@@ -26,4 +26,4 @@ const CollectConfirm = () => {
   );
 };
 
-export default CollectConfirm;
+export default CollectionAccepted;

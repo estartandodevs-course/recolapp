@@ -10,7 +10,11 @@ import CollectConfirm from "./CollectionConfirm";
 import CollectCancelled from "./CollectionCancelled";
 import Cancelled from "./JustifyCancellation";
 import Profile from "./Profile";
+import SearchCollect from "./SearchCollect";
+import OrderDetail from "./OrderDetail";
 import SchedulesCollector from "./SchedulesCollector";
+import CollectionAccepted from "./CollectionAccepted";
+import CollectionDenied from "./CollectionDenied";
 
 export {
   Introduction,
@@ -26,4 +30,8 @@ export {
   Cancelled,
   Profile,
   SchedulesCollector,
+  SearchCollect,
+  OrderDetail,
+  CollectionAccepted,
+  CollectionDenied,
 };
