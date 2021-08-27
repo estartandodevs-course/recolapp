@@ -11,6 +11,7 @@ function Modal({
   onClick,
   showModal,
   setShowModal,
+  id = "",
   ...rest
 }) {
   const history = useHistory();
@@ -25,7 +26,7 @@ function Modal({
           <S.ContainerModal width={width} onClick={(e) => e.stopPropagation()}>
             <S.ModalTitle>{text}</S.ModalTitle>
             <S.ActionModal>
-              <S.YesButtom onClick={() => history.push("/cancelled")}>
+              <S.YesButtom onClick={() => history.push(`/cancelled/${id}`)}>
                 {confirm}
               </S.YesButtom>
               <S.NoButtom onClick={() => setShowModal((previous) => !previous)}>

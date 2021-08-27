@@ -20,9 +20,7 @@ const SchedulesDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const [userEnd, setUserEnd] = useState("");
 
-  const collectID = parseInt(id);
-
-  const collect = getCollectByID(collectID);
+  const collect = getCollectByID(id);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -36,7 +34,7 @@ const SchedulesDetails = () => {
     fetchUser();
   }, []);
 
-  const hasCollector = collect.collector_id !== -1;
+  const hasCollector = collect.collector_id !== "";
 
   const collectState = hasCollector
     ? "Coleta em andamento"
@@ -54,7 +52,7 @@ const SchedulesDetails = () => {
   return (
     <>
       <S.HeaderDesktop logged={isLogged} />
-      <S.DSContainerAll key={collectID} showModal={showModal}>
+      <S.DSContainerAll key={id} showModal={showModal}>
         <S.Body>
           <S.DSBackButton pageTitle="Detalhes do agendamento" />
           <S.DSContainer>
@@ -84,11 +82,17 @@ const SchedulesDetails = () => {
 
               <S.DSConfirmCollection
                 hasCollector={hasCollector}
-                onClick={() => history.push("/collect-confirm")}
+                onClick={() =>
+                  history.push(`/collect-confirm/${collect?.collection_id}`)
+                }
               >
                 Confirmar coleta
               </S.DSConfirmCollection>
-              <Modal showModal={showModal} setShowModal={setShowModal} />
+              <Modal
+                id={collect?.collection_id}
+                showModal={showModal}
+                setShowModal={setShowModal}
+              />
               <S.DSCancelCollection onClick={() => setShowModal(true)}>
                 {cancelButtonName}
               </S.DSCancelCollection>

@@ -1,24 +1,38 @@
 import React, { useState, useContext } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { UserContext } from "../../contexts";
 
 import * as S from "./styles";
 
 import { SelectMessage } from "../../components/SelectMessage";
+import {
+  removeCollection,
+  removeCollectorCollection,
+} from "../../services/recycleCollection.service";
 import { SETTINGS } from "../../settings";
 
 const JustifyCancellation = () => {
   const history = useHistory();
+  const { id } = useParams();
+  const { user } = useContext(UserContext);
+  const logged = user?.name;
+  const [selectedMessage, setSelectedMessage] = useState("");
+  const [otherMessage, setOtherMessage] = useState("");
+
+  const disable = selectedMessage.length === 0 && otherMessage.length === 0;
+
   const options = [
     "Infelizmente tive um imprevisto e não poderei recebê-lo.",
     "Vou precisar agendar em outro horário.",
   ];
 
-  const [selectedMessage, setSelectedMessage] = useState("");
-  const [otherMessage, setOtherMessage] = useState("");
+  const removeFunction =
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+      ? removeCollection
+      : removeCollectorCollection;
 
-  const disable = selectedMessage.length === 0 && otherMessage.length === 0;
+  removeFunction(id, user?.id);
 
   const handleOtherMessage = (event) => {
     const newMessage = event.target.value;
@@ -31,8 +45,6 @@ const JustifyCancellation = () => {
     setOtherMessage("");
   };
 
-  const { user } = useContext(UserContext);
-  const logged = user?.name;
   const subTitle =
     user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
       ? "o Coletor"

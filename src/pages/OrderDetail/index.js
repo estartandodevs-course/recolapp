@@ -12,7 +12,7 @@ const OrderDetail = () => {
   const { user } = useContext(UserContext);
   const { id } = useParams();
 
-  const collect = getCollectByID(parseInt(id));
+  const collect = getCollectByID(id);
   const logged = user?.name;
 
   const [userEnd, setUserEnd] = useState(undefined);
@@ -47,12 +47,10 @@ const OrderDetail = () => {
         <S.OrderDetailsUserData
           hasCollector
           name={userEnd?.name}
-          office={`${userEnd?.office} a ${collect.title}`}
+          office={`${userEnd?.office} a ${collect?.title}`}
         />
 
-        <S.OrderDetailsAsk>
-          Deseja realizar a coleta da Confeitaria Docinho?
-        </S.OrderDetailsAsk>
+        <S.OrderDetailsAsk>Deseja realizar a coleta?</S.OrderDetailsAsk>
 
         <S.ButtonYes onClick={() => history.push(`/collection-accepted/${id}`)}>
           Sim, quero realizar
@@ -60,7 +58,7 @@ const OrderDetail = () => {
 
         <S.ButtonNo
           bgColor="#F28E36"
-          onClick={() => history.push("/collection-denied")}
+          onClick={() => history.push(`/collection-denied/${id}`)}
         >
           Não, obrigado
         </S.ButtonNo>

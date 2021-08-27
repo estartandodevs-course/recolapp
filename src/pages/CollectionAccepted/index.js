@@ -10,7 +10,7 @@ const CollectionAccepted = () => {
   const { user } = useContext(UserContext);
   const { id } = useParams();
 
-  setCollectionCollector(parseInt(id), user?.id);
+  setCollectionCollector(id, user?.id);
 
   return (
     <>
