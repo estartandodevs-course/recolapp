@@ -1,105 +1,82 @@
 /* eslint-disable */
 
 import { SETTINGS } from "../settings";
-import { getUserById } from "./users.service";
+import {
+  deleteDoc,
+  getAll,
+  getDoc,
+  save,
+  update,
+} from "../services/firebase/handlers";
 
-const { uuid } = require("uuidv4");
-
-// garbage collection = coleta de lixo
-
-export const removeCollection = (collect_id, user_id) => {
-  const collections = getAllCollections();
-
-  const collectionsUpdate = collections.filter(
-    (item) =>
-      item.collection_id !== collect_id && item?.collector_id !== user_id
-  );
-
-  console.log("collectionsUpdate", collectionsUpdate);
-
-  setLocalStorage(collectionsUpdate);
-  return collectionsUpdate;
+export const removeCollection = async (collect_id) => {
+  return await deleteDoc(SETTINGS.TABLES_NAME.COLLECTIONS, collect_id);
 };
 
-export const removeCollectorCollection = (collect_id, user_id) => {
-  const collections = getAllCollections();
-
-  const collectionsUpdate = collections.map((item) => {
-    if (item.collection_id === collect_id && item?.collector_id === user_id) {
-      return { ...item, collector_id: "" };
-    }
-    return item;
+export const removeCollectorCollection = async (collect_id) => {
+  await update(SETTINGS.TABLES_NAME.COLLECTIONS, collect_id, {
+    collector_id: "",
   });
-
-  setLocalStorage(collectionsUpdate);
-  return collectionsUpdate;
+  return {
+    message: "success",
+    status: 201,
+  };
 };
 
-export const setCollectionCollector = (collect_id, user_id) => {
-  const collections = getAllCollections();
-
-  const collectionsUpdate = collections.map((item) => {
-    if (item.collection_id === collect_id) {
-      return { ...item, collector_id: user_id };
-    }
-    return item;
+export const setCollectionCollector = async (collect_id, collector_id) => {
+  await update(SETTINGS.TABLES_NAME.COLLECTIONS, collect_id, {
+    collector_id: collector_id,
   });
-
-  setLocalStorage(collectionsUpdate);
-  return collectionsUpdate;
+  return {
+    message: "success",
+    status: 201,
+  };
 };
 
-export const getCollectionsInZone = (city) => {
-  const collections = getAllCollections();
-  const response = collections.filter((collect) => collect.city === city);
-  return response;
-};
-
-export const getCollectionsByCollectorID = (user_id) => {
-  const collections = getAllCollections();
-  const response = collections.filter(
-    (collect) => collect.collector_id === user_id
+export const getCollectionsInZone = async (city) => {
+  const collections = await getAll(
+    SETTINGS.TABLES_NAME.COLLECTIONS,
+    "city",
+    city
   );
-  return response;
+  return collections.filter((item) => item.collector_id === "");
 };
 
-export const getCollectionsByUserID = (user_id) => {
-  const collections = getAllCollections();
-  const response = collections.filter((collect) => collect.user_id === user_id);
-  return response;
-};
-
-export const getAllCollections = () => {
-  const response = getLocalStorage();
-  return response;
-};
-
-export const getCollectByID = (collect_id) => {
-  const collections = getAllCollections();
-
-  const response = collections.find(
-    (collect) => collect.collection_id === collect_id
+export const getCollectionsByCollectorID = async (collector_id) => {
+  const collections = await getAll(
+    SETTINGS.TABLES_NAME.COLLECTIONS,
+    "collector_id",
+    collector_id
   );
-  return response;
+  return collections;
+};
+
+export const getCollectionsByUserID = async (user_id) => {
+  const collections = await getAll(
+    SETTINGS.TABLES_NAME.COLLECTIONS,
+    "user_id",
+    user_id
+  );
+  return collections;
+};
+
+export const getCollectByID = async (collect_id) => {
+  const collect = await getDoc(SETTINGS.TABLES_NAME.COLLECTIONS, collect_id);
+  return collect;
 };
 
 export const createCollect = ({ user, order, orderTimestamp }) => {
-  const allCollections = getAllCollections();
-
-  const collections = allCollections;
-
   const timeStamp = new Date(orderTimestamp);
 
   const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
   const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
 
-  const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
   const day = timeStamp.getDay();
 
   const collect = {
-    collection_id: uuid(),
     collector_id: "",
     title: "Aguardando cooperativa/coletor",
+    author: user,
     user_id: user.id,
     zip: user.zip,
     street: user.street,
@@ -107,24 +84,10 @@ export const createCollect = ({ user, order, orderTimestamp }) => {
     timestamp: orderTimestamp,
     date,
     time,
-    week,
     day,
     material: order,
   };
 
-  collections.push(collect);
-  setLocalStorage(collections);
+  save(SETTINGS.TABLES_NAME.COLLECTIONS, collect);
   return collect;
-};
-
-const getLocalStorage = () => {
-  const storageCheck = localStorage.getItem(SETTINGS.TABLES_NAME.COLLECTIONS);
-
-  return storageCheck === undefined
-    ? storageCheck
-    : JSON.parse(storageCheck) || [];
-};
-
-const setLocalStorage = (data) => {
-  localStorage.setItem(SETTINGS.TABLES_NAME.COLLECTIONS, JSON.stringify(data));
 };
