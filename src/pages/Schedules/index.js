@@ -12,6 +12,8 @@ import {
   getCollectionsByCollectorID,
 } from "../../services/recycleCollection.service";
 
+import { weekDaysMock } from "../../mock/weekDays";
+
 import { SETTINGS } from "../../settings";
 
 const Schedules = () => {
@@ -70,18 +72,14 @@ const Schedules = () => {
                   />
                 </S.ContainerImg>
                 {collections.length ? (
-                  collections.map(
-                    ({ collection_id, date, time, week, day, userEnd }) => (
-                      <S.ViewSettings
-                        key={collection_id}
-                        title={userEnd?.name}
-                        date={`${week[day]}, ${date} - ${time}h`}
-                        onClick={() =>
-                          history.push(`schedules/${collection_id}`)
-                        }
-                      />
-                    )
-                  )
+                  collections.map(({ id, date, time, day, userEnd }) => (
+                    <S.ViewSettings
+                      key={id}
+                      title={userEnd?.name}
+                      date={`${weekDaysMock[day]}, ${date} - ${time}h`}
+                      onClick={() => history.push(`schedules/${id}`)}
+                    />
+                  ))
                 ) : (
                   <S.NoItemsMessage>
                     Ops...

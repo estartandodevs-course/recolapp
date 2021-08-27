@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../contexts";
 import { getCollectionsInZone } from "../../services/recycleCollection.service";
-import { getUserById } from "../../services/users.service";
 
 import * as S from "./styles";
 
@@ -12,7 +11,14 @@ const SearchCollect = () => {
   const [collectionID, setCollectionID] = useState(undefined);
   const history = useHistory();
   const { user } = useContext(UserContext);
-  const collections = getCollectionsInZone(user?.city);
+  const [collections, setCollections] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const collectionsResponse = await getCollectionsInZone(user?.city);
+      setCollections(collectionsResponse);
+    })();
+  }, []);
 
   const onClick = (collect_id) => {
     setSelectedCollection(collect_id);
@@ -40,24 +46,14 @@ const SearchCollect = () => {
                 <S.ResultsName>{isResultPlural}</S.ResultsName>
               </S.ContainerTitle>
               <S.ResultSection>
-                {collections?.map(({ user_id, collection_id, street }) => {
-                  const [userEnd, setUserEnd] = useState("");
-
-                  useEffect(() => {
-                    const fetchUser = async () => {
-                      const response = await getUserById(user_id);
-                      setUserEnd(response);
-                    };
-                    fetchUser();
-                  }, []);
-
+                {collections?.map(({ author, id, street }) => {
                   return (
                     <S.ContainerResults
-                      key={collection_id}
-                      selected={collection_id === selectedCollection}
-                      onClick={() => onClick(collection_id)}
+                      key={id}
+                      selected={id === selectedCollection}
+                      onClick={() => onClick(id)}
                     >
-                      <S.Company>{userEnd?.name}</S.Company>
+                      <S.Company>{author?.name}</S.Company>
                       <S.Address>{street}</S.Address>
                     </S.ContainerResults>
                   );
