@@ -1,8 +1,7 @@
 /* eslint-disable */
 
-import { useState } from "react";
-
 import { SETTINGS } from "../settings";
+import { getUserById } from "./users.service";
 
 const { uuid } = require("uuidv4");
 
@@ -86,7 +85,16 @@ export const getCollectByID = (collect_id) => {
 
 export const createCollect = ({ user, order, orderTimestamp }) => {
   const allCollections = getAllCollections();
-  const [collections] = useState(allCollections);
+
+  const collections = allCollections;
+
+  const timeStamp = new Date(orderTimestamp);
+
+  const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
+  const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
+
+  const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+  const day = timeStamp.getDay();
 
   const collect = {
     collection_id: uuid(),
@@ -97,6 +105,10 @@ export const createCollect = ({ user, order, orderTimestamp }) => {
     street: user.street,
     city: user.city,
     timestamp: orderTimestamp,
+    date,
+    time,
+    week,
+    day,
     material: order,
   };
 

@@ -34,14 +34,6 @@ const Schedules = () => {
 
       const collectionsMapped = await Promise.all(
         collectionsResponse.map(async (collection) => {
-          const timeStamp = new Date(collection.timestamp);
-
-          const date = timeStamp.toLocaleDateString("pt-BR").slice(0, 5);
-          const time = timeStamp.toLocaleTimeString("pt-BR").slice(0, 5);
-
-          const week = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
-          const day = timeStamp.getDay();
-
           const userId =
             user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
               ? collection.collector_id
@@ -51,10 +43,6 @@ const Schedules = () => {
 
           return {
             ...collection,
-            date,
-            time,
-            week,
-            day,
             userEnd,
           };
         })
