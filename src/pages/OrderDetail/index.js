@@ -12,7 +12,15 @@ const OrderDetail = () => {
   const { user } = useContext(UserContext);
   const { id } = useParams();
 
-  const collect = getCollectByID(id);
+  const [collect, setCollect] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const responseCollect = await getCollectByID(id);
+      setCollect(responseCollect);
+    })();
+  }, []);
+
   const logged = user?.name;
 
   const [userEnd, setUserEnd] = useState(undefined);

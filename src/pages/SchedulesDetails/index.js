@@ -20,18 +20,22 @@ const SchedulesDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const [userEnd, setUserEnd] = useState("");
 
-  const collect = getCollectByID(id);
+  const [collect, setCollect] = useState([]);
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const response = await getUserById(
-        user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
-          ? collect?.collector_id
-          : collect?.user_id
-      );
-      setUserEnd(response);
-    };
-    fetchUser();
+    (async () => {
+      const collectResponse = await getCollectByID(id);
+      setCollect(collectResponse);
+
+      if (user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR) {
+        const collectorResponse = await getUserById(
+          collectResponse?.collector_id
+        );
+        setUserEnd(collectorResponse);
+      } else {
+        setUserEnd(collectResponse?.author);
+      }
+    })();
   }, []);
 
   const hasCollector = collect.collector_id !== "";
@@ -82,14 +86,12 @@ const SchedulesDetails = () => {
 
               <S.DSConfirmCollection
                 hasCollector={hasCollector}
-                onClick={() =>
-                  history.push(`/collect-confirm/${collect?.collection_id}`)
-                }
+                onClick={() => history.push(`/collect-confirm/${collect?.id}`)}
               >
                 Confirmar coleta
               </S.DSConfirmCollection>
               <Modal
-                id={collect?.collection_id}
+                id={collect?.id}
                 showModal={showModal}
                 setShowModal={setShowModal}
               />
