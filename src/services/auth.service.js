@@ -25,7 +25,7 @@ export const registerWithEmailAndPassword = async (
 
   const { name } = profileData;
 
-  const newUser = await save(`${SETTINGS.TABLES_NAME.BASE_URL}/users`, {
+  const newUser = await save(SETTINGS.TABLES_NAME.USERS, {
     ...profileData,
     ...user,
     name,
