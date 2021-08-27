@@ -29,10 +29,10 @@ const JustifyCancellation = () => {
 
   const removeFunction =
     user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
-      ? removeCollection
+      ? removeCollection // se tiver um coletor tem que avisa-lo, caso contrário, só remove!
       : removeCollectorCollection;
 
-  removeFunction(id, user?.id);
+  removeFunction(id);
 
   const handleOtherMessage = (event) => {
     const newMessage = event.target.value;
