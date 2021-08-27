@@ -10,9 +10,7 @@ const CollectionAccepted = () => {
   const { user } = useContext(UserContext);
   const { id } = useParams();
 
-  const result = setCollectionCollector(parseInt(id), user?.id);
-
-  console.log("result", result);
+  setCollectionCollector(parseInt(id), user?.id);
 
   return (
     <>
