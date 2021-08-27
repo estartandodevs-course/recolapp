@@ -9,16 +9,16 @@ const Step7 = ({ firstPage }) => {
   return (
     <>
       <S.HeaderDesktop logged={isLogged} />
-      <S.body>
-        <S.backb handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.mainTextAling>
-              <S.mainSpan>Como a reciclagem beneficia as empresas?</S.mainSpan>
-            </S.mainTextAling>
-            <S.pageContent>
+      <S.Body>
+        <S.BackB handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.MainTextAling>
+              <S.MainSpan>Como a reciclagem beneficia as empresas?</S.MainSpan>
+            </S.MainTextAling>
+            <S.PageContent>
               <img src={WomanRecy} alt="woman recycling" />
-              <S.contentSpan>
+              <S.ContentSpan>
                 Os catadores são os que organizam os materiais para a
                 reciclagem. Eles coletam, separam, transportam e acondicionam.
                 <br />
@@ -31,11 +31,12 @@ const Step7 = ({ firstPage }) => {
                 <br />
                 Portanto é uma das profissões essenciais para que o processo de
                 reciclagem no país funcione bem.
-              </S.contentSpan>
-            </S.pageContent>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ContentSpan>
+            </S.PageContent>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
+      <S.TabBarFaq />
     </>
   );
 };

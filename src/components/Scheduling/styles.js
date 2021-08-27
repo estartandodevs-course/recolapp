@@ -14,13 +14,11 @@ export const SchedulingContainer = styled.div`
 
 export const SchedulingDiv = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding-left: 12px;
 
   color: #000000;
-  /* font-family: "Poppins400"; */
   font-size: 16px;
 `;
 

@@ -72,7 +72,7 @@ export const ContainerWeb = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 100vh;
+    min-height: calc(100vh - var(--headerWebHeight));
     gap: 114px;
   }
 `;

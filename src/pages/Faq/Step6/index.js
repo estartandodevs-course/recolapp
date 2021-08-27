@@ -9,16 +9,16 @@ const Step6 = ({ firstPage }) => {
   return (
     <>
       <S.HeaderDesktop logged={isLogged} />
-      <S.body>
-        <S.backb handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.mainTextAling>
-              <S.mainSpan>Como a reciclagem beneficia as empresas?</S.mainSpan>
-            </S.mainTextAling>
-            <S.pageContent>
+      <S.Body>
+        <S.BackB handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.MainTextAling>
+              <S.MainSpan>Como a reciclagem beneficia as empresas?</S.MainSpan>
+            </S.MainTextAling>
+            <S.PageContent>
               <img src={WomanRecy} alt="woman recycling" />
-              <S.contentSpan>
+              <S.ContentSpan>
                 A reciclagem é geradora de riquezas, pois a empresa reduz custos
                 no seu processo de produto e ainda lucra com a venda dos
                 resíduos que não poderão mais serem utilizados, mas são úteis
@@ -30,11 +30,12 @@ const Step6 = ({ firstPage }) => {
                 ambientais exigem a destinação correta dos resíduos gerados
                 pelas empresas, a reciclagem é um dos métodos mais bem visto
                 devido aos benefícios gerados.
-              </S.contentSpan>
-            </S.pageContent>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ContentSpan>
+            </S.PageContent>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
+      <S.TabBarFaq />
     </>
   );
 };

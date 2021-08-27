@@ -71,17 +71,38 @@ const Schedules = () => {
           <S.HeaderDesktop logged={logged} />
           <S.CollectionsContainer>
             <S.CollectionsButton pageTitle="Meus agendamentos" />
-            <S.CollectionsImg src={myCollections} />
-            {collections.map(
-              ({ collection_id, date, time, week, day, userEnd }) => (
-                <S.ViewSettings
-                  key={collection_id}
-                  title={userEnd?.name}
-                  date={`${week[day]}, ${date} - ${time}h`}
-                  onClick={() => history.push(`schedules/${collection_id}`)}
-                />
-              )
-            )}
+            <S.DesktopAling>
+              <S.DesktopContainer>
+                <S.ContainerImg>
+                  <S.CollectionsImg
+                    src={myCollections}
+                    marginDesktop={
+                      collections.length ? "50px 0 50px 0" : "100px auto 0 auto"
+                    }
+                  />
+                </S.ContainerImg>
+                {collections.length ? (
+                  collections.map(
+                    ({ collection_id, date, time, week, day, userEnd }) => (
+                      <S.ViewSettings
+                        key={collection_id}
+                        title={userEnd?.name}
+                        date={`${week[day]}, ${date} - ${time}h`}
+                        onClick={() =>
+                          history.push(`schedules/${collection_id}`)
+                        }
+                      />
+                    )
+                  )
+                ) : (
+                  <S.NoItemsMessage>
+                    Ops...
+                    <br />
+                    ainda não tem agendamentos!
+                  </S.NoItemsMessage>
+                )}
+              </S.DesktopContainer>
+            </S.DesktopAling>
           </S.CollectionsContainer>
           <S.MobileTabBar />
         </>

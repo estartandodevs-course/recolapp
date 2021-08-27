@@ -1,5 +1,4 @@
 export const defaultMaterials = {
-  timeStamp: "1629317588953",
   material: [
     {
       name: "Papel",

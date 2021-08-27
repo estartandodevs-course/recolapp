@@ -45,16 +45,18 @@ const JustifyCancellation = () => {
     setOtherMessage("");
   };
 
+  const subTitle =
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+      ? "o Coletor"
+      : "o Empreendedor";
+
   return (
     <>
       <S.HeaderWebCancelled logged={logged} />
       <S.ContainerCancelled>
         <S.ContainerMain>
           <S.Title>Sua coleta foi CANCELADA.</S.Title>
-          <S.SubTitle>
-            Para deixar uma mensagem para o Coletor, basta clicar em alguma das
-            opções abaixo:
-          </S.SubTitle>
+          <S.SubTitle>{`Para deixar uma mensagem para ${subTitle}, basta clicar ou digitar abaixo:`}</S.SubTitle>
           <S.ContainerOptions>
             <SelectMessage
               messages={options}

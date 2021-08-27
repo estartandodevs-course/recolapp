@@ -9,16 +9,16 @@ const Step4 = ({ firstPage }) => {
   return (
     <>
       <S.HeaderDesktop logged={isLogged} />
-      <S.body>
-        <S.backb handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
-        <S.desktopAling>
-          <S.desktopContainer>
-            <S.mainTextAling>
-              <S.mainSpan>Como separar o lixo?</S.mainSpan>
-            </S.mainTextAling>
-            <S.pageContent>
+      <S.Body>
+        <S.BackB handleBack={firstPage} pageTitle="Dúvidas Frequentes" />
+        <S.DesktopAling>
+          <S.DesktopContainer>
+            <S.MainTextAling>
+              <S.MainSpan>Como separar o lixo?</S.MainSpan>
+            </S.MainTextAling>
+            <S.PageContent>
               <img src={WomanRecy} alt="woman recycling" />
-              <S.contentSpan>
+              <S.ContentSpan>
                 Nunca misture o material reciclável e orgânico;
                 <br />
                 Coloque os plásticos, vidros, metais e papéis em sacos
@@ -37,11 +37,12 @@ const Step4 = ({ firstPage }) => {
                 <br />
                 Desmonte as embalagens mistas, separando as partes de metal,
                 plástico e vidro, por exemplo, e distribua nos sacos corretos.
-              </S.contentSpan>
-            </S.pageContent>
-          </S.desktopContainer>
-        </S.desktopAling>
-      </S.body>
+              </S.ContentSpan>
+            </S.PageContent>
+          </S.DesktopContainer>
+        </S.DesktopAling>
+      </S.Body>
+      <S.TabBarFaq />
     </>
   );
 };

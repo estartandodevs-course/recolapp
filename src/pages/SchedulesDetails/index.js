@@ -53,51 +53,53 @@ const SchedulesDetails = () => {
     <>
       <S.HeaderDesktop logged={isLogged} />
       <S.DSContainerAll key={id} showModal={showModal}>
-        <S.DSBackButton pageTitle="Detalhes do agendamento" />
+        <S.Body>
+          <S.DSBackButton pageTitle="Detalhes do agendamento" />
 
-        <S.DSContainer>
-          <S.desktopContainer>
-            <S.DSMaterialInfo info={collect?.material} />
-            <S.DSScheduling
-              street={collect?.street}
-              date={dateCollect}
-              hour={hourCollect}
-            />
-            <S.DSUserData
-              hasCollector={hasCollector}
-              name={userEnd?.name}
-              office={`${userEnd?.typeUser} ${userEnd?.office}`}
-            />
-            <S.DSCollectionStates>
-              {collectState}
-              <S.DSCollectionStatesImg image={states} />
-            </S.DSCollectionStates>
+          <S.DSContainer>
+            <S.desktopContainer>
+              <S.DSMaterialInfo info={collect?.material} />
+              <S.DSScheduling
+                street={collect?.street}
+                date={dateCollect}
+                hour={hourCollect}
+              />
+              <S.DSUserData
+                hasCollector={hasCollector}
+                name={userEnd?.name}
+                office={`${userEnd?.office} a ${collect.title}`}
+              />
+              <S.DSCollectionStates>
+                {collectState}
+                <S.DSCollectionStatesImg image={states} />
+              </S.DSCollectionStates>
 
-            <S.DSConfirmTitle>A coleta foi realizada ?</S.DSConfirmTitle>
+              <S.DSConfirmTitle>A coleta foi realizada ?</S.DSConfirmTitle>
 
-            <S.DSConfirmParagraph>
-              Confirme assim que a coleta for realizada e nos ajude a sabe se
-              deu tudo certo.
-            </S.DSConfirmParagraph>
+              <S.DSConfirmParagraph>
+                Confirme assim que a coleta for realizada e nos ajude a sabe se
+                deu tudo certo.
+              </S.DSConfirmParagraph>
 
-            <S.DSConfirmCollection
-              hasCollector={hasCollector}
-              onClick={() =>
-                history.push(`/collect-confirm/${collect?.collection_id}`)
-              }
-            >
-              Confirmar coleta
-            </S.DSConfirmCollection>
-            <Modal
-              id={collect?.collection_id}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-            <S.DSCancelCollection onClick={() => setShowModal(true)}>
-              {cancelButtonName}
-            </S.DSCancelCollection>
-          </S.desktopContainer>
-        </S.DSContainer>
+              <S.DSConfirmCollection
+                hasCollector={hasCollector}
+                onClick={() =>
+                  history.push(`/collect-confirm/${collect?.collection_id}`)
+                }
+              >
+                Confirmar coleta
+              </S.DSConfirmCollection>
+              <Modal
+                id={collect?.collection_id}
+                showModal={showModal}
+                setShowModal={setShowModal}
+              />
+              <S.DSCancelCollection onClick={() => setShowModal(true)}>
+                {cancelButtonName}
+              </S.DSCancelCollection>
+            </S.desktopContainer>
+          </S.DSContainer>
+        </S.Body>
         <S.tabBar />
       </S.DSContainerAll>
     </>
