@@ -16,7 +16,7 @@ const CollectionAccepted = () => {
     <>
       <Confirmation
         message="Parabéns!
-        Você aceitou o pedido de coleta da Confeitaria Docinho."
+        Você aceitou o pedido!"
         img={collectionConfirmation}
         alt="foto"
         buttonMessage="Voltar para tela inicial"
