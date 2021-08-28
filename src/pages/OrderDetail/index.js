@@ -28,37 +28,39 @@ const OrderDetail = () => {
 
   return (
     <>
+      <S.HeaderDesktop logged={logged} />
       <S.OrderDetailsBody>
-        <S.HeaderDesktop logged={logged} />
-
         <S.OrderDetailsBackButton pageTitle="Detalhes do pedido" />
+        <S.Body>
+          <S.OrderDetailsMaterialInfo info={collect?.material} />
 
-        <S.OrderDetailsMaterialInfo info={collect?.material} />
+          <S.OrderDetailsScheduling
+            street={collect?.street}
+            date={dateCollect}
+            hour={hourCollect}
+          />
 
-        <S.OrderDetailsScheduling
-          street={collect?.street}
-          date={dateCollect}
-          hour={hourCollect}
-        />
+          <S.OrderDetailsUserData
+            hasCollector
+            name={collect?.author?.name}
+            office={collect?.author?.typeUser}
+          />
 
-        <S.OrderDetailsUserData
-          hasCollector
-          name={collect?.author?.name}
-          office={`${collect?.author?.typeUser}`}
-        />
+          <S.OrderDetailsAsk>Deseja realizar a coleta?</S.OrderDetailsAsk>
 
-        <S.OrderDetailsAsk>Deseja realizar a coleta?</S.OrderDetailsAsk>
+          <S.ButtonYes
+            onClick={() => history.push(`/collection-accepted/${id}`)}
+          >
+            Sim, quero realizar
+          </S.ButtonYes>
 
-        <S.ButtonYes onClick={() => history.push(`/collection-accepted/${id}`)}>
-          Sim, quero realizar
-        </S.ButtonYes>
-
-        <S.ButtonNo
-          bgColor="#F28E36"
-          onClick={() => history.push(`/collection-denied/${id}`)}
-        >
-          Não, obrigado
-        </S.ButtonNo>
+          <S.ButtonNo
+            bgColor="#F28E36"
+            onClick={() => history.push(`/collection-denied/${id}`)}
+          >
+            Não, obrigado
+          </S.ButtonNo>
+        </S.Body>
       </S.OrderDetailsBody>
       <S.TabBarMobile />
     </>

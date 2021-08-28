@@ -52,7 +52,7 @@ const Routes = () => {
             />
             <Route
               exact
-              path="/collection-denied"
+              path="/collection-denied/:id"
               component={R.CollectionDenied}
             />
 

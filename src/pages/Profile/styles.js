@@ -28,7 +28,7 @@ export const ContainerProfile = styled.div`
   overflow: auto;
 
   @media (min-width: 768px) {
-    max-width: 680px;
+    max-width: 600px;
     margin: auto;
     border-radius: 28px;
     border: solid 2px #3cb43c;
@@ -54,18 +54,18 @@ export const HeaderProfile = styled.div`
     border-radius: 28px;
     width: 90%;
     margin: auto;
-    margin-top: 48px;
+    margin-top: 24px;
   }
 `;
 
 export const UserProfileImg = styled.div`
   position: relative;
   align-self: initial;
-  margin-right: 40px;
   @media (min-width: 768px) {
     width: 100%;
     display: flex;
     justify-content: end;
+    margin-right: 40px;
   }
 `;
 
@@ -141,7 +141,7 @@ export const UserName = styled.p`
 
   @media (min-width: 768px) {
     color: #000000;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
   }
 `;
