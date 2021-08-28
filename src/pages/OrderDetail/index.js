@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { UserContext } from "../../contexts";
 import { getCollectByID } from "../../services/recycleCollection.service";
-import { getUserById } from "../../services/users.service";
 
 import * as S from "./styles";
 
@@ -22,16 +21,6 @@ const OrderDetail = () => {
   }, []);
 
   const logged = user?.name;
-
-  const [userEnd, setUserEnd] = useState(undefined);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const response = await getUserById(collect?.user_id);
-      setUserEnd(response);
-    };
-    fetchUser();
-  }, []);
 
   const timestamp = new Date(parseInt(collect?.timestamp));
   const dateCollect = timestamp.toLocaleDateString("pt-BR");
@@ -54,8 +43,8 @@ const OrderDetail = () => {
 
         <S.OrderDetailsUserData
           hasCollector
-          name={userEnd?.name}
-          office={`${userEnd?.office} a ${collect?.title}`}
+          name={collect?.author?.name}
+          office={`${collect?.author?.typeUser}`}
         />
 
         <S.OrderDetailsAsk>Deseja realizar a coleta?</S.OrderDetailsAsk>
