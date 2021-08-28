@@ -1,5 +1,6 @@
 import React from "react";
-import { ButtonElement } from "./styles";
+
+import * as S from "./styles";
 
 const Button = ({
   onClick,
@@ -7,18 +8,31 @@ const Button = ({
   children,
   disable,
   width = "100%",
+  loading,
+  type = "bubbles",
+  color = "#f28e36",
   ...rest
 }) => {
+  const textButton = loading ? "" : children;
   return (
-    <ButtonElement
+    <S.ButtonElement
       onClick={onClick}
       bgColor={bgColor}
       disabled={disable}
       width={width}
+      loading={`${loading}`}
       {...rest}
     >
-      {children}
-    </ButtonElement>
+      {textButton}
+      <S.ButtonLoading
+        bgColor={bgColor}
+        type={type}
+        color={color}
+        loading={`${loading}`}
+        height={80}
+        width={80}
+      />
+    </S.ButtonElement>
   );
 };
 
