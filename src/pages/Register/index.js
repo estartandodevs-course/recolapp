@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../../contexts";
 
 import * as S from "./styles";
 
@@ -14,6 +15,7 @@ const Register = () => {
     message: "",
     status: false,
   });
+  const { setUser } = useContext(UserContext);
   const [count, setCount] = useState(1);
   const [disable, setDisable] = useState(true);
   const [maskCertification, setMaskCertification] = useState("");
@@ -38,11 +40,10 @@ const Register = () => {
 
   const finishRegister = async () => {
     if (passwordMatch(password.one, password.two) === false) {
-      setErrorDisable({
+      return setErrorDisable({
         message: "Senhas não são iguais!",
         status: true,
       });
-      return 0;
     }
 
     await registerWithEmailAndPassword(
@@ -53,6 +54,8 @@ const Register = () => {
       data.typeUser,
       data
     );
+
+    setUser(data);
     return history.push("/home");
   };
 
