@@ -1,10 +1,13 @@
+/* eslint-disable */
+
 import styled from "styled-components";
 import { transparentize, shade } from "polished";
+import ReactLoading from "react-loading";
 
 export const ButtonElement = styled.button`
-  background-color: ${(props) => props.bgColor};
-  cursor: pointer;
-  width: ${(props) => props.width};
+  background-color: ${({ bgColor }) => bgColor};
+  cursor: ${({ loading }) => (loading === "true" ? "not-allowed" : "pointer")};
+  width: ${({ width }) => width};
   height: 51px;
   border: none;
   border-radius: 8px;
@@ -15,11 +18,17 @@ export const ButtonElement = styled.button`
   align-items: center;
   justify-content: center;
   color: #ffffff;
+
   &:hover {
-    background-color: ${(props) => shade(0.3, props.bgColor)};
+    background-color: ${({ bgColor, loading }) =>
+      loading === "true" ? transparentize(0.6, bgColor) : shade(0.3, bgColor)};
   }
   &:disabled {
-    background-color: ${(props) => transparentize(0.6, props.bgColor)};
+    background-color: ${({ bgColor }) => transparentize(0.6, bgColor)};
     cursor: not-allowed;
   }
+`;
+
+export const ButtonLoading = styled(ReactLoading)`
+  display: ${({ loading }) => (loading === "true" ? "initial" : "none")};
 `;

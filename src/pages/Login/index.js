@@ -14,12 +14,15 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [disable, setDisable] = useState(true);
   const [errorDisable, setErroDisable] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const history = useHistory();
   const { setUser } = useContext(UserContext);
 
   const authLogin = async () => {
+    setLoading(true);
     const response = await loginWithEmailAndPassword(email, password);
+    setLoading(false);
 
     if (response?.idToken) {
       setUser(response.user);
@@ -58,7 +61,7 @@ const Login = () => {
         <S.ErrorMessage disable={errorDisable}>
           O email ou senha está errado. Por favor, tente novamente
         </S.ErrorMessage>
-        <Button disable={disable} onClick={() => authLogin()}>
+        <Button disable={disable} loading={loading} onClick={() => authLogin()}>
           Entrar
         </Button>
       </S.Container>
