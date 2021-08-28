@@ -41,7 +41,6 @@ export const CollectionsButton = styled(BackButton)`
 export const ViewSettings = styled(ViewDetails)`
   margin-bottom: 48px;
   @media (min-width: 768px) {
-    width: 100%;
   }
 `;
 
@@ -53,7 +52,6 @@ export const ContainerImg = styled.div`
 
 export const CollectionsImg = styled.img`
   margin: 40px auto 40px auto;
-  /* width: 100%; */
 
   @media (min-width: 768px) {
     margin: ${(props) => props.marginDesktop};
@@ -80,9 +78,7 @@ export const DesktopContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* position: relative; */
     width: 400px;
-    /* padding: 70px 80px; */
     border-radius: 28px;
     margin-bottom: 30px;
     width: 100%;

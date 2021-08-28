@@ -50,8 +50,6 @@ const Profile = () => {
             <S.ContainerAddressCompany>
               <S.AddressTag>Endereço</S.AddressTag>
               <S.Address>{`${user?.street}/ ${user?.city}-${user?.state}`}</S.Address>
-              <S.Business>Empreendimento</S.Business>
-              <S.Company>Dono da Confeitaria Docinho</S.Company>
             </S.ContainerAddressCompany>
           </S.ContainerInfo>
           <S.ContainerCollections>

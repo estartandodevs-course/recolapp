@@ -23,22 +23,36 @@ export const MainContainer = styled.div`
   overflow: auto;
   align-items: center;
   margin-bottom: 0;
-  padding: 0 25px;
+  width: 100%;
 
   @media (min-width: 768px) {
     min-height: calc(100vh - var(--headerWebHeight));
     padding: 0px;
+    max-width: 600px;
+    margin: auto;
   }
 `;
 
+export const Body = styled.div`
+  width: 100%;
+`;
+
 export const BackButtonSC = styled(BackButton)`
-  margin-bottom: 48px;
-  margin-top: 24px;
+  margin: 0 13px 8px 13px;
+  padding-top: 17px;
+
+  @media (min-width: 768px) {
+  }
 `;
 
 export const ContainerSC = styled.div`
-  width: 100%;
-  height: 300px;
+  height: 350px;
+  padding: 0px 35px;
+  margin-top: 25px;
+
+  @media (min-width: 768px) {
+    padding: 0px 100px;
+  }
 `;
 
 export const ContainerTitle = styled.div`
@@ -63,6 +77,7 @@ export const ResultSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin: 0 25;
 `;
 
 export const ContainerResults = styled.div`
@@ -90,8 +105,14 @@ export const Address = styled.span`
   padding-left: 15px;
 `;
 
-export const ButtonSC = styled(Button)`
-  margin: 24px 0;
+export const ButtonSC = styled(Button)``;
+
+export const ContainerButton = styled.div`
+  padding: 0px 35px;
+
+  @media (min-width: 768px) {
+    padding: 0px 100px;
+  }
 `;
 
 export const TabBarSelCollection = styled(TabBar)`

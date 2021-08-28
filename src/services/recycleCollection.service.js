@@ -75,7 +75,6 @@ export const createCollect = ({ user, order, orderTimestamp }) => {
 
   const collect = {
     collector_id: "",
-    title: "Aguardando cooperativa/coletor",
     author: user,
     user_id: user.id,
     zip: user.zip,
