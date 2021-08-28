@@ -3,17 +3,15 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { UserContext } from "./contexts";
 
 import * as R from "./pages";
-import { getCurrentUser } from "./services/auth.service";
 
 const Routes = () => {
   const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
-    const currentUser = async () => {
-      const response = await getCurrentUser();
+    (async () => {
+      const response = JSON.parse(localStorage.getItem("user"));
       setUser(response);
-    };
-    currentUser();
+    })();
   }, []);
 
   return (

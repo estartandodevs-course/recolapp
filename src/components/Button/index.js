@@ -25,7 +25,6 @@ const Button = ({
     >
       {textButton}
       <S.ButtonLoading
-        bgColor={bgColor}
         type={type}
         color={color}
         loading={`${loading}`}

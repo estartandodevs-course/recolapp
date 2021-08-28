@@ -21,13 +21,16 @@ const Login = () => {
 
   const authLogin = async () => {
     setLoading(true);
-    const response = await loginWithEmailAndPassword(email, password);
-    setLoading(false);
 
-    if (response?.idToken) {
-      setUser(response.user);
+    try {
+      const response = await loginWithEmailAndPassword(email, password);
+
+      localStorage.setItem("user", JSON.stringify(response?.user));
+      setLoading(false);
+      setUser(response?.user);
       history.push("/home");
-    } else {
+    } catch (error) {
+      setLoading(false);
       setErroDisable(false);
     }
   };
@@ -61,7 +64,11 @@ const Login = () => {
         <S.ErrorMessage disable={errorDisable}>
           O email ou senha está errado. Por favor, tente novamente
         </S.ErrorMessage>
-        <Button disable={disable} loading={loading} onClick={() => authLogin()}>
+        <Button
+          disable={disable}
+          loading={loading}
+          onClick={() => !loading && authLogin()}
+        >
           Entrar
         </Button>
       </S.Container>
