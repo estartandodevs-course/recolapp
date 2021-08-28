@@ -7,6 +7,7 @@ export const ContainerViewDetails = styled.div`
   padding-left: 15px;
   padding-right: 30.33px;
   line-height: 19.2px;
+  box-sizing: border-box;
 
   color: #ffffff;
   font-size: 16px;
@@ -19,7 +20,6 @@ export const ContainerViewDetails = styled.div`
 export const TitleViewDetails = styled.p`
   max-width: 200px;
   max-height: 20px;
-  margin-top: 17px;
   font-weight: 600;
 
   text-overflow: ellipsis;

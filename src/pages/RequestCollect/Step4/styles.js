@@ -58,10 +58,6 @@ export const DesktopContainer = styled.div`
     border: solid 2px #3cb43c;
     border-radius: 28px;
     margin-bottom: 30px;
-
-    @media (min-width: 768px) {
-      display: flex;
-    }
   }
 `;
 
@@ -110,8 +106,8 @@ export const MaterialsList = styled(MaterialInfo)`
 `;
 
 export const InfoLocation = styled(Scheduling)`
-  width: 300px;
   height: 100px;
+  width: 300px;
 `;
 
 export const Confirmations = styled.div`

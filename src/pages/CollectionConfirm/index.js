@@ -1,11 +1,15 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { Confirmation } from "../../components/Confirmation";
 import { collectionConfirmation } from "../../assets/img/illustrations/index";
+import { removeCollection } from "../../services/recycleCollection.service";
 
 const CollectConfirm = () => {
   const history = useHistory();
+  const { id } = useParams();
+
+  removeCollection(id);
+
   return (
     <>
       <Confirmation

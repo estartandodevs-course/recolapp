@@ -1,23 +1,38 @@
 import React, { useState, useContext } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { UserContext } from "../../contexts";
 
 import * as S from "./styles";
 
 import { SelectMessage } from "../../components/SelectMessage";
+import {
+  removeCollection,
+  removeCollectorCollection,
+} from "../../services/recycleCollection.service";
+import { SETTINGS } from "../../settings";
 
 const JustifyCancellation = () => {
   const history = useHistory();
+  const { id } = useParams();
+  const { user } = useContext(UserContext);
+  const logged = user?.name;
+  const [selectedMessage, setSelectedMessage] = useState("");
+  const [otherMessage, setOtherMessage] = useState("");
+
+  const disable = selectedMessage.length === 0 && otherMessage.length === 0;
+
   const options = [
     "Infelizmente tive um imprevisto e não poderei recebê-lo.",
     "Vou precisar agendar em outro horário.",
   ];
 
-  const [selectedMessage, setSelectedMessage] = useState("");
-  const [otherMessage, setOtherMessage] = useState("");
+  const removeFunction =
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+      ? removeCollection // se tiver um coletor tem que avisa-lo, caso contrário, só remove!
+      : removeCollectorCollection;
 
-  const disable = selectedMessage.length === 0 && otherMessage.length === 0;
+  removeFunction(id);
 
   const handleOtherMessage = (event) => {
     const newMessage = event.target.value;
@@ -30,8 +45,10 @@ const JustifyCancellation = () => {
     setOtherMessage("");
   };
 
-  const { user } = useContext(UserContext);
-  const logged = user?.name;
+  const subTitle =
+    user?.typeUser === SETTINGS.TYPE_USER.EMTREPRENEUR
+      ? "o Coletor"
+      : "o Empreendedor";
 
   return (
     <>
@@ -39,10 +56,7 @@ const JustifyCancellation = () => {
       <S.ContainerCancelled>
         <S.ContainerMain>
           <S.Title>Sua coleta foi CANCELADA.</S.Title>
-          <S.SubTitle>
-            Para deixar uma mensagem para o Coletor, basta clicar em alguma das
-            opções abaixo:
-          </S.SubTitle>
+          <S.SubTitle>{`Para deixar uma mensagem para ${subTitle}, basta clicar ou digitar abaixo:`}</S.SubTitle>
           <S.ContainerOptions>
             <SelectMessage
               messages={options}

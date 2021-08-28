@@ -39,9 +39,6 @@ const Profile = () => {
                 <S.WhatsappImg src={whatsapp} />
               </S.PhoneContainer>
             </S.ContainerInfoUser>
-            <S.EditContainer>
-              <S.EditName src={edit} />
-            </S.EditContainer>
           </S.ContainerUser>
         </S.HeaderProfile>
         <S.ContainerMainBottom>
@@ -52,11 +49,7 @@ const Profile = () => {
             </S.TitleContainerInfo>
             <S.ContainerAddressCompany>
               <S.AddressTag>Endereço</S.AddressTag>
-              <S.Address>
-                Av. Rio Branco, 145 - Campo Limpo/São Paulo-SP
-              </S.Address>
-              <S.Business>Empreendimento</S.Business>
-              <S.Company>Dono da Confeitaria Docinho</S.Company>
+              <S.Address>{`${user?.street}/ ${user?.city}-${user?.state}`}</S.Address>
             </S.ContainerAddressCompany>
           </S.ContainerInfo>
           <S.ContainerCollections>

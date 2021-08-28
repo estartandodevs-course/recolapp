@@ -28,7 +28,7 @@ export const ContainerProfile = styled.div`
   overflow: auto;
 
   @media (min-width: 768px) {
-    max-width: 680px;
+    max-width: 600px;
     margin: auto;
     border-radius: 28px;
     border: solid 2px #3cb43c;
@@ -42,7 +42,7 @@ export const HeaderProfile = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 265px;
+  min-height: 265px;
   background-color: #228b22;
   width: 100%;
   padding-top: 13px;
@@ -54,18 +54,18 @@ export const HeaderProfile = styled.div`
     border-radius: 28px;
     width: 90%;
     margin: auto;
-    margin-top: 48px;
+    margin-top: 24px;
   }
 `;
 
 export const UserProfileImg = styled.div`
   position: relative;
   align-self: initial;
-  margin-right: 40px;
   @media (min-width: 768px) {
     width: 100%;
     display: flex;
     justify-content: end;
+    margin-right: 40px;
   }
 `;
 
@@ -136,10 +136,12 @@ export const UserName = styled.p`
   font-size: 24px;
   font-weight: 400;
   line-height: 36px;
+  padding: 0 10px;
+  text-align: center;
 
   @media (min-width: 768px) {
     color: #000000;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
   }
 `;
@@ -196,10 +198,11 @@ export const PhoneContainer = styled.div`
   background-color: #f28e36;
   padding: 6px 8px 6px 23px;
   border-radius: 3px;
+  margin-bottom: 10px;
 `;
 
 export const PhoneNumber = styled.p`
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--lightTextColor);
 `;

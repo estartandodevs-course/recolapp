@@ -7,24 +7,25 @@ import { Button } from "../../components/Button";
 import * as S from "./styles";
 
 import image from "../../assets/img/illustrations/login.svg";
-import { getUser } from "../../services/users";
-import { auth } from "../../services/users/auth";
+import { loginWithEmailAndPassword } from "../../services/auth.service";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disable, setDisable] = useState(true);
   const [errorDisable, setErroDisable] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const history = useHistory();
   const { setUser } = useContext(UserContext);
 
-  const authLogin = () => {
-    const response = auth(email, password);
+  const authLogin = async () => {
+    setLoading(true);
+    const response = await loginWithEmailAndPassword(email, password);
+    setLoading(false);
 
-    if (response.auth) {
-      localStorage.setItem("user", JSON.stringify(response.user));
-      setUser(getUser(response.user.id));
+    if (response?.idToken) {
+      setUser(response.user);
       history.push("/home");
     } else {
       setErroDisable(false);
@@ -60,7 +61,7 @@ const Login = () => {
         <S.ErrorMessage disable={errorDisable}>
           O email ou senha está errado. Por favor, tente novamente
         </S.ErrorMessage>
-        <Button disable={disable} onClick={() => authLogin()}>
+        <Button disable={disable} loading={loading} onClick={() => authLogin()}>
           Entrar
         </Button>
       </S.Container>
