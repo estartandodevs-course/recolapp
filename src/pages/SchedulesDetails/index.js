@@ -69,8 +69,8 @@ const SchedulesDetails = () => {
               />
               <S.DSUserData
                 hasCollector={hasCollector}
-                name={collect?.author?.name}
-                office={collect?.author?.typeUser}
+                name={userEnd?.name}
+                office={userEnd?.typeUser}
               />
               <S.DSCollectionStates>
                 {collectState}
